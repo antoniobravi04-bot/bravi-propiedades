@@ -37,7 +37,7 @@ a   { text-decoration: none; }
   margin-inline: auto;
 }
 
-.section       { padding-block: 96px; }
+.section       { padding-block: clamp(64px, 7vw, 96px); }
 .bg-soft       { background: var(--off-white); }
 .bg-navy       { background: var(--navy); }
 
@@ -203,7 +203,7 @@ a   { text-decoration: none; }
 }
 .hero {
   position: relative;
-  min-height: 100svh;
+  min-height: clamp(560px, 85vh, 820px); /* fluido: crece hasta 85vh, tope en 820px */
   display: flex;
   align-items: center;
   padding-top: 30px; /* compensar topbar */
@@ -219,7 +219,8 @@ a   { text-decoration: none; }
   position: relative;
   z-index: 1;
   max-width: 680px;
-  padding-top: 80px;
+  padding-top: clamp(32px, 5vh, 80px);    /* se comprime en pantallas más chicas */
+  padding-bottom: clamp(16px, 3vh, 40px); /* equilibra el espacio inferior */
 }
 .hero__logo {
   height: 72px; width: auto; object-fit: contain;
@@ -241,10 +242,10 @@ a   { text-decoration: none; }
   margin-bottom: 22px;
 }
 .hero__sub {
-  font-size: 1rem;
+  font-size: clamp(1rem, 1.1vw, 1.15rem); /* escala suavemente con el ancho */
   color: rgba(255,255,255,.78);
   line-height: 1.75;
-  margin-bottom: 40px;
+  margin-bottom: clamp(24px, 3.5vh, 40px);
   max-width: 520px;
 }
 .hero__actions { display: flex; gap: 14px; flex-wrap: wrap; justify-content: center; }
@@ -780,7 +781,7 @@ a   { text-decoration: none; }
   border-radius: 50px;
   overflow: hidden;
   box-shadow: 0 12px 48px rgba(0,0,0,.28);
-  max-width: 680px;
+  max-width: clamp(560px, 55vw, 720px); /* se adapta al ancho disponible */
   width: 100%;
 }
 
@@ -853,8 +854,8 @@ a   { text-decoration: none; }
     background-size: cover !important;
   }
   .hero__content {
-    padding-top: 100px;
-    padding-bottom: 40px;
+    padding-top: 90px;  /* navbars fijos en mobile */
+    padding-bottom: 32px;
   }
   .hero__title { font-size: clamp(1.8rem, 8vw, 2.4rem); margin-bottom: 10px; }
   .hero__sub { font-size: 0.9rem; margin-bottom: 24px; }
@@ -901,6 +902,24 @@ a   { text-decoration: none; }
     padding: 13px;
     font-size: 1rem;
   }
+}
+
+/* ===== PANTALLAS GRANDES (≥1600px) ===== */
+@media (min-width: 1600px) {
+  /* Container ligeramente más ancho */
+  .container { width: min(1320px, 88%); }
+
+  /* Hero: evitar exceso vertical en monitores 4K/2K */
+  .hero { min-height: clamp(560px, 75vh, 820px); }
+
+  /* Stats: números ligeramente más grandes */
+  .stat__num { font-size: 3.2rem; }
+
+  /* Botones hero */
+  .hero__op-btn { font-size: 1.15rem; padding: 17px 48px; }
+
+  /* Buscador más ancho */
+  .hero__widget { max-width: 780px; }
 }
 
 /* ===== LISTADO PAGES ===== */
