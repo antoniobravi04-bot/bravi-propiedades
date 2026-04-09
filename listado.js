@@ -166,8 +166,51 @@ function ordenar(arr) {
   return sorted;
 }
 
+// ── Normalización para búsqueda robusta ──────────────────────────────────────
+function normalizarTexto(str) {
+  if (!str) return '';
+  return str
+    .toLowerCase()
+    .normalize('NFD').replace(/[\u0300-\u036f]/g, '') // quitar acentos
+    .replace(/\s+/g, ' ')
+    .trim();
+}
+
+// Expande abreviaciones comunes antes de comparar
+function expandirAbrev(str) {
+  return str
+    .replace(/\bav\b\.?/g,      'avenida')
+    .replace(/\bgral\b\.?/g,    'general')
+    .replace(/\bpje\b\.?/g,     'pasaje')
+    .replace(/\bpte\b\.?/g,     'presidente')
+    .replace(/\bpcias\b\.?/g,   'provincias')
+    .replace(/\bn°\b/g,         '')
+    .replace(/\bnro\b\.?/g,     '')
+    .replace(/\bcc\b/g,         'country club')
+    .replace(/\bbc\b/g,         'barrio cerrado');
+}
+
+function prepararBusqueda(str) {
+  return expandirAbrev(normalizarTexto(str || ''));
+}
+
+function indexarPropiedad(p) {
+  // Combina todos los campos de texto relevantes en un solo string normalizado
+  const partes = [
+    p.titulo,
+    p.direccion,
+    p.ciudad,
+    p.zona,
+    p.descripcion,
+    p.tipoProp,
+    p.codigo,
+  ];
+  return prepararBusqueda(partes.filter(Boolean).join(' '));
+}
+
 function aplicarFiltros() {
-  const texto     = document.getElementById('filtroTexto').value.trim().toLowerCase();
+  const textoRaw  = document.getElementById('filtroTexto').value.trim();
+  const texto     = prepararBusqueda(textoRaw);
   const min       = parsePrecio(document.getElementById('filtroMin').value);
   const max       = parsePrecio(document.getElementById('filtroMax').value);
   const moneda    = document.getElementById('filtroMoneda').value;
@@ -182,8 +225,10 @@ function aplicarFiltros() {
 
   propsFiltradas = allProps.filter(p => {
     if (texto) {
-      const haystack = [p.titulo, p.codigo, p.direccion, p.zona, p.ciudad].filter(Boolean).join(' ').toLowerCase();
-      if (!haystack.includes(texto)) return false;
+      const haystack = indexarPropiedad(p);
+      // soporta múltiples palabras: todas deben estar presentes
+      const palabras = texto.split(' ').filter(Boolean);
+      if (!palabras.every(pal => haystack.includes(pal))) return false;
     }
     if (filtroId) {
       if (!(p.codigo || '').toLowerCase().includes(filtroId)) return false;
