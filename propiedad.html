@@ -330,11 +330,12 @@
 
       // ── Highlights bar (íconos) ──────────────────────────────────────────
       const hlItems = [
-        p.ambientes   ? { icon: `<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/></svg>`, val: p.ambientes, lbl: 'Ambientes' } : null,
-        p.dormitorios ? { icon: `<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 4v16M2 8h18a2 2 0 012 2v10M2 16h20"/></svg>`, val: p.dormitorios, lbl: 'Dormitorios' } : null,
-        p.banos       ? { icon: `<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6 6.5 3.5a1.5 1.5 0 00-1-.5C4.683 3 4 3.683 4 4.5V17a2 2 0 002 2h12a2 2 0 002-2v-5"/><line x1="10" y1="5" x2="8" y2="3"/><line x1="5" y1="10" x2="21" y2="10"/></svg>`, val: p.banos, lbl: 'Baños' } : null,
-        p.supCubierta ? { icon: `<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>`, val: p.supCubierta, lbl: 'Cubierto' } : null,
-        p.supTerreno  ? { icon: `<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17l4-8 4 4 4-6 4 10H3z"/></svg>`, val: p.supTerreno, lbl: 'Terreno' } : null,
+        p.ambientes        ? { icon: `<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/></svg>`, val: p.ambientes, lbl: 'Ambientes' } : null,
+        p.dormitorios      ? { icon: `<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 4v16M2 8h18a2 2 0 012 2v10M2 16h20"/></svg>`, val: p.dormitorios, lbl: 'Dormitorios' } : null,
+        p.banos            ? { icon: `<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6 6.5 3.5a1.5 1.5 0 00-1-.5C4.683 3 4 3.683 4 4.5V17a2 2 0 002 2h12a2 2 0 002-2v-5"/><line x1="10" y1="5" x2="8" y2="3"/><line x1="5" y1="10" x2="21" y2="10"/></svg>`, val: p.banos, lbl: 'Baños' } : null,
+        p.cochera > 0      ? { icon: `<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="8" width="22" height="12" rx="2"/><path d="M5 8V6a2 2 0 012-2h10a2 2 0 012 2v2"/><line x1="12" y1="12" x2="12" y2="16"/><line x1="10" y1="14" x2="14" y2="14"/></svg>`, val: p.cochera, lbl: 'Cocheras' } : null,
+        p.supCubierta      ? { icon: `<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>`, val: p.supCubierta, lbl: 'Cubierto' } : null,
+        p.supTerreno       ? { icon: `<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17l4-8 4 4 4-6 4 10H3z"/></svg>`, val: p.supTerreno, lbl: 'Terreno' } : null,
       ].filter(Boolean);
 
       const hlsHTML = hlItems.length ? `
@@ -354,6 +355,7 @@
         p.ambientes   ? ['Ambientes',       p.ambientes] : null,
         p.dormitorios ? ['Dormitorios',     p.dormitorios] : null,
         p.banos       ? ['Baños',           p.banos] : null,
+        p.cochera > 0 ? ['Cocheras',        p.cochera] : null,
         p.supCubierta ? ['Sup. cubierta',   p.supCubierta] : null,
         p.supTerreno  ? ['Sup. terreno',    p.supTerreno] : null,
         p.superficie && !p.supCubierta && !p.supTerreno ? ['Superficie', p.superficie] : null,
