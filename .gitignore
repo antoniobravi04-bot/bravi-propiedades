@@ -1,0 +1,23 @@
+# Local Netlify folder
+.netlify
+
+# Entorno local - nunca subir al repo
+.env
+.env.local
+
+# Archivos temporales / guardados del navegador
+rod 4.9.html
+rod 4.9_files/
+rod 3.0.jpg
+debug.html
+
+# Claude Code (configuración local del IDE)
+.claude/
+
+# Archivos de trabajo temporales
+notion_api_docs.txt
+notion_output.txt
+
+# OS
+.DS_Store
+Thumbs.db

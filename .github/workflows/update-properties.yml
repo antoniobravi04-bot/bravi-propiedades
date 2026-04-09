@@ -1,0 +1,34 @@
+name: Actualizar propiedades
+
+on:
+  schedule:
+    - cron: '0 6 * * *'   # todos los días a las 3am Argentina (UTC-3)
+  workflow_dispatch:        # también se puede disparar manualmente desde GitHub
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+
+    permissions:
+      contents: write       # necesario para hacer push al repo
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Actualizar properties.json desde MapaProp
+        env:
+          MAPAPROP_TOKEN: ${{ secrets.MAPAPROP_TOKEN }}
+        run: node update-properties.js
+
+      - name: Commit y push si hay cambios
+        run: |
+          git config user.name "GitHub Actions"
+          git config user.email "actions@github.com"
+          git add properties.json
+          git diff --staged --quiet || (git commit -m "chore: actualizar propiedades [skip ci]" && git push)

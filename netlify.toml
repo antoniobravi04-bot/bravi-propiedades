@@ -1,0 +1,104 @@
+[build]
+  publish = "."
+  functions = "netlify/functions"
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "DENY"
+    X-Content-Type-Options = "nosniff"
+
+[[redirects]]
+  from = "/api/*"
+  to = "/.netlify/functions/:splat"
+  status = 200
+
+# Redirects del sitio viejo (MapaProp) → sitio nuevo
+
+# Páginas internas
+[[redirects]]
+  from = "/pagina/quienes-somos"
+  to = "/#nosotros"
+  status = 301
+
+[[redirects]]
+  from = "/pagina/contacto"
+  to = "/#contacto"
+  status = 301
+
+[[redirects]]
+  from = "/pagina/*"
+  to = "/"
+  status = 301
+
+[[redirects]]
+  from = "/contacto"
+  to = "/#contacto"
+  status = 301
+
+# /buscar → lo maneja buscar/index.html con JS (lee ?operation=)
+[[redirects]]
+  from = "/buscar"
+  to = "/buscar/"
+  status = 301
+
+# Propiedades individuales
+[[redirects]]
+  from = "/propiedad/*"
+  to = "/ventas.html"
+  status = 301
+
+[[redirects]]
+  from = "/propiedades/alquiler"
+  to = "/alquileres.html"
+  status = 301
+
+[[redirects]]
+  from = "/propiedades/*"
+  to = "/ventas.html"
+  status = 301
+
+# Mapa
+[[redirects]]
+  from = "/mapa/"
+  to = "/ventas.html"
+  status = 301
+
+[[redirects]]
+  from = "/mapa"
+  to = "/ventas.html"
+  status = 301
+
+[[redirects]]
+  from = "/mapa-propiedades"
+  to = "/ventas.html"
+  status = 301
+
+# Destacados
+[[redirects]]
+  from = "/destacados/"
+  to = "/ventas.html"
+  status = 301
+
+[[redirects]]
+  from = "/destacados"
+  to = "/ventas.html"
+  status = 301
+
+# Scripts y estilos viejos
+[[redirects]]
+  from = "/styles/*"
+  to = "/"
+  status = 301
+
+[[redirects]]
+  from = "/scripts/*"
+  to = "/"
+  status = 301
+
+# Catch-all: cualquier URL inexistente → inicio
+[[redirects]]
+  from = "/*"
+  to = "/"
+  status = 301
+  force = false

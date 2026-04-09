@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Redirigiendo…</title>
+  <script>
+    var params = new URLSearchParams(window.location.search);
+    var op = params.get('operation');
+    if (op === '2' || op === '3') {
+      window.location.replace('/alquileres.html');
+    } else {
+      window.location.replace('/ventas.html');
+    }
+  </script>
+</head>
+<body></body>
+</html>
