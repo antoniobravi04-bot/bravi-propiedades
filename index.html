@@ -117,7 +117,11 @@
 
   <!-- HERO -->
   <section class="hero">
-    <canvas id="heroCanvas" class="hero__canvas"></canvas>
+    <div class="hero__slides">
+      <div class="hero__slide hero__slide--active" style="background-image:url('hero-bg-1.jpg')"></div>
+      <div class="hero__slide" style="background-image:url('hero-bg-2.jpg')"></div>
+      <div class="hero__slide" style="background-image:url('hero-bg-3.jpg')"></div>
+    </div>
     <div class="hero__overlay"></div>
     <div class="container hero__content">
       <h1 class="hero__title">Bravi Propiedades<br><span style="font-size:0.55em;font-weight:400;letter-spacing:0.08em;text-transform:uppercase;opacity:0.85">Negocios Inmobiliarios</span></h1>
@@ -487,8 +491,19 @@
   </a>
 
   <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
-  <script src="three-hero.js"></script>
   <script src="main.js"></script>
+  <script>
+  // Hero background slider — crossfade cada 6 segundos
+  (function () {
+    var slides = document.querySelectorAll('.hero__slide');
+    if (slides.length < 2) return;
+    var cur = 0;
+    setInterval(function () {
+      slides[cur].classList.remove('hero__slide--active');
+      cur = (cur + 1) % slides.length;
+      slides[cur].classList.add('hero__slide--active');
+    }, 6000);
+  })();
+  </script>
 </body>
 </html>

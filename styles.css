@@ -203,21 +203,54 @@ a   { text-decoration: none; }
 }
 .hero {
   position: relative;
-  min-height: clamp(560px, 85vh, 820px); /* fluido: crece hasta 85vh, tope en 820px */
+  min-height: clamp(560px, 85vh, 820px);
   display: flex;
   align-items: center;
-  padding-top: 30px; /* compensar topbar */
-  background: url('hero.jpg') center/cover no-repeat,
-              url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1800&q=80') center/cover no-repeat;
+  padding-top: 30px;
+  background: #001840; /* fallback mientras cargan las fotos */
 }
+
+/* ─ Slides del hero ─ */
+.hero__slides {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+}
+.hero__slide {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center center;
+  opacity: 0;
+  transition: opacity 1.8s ease-in-out;
+  /* Ken Burns suave: amplía muy levemente para dar vida sin distraer */
+  animation: heroKenBurns 12s ease-in-out infinite alternate;
+}
+.hero__slide--active {
+  opacity: 1;
+}
+@keyframes heroKenBurns {
+  from { transform: scale(1); }
+  to   { transform: scale(1.04); }
+}
+
 .hero__overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(135deg, rgba(0,61,165,.32) 0%, rgba(0,20,80,.06) 100%);
+  z-index: 1;
+  /* Gradiente fuerte a la izquierda (donde está el texto) → transparente a la derecha */
+  background: linear-gradient(
+    105deg,
+    rgba(0,18,55,.72) 0%,
+    rgba(0,25,70,.50) 40%,
+    rgba(0,15,45,.20) 75%,
+    rgba(0,10,35,.08) 100%
+  );
 }
 .hero__content {
   position: relative;
-  z-index: 1;
+  z-index: 2;
   max-width: 680px;
   padding-top: clamp(32px, 5vh, 80px);    /* se comprime en pantallas más chicas */
   padding-bottom: clamp(16px, 3vh, 40px); /* equilibra el espacio inferior */
@@ -255,6 +288,7 @@ a   { text-decoration: none; }
   transform: translateX(-50%);
   animation: bounce 2.2s ease-in-out infinite;
   opacity: .6;
+  z-index: 2;
 }
 @keyframes bounce {
   0%,100% { transform: translateX(-50%) translateY(0); }
