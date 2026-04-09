@@ -280,7 +280,7 @@ a   { text-decoration: none; }
   color: rgba(255,255,255,.78);
   line-height: 1.75;
   margin-bottom: clamp(24px, 3.5vh, 40px);
-  max-width: 520px;
+  max-width: 680px;
 }
 .hero__actions { display: flex; gap: 14px; flex-wrap: wrap; justify-content: center; }
 .hero__scroll {
