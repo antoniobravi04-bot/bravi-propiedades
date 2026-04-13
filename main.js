@@ -123,6 +123,16 @@ function inferirTipoProp(p) {
 
 const MAX_DESTACADAS = 6;
 
+// Mezcla un array sin mutar el original (Fisher-Yates)
+function shuffle(arr) {
+  const a = [...arr];
+  for (let i = a.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [a[i], a[j]] = [a[j], a[i]];
+  }
+  return a;
+}
+
 function aplicarFiltros() {
   const min       = parsePrecio(document.getElementById('filtroMin').value);
   const max       = parsePrecio(document.getElementById('filtroMax').value);
@@ -165,7 +175,7 @@ function aplicarFiltros() {
     return true;
   });
 
-  renderPropiedades(filtradas.slice(0, MAX_DESTACADAS));
+  renderPropiedades(shuffle(filtradas).slice(0, MAX_DESTACADAS));
 }
 
 fetch('properties.json')
