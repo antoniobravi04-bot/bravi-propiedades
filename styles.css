@@ -451,18 +451,21 @@ a   { text-decoration: none; }
 .filtros-orden select:focus { outline: none; border-color: var(--gold); }
 
 .filtros-toggle {
-  display: flex; align-items: center; gap: 8px; width: 100%;
+  display: flex; align-items: center; gap: 8px;
+  flex: 0 0 auto;          /* nunca crece ni se estira */
+  white-space: nowrap;
+  height: 44px;            /* misma altura que los demás controles */
   background: none; border: 1.5px solid var(--border);
-  border-radius: 8px; padding: 11px 18px;
+  border-radius: 8px; padding: 0 18px;
   font-size: .9rem; color: var(--navy); font-family: inherit;
   font-weight: 500; cursor: pointer;
   transition: border-color .2s, background .2s;
 }
 .filtros-toggle:hover, .filtros-toggle.active {
-  border-color: var(--gold); background: var(--off-white);
+  border-color: var(--navy); background: var(--off-white);
 }
 .filtros-toggle__chevron {
-  margin-left: auto; transition: transform .25s;
+  margin-left: 4px; transition: transform .25s;  /* era: margin-left:auto → inflaba el botón */
   display: flex; align-items: center;
 }
 .filtros-toggle.active .filtros-toggle__chevron { transform: rotate(180deg); }
@@ -704,6 +707,8 @@ a   { text-decoration: none; }
   .stat--div:nth-child(3) { border-left: none; border-top: 1px solid rgba(255,255,255,.1); }
   .stat--div:nth-child(4) { border-top: 1px solid rgba(255,255,255,.1); }
   .servicios__grid   { grid-template-columns: repeat(2, 1fr); }
+  .servicios__grid .card:nth-child(5),
+  .servicios__grid .card:nth-child(6) { grid-column: auto; }
   .propiedades__grid { grid-template-columns: repeat(2, 1fr); }
   .testimonios__grid { grid-template-columns: 1fr; gap: 16px; }
   .nosotros__inner   { grid-template-columns: 1fr; gap: 48px; }
@@ -765,8 +770,38 @@ a   { text-decoration: none; }
   /* Hide old mobile-only block */
   .nav__mobile-only { display: none !important; }
   .stats__grid       { grid-template-columns: repeat(2, 1fr); }
-  .servicios__grid   { grid-template-columns: 1fr; }
+  /* Servicios: carrusel horizontal en lugar de grilla apilada */
+  .servicios__grid {
+    grid-template-columns: unset;
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    gap: 16px;
+    padding-bottom: 12px;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  .servicios__grid::-webkit-scrollbar { display: none; }
+  .servicios__grid .card {
+    flex: 0 0 78vw;
+    max-width: 300px;
+    scroll-snap-align: start;
+  }
+  /* nth-child placement sigue reseteado desde el breakpoint 960px */
+
   .propiedades__grid { grid-template-columns: 1fr; }
+
+  /* Filtros mobile: barra compacta en 2 filas */
+  .filtros-barra {
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  .filtros-busqueda {
+    flex: 1 1 100%;
+    max-width: none;
+  }
+  .filtros-orden { flex: 1; min-width: 0; }
+  .filtros-toggle { width: auto; flex: 1; min-width: 0; }
   .hero__actions     { flex-direction: column; align-items: flex-start; }
   .form__row         { grid-template-columns: 1fr; }
   .contacto__form    { padding: 28px 20px; }
@@ -818,6 +853,32 @@ a   { text-decoration: none; }
   box-shadow: 0 12px 48px rgba(0,0,0,.28);
   max-width: clamp(560px, 55vw, 720px); /* se adapta al ancho disponible */
   width: 100%;
+}
+
+/* ===== HERO SEARCH TABS (Venta / Alquiler) ===== */
+.hero__search-tabs {
+  display: flex;
+  background: rgba(0,30,90,.06);
+  padding: 6px 6px 0;
+  gap: 2px;
+}
+.hero__search-tab {
+  flex: 1;
+  padding: 10px 0;
+  background: none;
+  border: none;
+  font-family: inherit;
+  font-size: .88rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  cursor: pointer;
+  border-radius: 40px 40px 0 0;
+  transition: color .18s, background .18s;
+  letter-spacing: .02em;
+}
+.hero__search-tab--active {
+  background: #fff;
+  color: var(--navy);
 }
 
 /* ===== HERO SEARCH ===== */
@@ -905,6 +966,10 @@ a   { text-decoration: none; }
     padding: 12px 14px;             /* levemente más compactos */
     font-size: 0.95rem;
   }
+
+  /* Tabs mobile: se adaptan al widget rectangular */
+  .hero__search-tabs { padding: 5px 5px 0; }
+  .hero__search-tab  { font-size: .82rem; padding: 9px 0; }
 
   /* Buscador: menos peso visual, mismo confort táctil */
   .hero__widget {
@@ -1014,14 +1079,15 @@ a   { text-decoration: none; }
 }
 
 /* Filtros */
-.listado-filtros { padding: 16px 0 0; border-bottom: 1px solid #e8e9ec; }
+.listado-filtros { padding: 28px 0 0; border-bottom: 1px solid #e8e9ec; }
 .filtros-barra {
   display: flex;
   align-items: center;
   gap: 12px;
   margin-bottom: 0;
-  padding-bottom: 16px;
+  padding-bottom: 20px;
 }
+.filtros-barra .filtros-orden { margin-bottom: 0; flex-shrink: 0; }
 .filtros-busqueda {
   display: flex;
   align-items: center;
@@ -1030,8 +1096,8 @@ a   { text-decoration: none; }
   border: 1.5px solid var(--border);
   border-radius: 50px;
   padding: 10px 20px;
-  flex: 1;
-  max-width: 480px;
+  flex: 1 1 0;    /* crece para ocupar el espacio disponible */
+  min-width: 0;   /* permite que el input se comprima si hace falta */
 }
 .filtros-busqueda svg { color: #999; flex-shrink: 0; }
 .filtros-busqueda input {
@@ -1046,11 +1112,14 @@ a   { text-decoration: none; }
   border: 1.5px solid var(--border);
   border-radius: 50px;
   padding: 10px 16px;
+  height: 44px;           /* misma altura que .filtros-busqueda y .filtros-toggle */
   font-size: .9rem;
+  font-family: inherit;
   color: var(--text);
   background: #fff;
   outline: none;
   cursor: pointer;
+  display: block;
 }
 .listado-grid { padding-top: 32px; }
 .listado-count {

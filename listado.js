@@ -195,7 +195,9 @@ function prepararBusqueda(str) {
 }
 
 function indexarPropiedad(p) {
-  // Combina todos los campos de texto relevantes en un solo string normalizado
+  // Combina todos los campos de texto relevantes en un solo string normalizado.
+  // amenities puede ser array (MapaProp) → join antes de indexar.
+  const amenStr = Array.isArray(p.amenities) ? p.amenities.join(' ') : (p.amenities || '');
   const partes = [
     p.titulo,
     p.direccion,
@@ -204,6 +206,7 @@ function indexarPropiedad(p) {
     p.descripcion,
     p.tipoProp,
     p.codigo,
+    amenStr,
   ];
   return prepararBusqueda(partes.filter(Boolean).join(' '));
 }
@@ -272,8 +275,11 @@ function aplicarFiltros() {
     }
 
     if (tipoProp) {
-      const tp = p.tipoProp || inferirTipoProp(p);
-      if (tp !== tipoProp) return false;
+      // Siempre usar inferirTipoProp como clasificador canónico,
+      // ya que p.tipoProp puede traer valores multi-palabra del JSON
+      // ej: 'local comercial' != 'local' → bug. inferirTipoProp normaliza eso.
+      const tp = inferirTipoProp(p) || normalizarTexto(p.tipoProp || '');
+      if (!tp || tp !== tipoProp) return false;
     }
     return true;
   });

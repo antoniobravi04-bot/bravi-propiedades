@@ -228,7 +228,17 @@ document.addEventListener('keydown', e => { if (e.key === 'Escape') cerrarModal(
   }, 3500);
 })();
 
-// ── Buscador del hero — navega a ventas con filtros como parámetros URL ──────
+// ── Buscador del hero — tabs Venta / Alquiler + navegación con params URL ────
+let heroOp = 'venta'; // operación seleccionada en el widget
+
+document.querySelectorAll('.hero__search-tab').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('.hero__search-tab').forEach(b => b.classList.remove('hero__search-tab--active'));
+    btn.classList.add('hero__search-tab--active');
+    heroOp = btn.dataset.op;
+  });
+});
+
 document.getElementById('heroBuscar').addEventListener('click', () => {
   const tipoProp = document.getElementById('heroTipoProp').value;
   const texto    = document.getElementById('heroTexto').value.trim();
@@ -237,7 +247,8 @@ document.getElementById('heroBuscar').addEventListener('click', () => {
   if (tipoProp) params.set('tipo', tipoProp);
   if (texto)    params.set('q',    texto);
 
-  window.location.href = 'ventas.html' + (params.toString() ? '?' + params.toString() : '');
+  const destino = heroOp === 'alquiler' ? 'alquileres.html' : 'ventas.html';
+  window.location.href = destino + (params.toString() ? '?' + params.toString() : '');
 });
 
 // Enter en el input del hero
