@@ -767,6 +767,27 @@ a   { text-decoration: none; }
     border-left: 3px solid var(--gold); margin-left: 24px;
   }
   .nav__mobile-sub a:hover { color: var(--navy) !important; background: var(--off-white); }
+  /* Botones Venta / Alquiler en menú mobile */
+  .nav__mobile-cta {
+    display: flex !important;
+    gap: 10px;
+    padding: 14px 24px;
+    border-bottom: 1px solid var(--border);
+  }
+  .nav__cta-btn {
+    flex: 1;
+    text-align: center;
+    padding: 11px 0;
+    border-radius: 8px;
+    font-size: .93rem;
+    font-weight: 700;
+    text-decoration: none;
+    transition: opacity .18s;
+  }
+  .nav__cta-btn--venta   { background: var(--navy); color: #fff; }
+  .nav__cta-btn--alquiler { background: transparent; border: 2px solid var(--navy); color: var(--navy); }
+  .nav__cta-btn:hover { opacity: .85; }
+
   /* Hide old mobile-only block */
   .nav__mobile-only { display: none !important; }
   .stats__grid       { grid-template-columns: repeat(2, 1fr); }
@@ -1291,6 +1312,7 @@ a   { text-decoration: none; }
 /* ===== NAV SOCIAL ===== */
 .nav__mobile-only { display: none; }
 .nav__mobile-sub   { display: none; }
+.nav__mobile-cta   { display: none; }
 .nav__social { display: flex; align-items: center; gap: 14px; padding-left: 8px; border-left: 1px solid rgba(255,255,255,.2); margin-left: 4px; }
 .nav__social a { color: rgba(255,255,255,.7); display: flex; transition: color .2s; }
 .nav__social a:hover { color: #fff; }
