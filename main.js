@@ -178,7 +178,7 @@ function aplicarFiltros() {
   renderPropiedades(shuffle(filtradas).slice(0, MAX_DESTACADAS));
 }
 
-fetch('properties.json')
+fetch('properties.json?v=' + Date.now())
   .then(r => r.json())
   .then(props => [
     props.filter(p => p.tipo === 'Venta'),

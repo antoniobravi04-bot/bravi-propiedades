@@ -290,7 +290,7 @@ function aplicarFiltros() {
 }
 
 // Cargar propiedades desde properties.json estático
-fetch('properties.json')
+fetch('properties.json?v=' + Date.now())
   .then(r => r.json())
   .then(data => {
     rawAll         = data;                                    // array completo, para índices correctos
