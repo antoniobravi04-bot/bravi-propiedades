@@ -791,6 +791,31 @@ a   { text-decoration: none; }
 
   .propiedades__grid { grid-template-columns: 1fr; }
 
+  /* Filtros home: colapsables en mobile */
+  .props-filters-btn {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    width: 100%;
+    background: none;
+    border: 1.5px solid var(--border);
+    border-radius: 8px;
+    padding: 0 18px;
+    height: 44px;
+    font-size: .9rem;
+    font-family: inherit;
+    font-weight: 500;
+    color: var(--navy);
+    cursor: pointer;
+    margin-bottom: 8px;
+    transition: border-color .2s, background .2s;
+  }
+  .props-filters-btn.active { border-color: var(--navy); background: var(--off-white); }
+  .props-filters-btn__chevron { margin-left: auto; transition: transform .25s; }
+  .props-filters-btn.active .props-filters-btn__chevron { transform: rotate(180deg); }
+  .props-filters { display: none; margin-bottom: 16px; }
+  .props-filters.open { display: flex; }
+
   /* Filtros mobile: barra compacta en 2 filas */
   .filtros-barra {
     flex-wrap: wrap;
@@ -1173,6 +1198,11 @@ a   { text-decoration: none; }
   background: var(--navy);
   color: #fff;
 }
+/* Botón toggle filtros — solo visible en mobile */
+.props-filters-btn {
+  display: none;
+}
+
 .props-filters {
   display: flex;
   flex-wrap: wrap;

@@ -238,6 +238,17 @@ document.addEventListener('keydown', e => { if (e.key === 'Escape') cerrarModal(
   }, 3500);
 })();
 
+// ── Filtros home: toggle colapsable en mobile ────────────────────────────────
+(function() {
+  const btn   = document.getElementById('propsFiltrosToggle');
+  const panel = document.getElementById('propsFiltros');
+  if (!btn || !panel) return;
+  btn.addEventListener('click', () => {
+    const open = panel.classList.toggle('open');
+    btn.classList.toggle('active', open);
+  });
+})();
+
 // ── Buscador del hero — tabs Venta / Alquiler + navegación con params URL ────
 let heroOp = 'venta'; // operación seleccionada en el widget
 
