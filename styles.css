@@ -784,7 +784,7 @@ a   { text-decoration: none; }
     text-decoration: none;
     transition: opacity .18s;
   }
-  .nav__cta-btn--venta   { background: var(--navy); color: #fff; }
+  .nav__cta-btn--venta   { background: transparent; border: 2px solid var(--navy); color: var(--navy); }
   .nav__cta-btn--alquiler { background: transparent; border: 2px solid var(--navy); color: var(--navy); }
   .nav__cta-btn:hover { opacity: .85; }
 
