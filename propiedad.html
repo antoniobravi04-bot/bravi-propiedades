@@ -12,8 +12,10 @@
   <meta property="og:image" content="https://bravipropiedades.com.ar/hero-bg-1.jpg" />
   <meta property="og:url" content="https://bravipropiedades.com.ar/propiedad.html" />
   <link rel="canonical" href="" />
-  <link rel="icon" href="logo-nuevo.png.jpg" type="image/jpeg" />
-  <link rel="apple-touch-icon" href="logo-nuevo.png.jpg" />
+  <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+  <link rel="icon" href="logo-nuevo.png.jpg" type="image/jpeg" sizes="32x32" />
+  <link rel="apple-touch-icon" sizes="180x180" href="logo-nuevo.png.jpg" />
+  <link rel="manifest" href="site.webmanifest" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
@@ -338,13 +340,13 @@
       descripcion = descripcion.replace(/^descripci[oó]n\s*c[oó]digo[^|]*\|\s*/i, '').replace(/\s*Tweet\s*$/i, '').trim();
 
       const volver  = p.tipo === 'Alquiler' ? 'alquileres.html' : 'ventas.html';
-      const waMsg   = encodeURIComponent('Hola! Me interesa: ' + titulo + (p.link ? ' — ' + p.link : ''));
       const imgs    = (p.imagenes && p.imagenes.length) ? p.imagenes : (p.imagen ? [p.imagen] : [FALLBACK]);
       document.title = titulo + ' | Bravi Propiedades';
 
       // Meta tags dinámicos para SEO y redes sociales
       const metaDesc   = [p.tipo, p.tipoProp, p.precio, locFull].filter(Boolean).join(' — ');
       const pageUrl    = 'https://bravipropiedades.com.ar/propiedad.html?id=' + p.id;
+      const waMsg      = encodeURIComponent('Hola! Quiero consultar por esta propiedad:\n' + titulo + '\n' + pageUrl);
       const ogImage    = p.imagen || imgs[0] || '';
       const setMeta = (sel, val) => { const el = document.querySelector(sel); if (el) el.setAttribute(el.hasAttribute('content') ? 'content' : 'href', val); };
       setMeta('meta[name="description"]',        metaDesc);

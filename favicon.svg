@@ -1,5 +1,4 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
-  <rect width="64" height="64" rx="10" fill="#0d2137"/>
-  <!-- b minúscula bold -->
-  <text x="13" y="52" font-family="Georgia, 'Times New Roman', serif" font-size="54" font-weight="700" font-style="italic" fill="white">b</text>
+  <rect width="64" height="64" rx="10" fill="#003DA5"/>
+  <text x="14" y="52" font-family="Georgia, 'Times New Roman', serif" font-size="52" font-weight="700" font-style="italic" fill="#ffffff">b</text>
 </svg>

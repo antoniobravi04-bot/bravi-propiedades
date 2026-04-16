@@ -1,6 +1,11 @@
 [build]
   publish = "."
   functions = "netlify/functions"
+  edge_functions = "netlify/edge-functions"
+
+[[edge_functions]]
+  function = "og-inject"
+  path = "/propiedad.html"
 
 [[headers]]
   for = "/*"
