@@ -92,7 +92,7 @@ function mapProperty(p, operation) {
 
   return {
     id:          p.id || p.propertyHash,
-    titulo:      p.title || 'Propiedad en General Rodríguez',
+    titulo:      (() => { const t = p.title || 'Propiedad en General Rodríguez'; return t === t.toUpperCase() ? t.replace(/\b\w+/g, w => w.charAt(0).toUpperCase() + w.slice(1).toLowerCase()) : t; })(),
     imagen:      p.mainImage || imagenes[0] || '',
     imagenes,
     link:        p.seoUrl ? `https://mapaprop.app/propiedades/${p.seoUrl}` : '',
@@ -100,6 +100,7 @@ function mapProperty(p, operation) {
     tipo:        String(operation) === '2' ? 'Alquiler' : 'Venta',
     moneda:      p.currency === 'USD' ? 'USD' : 'ARS',
     precio,
+    precioNum:   p.price ? Number(p.price) : null,
     dormitorios: dormVal,
     banos:       banosVal,
     superficie:  p.buildingArea ? `${p.buildingArea} m²` : p.landArea ? `${p.landArea} m²` : null,
@@ -190,7 +191,7 @@ async function validarImagenes(props) {
     if (diff > 0) rotas += diff;
 
     // Si la imagen principal está rota, usar la primera válida del array
-    const imagen = valid.has(p.imagen) ? p.imagen : (imagenes[0] ? imagenes[0] + 't' : '');
+    const imagen = valid.has(p.imagen) ? p.imagen : (imagenes[0] ? imagenes[0].replace(/\.jpg$/i, 't.jpg') : '');
 
     return { ...p, imagen, imagenes };
   });

@@ -60,10 +60,6 @@ function renderPropiedades(props) {
     });
   });
 
-  // Botones "Ver más" → modal
-  grid.querySelectorAll('.btn--ver-mas').forEach(btn => {
-    btn.addEventListener('click', () => abrirModal(allProps[parseInt(btn.dataset.idx)]));
-  });
 }
 
 function abrirModal(p) {

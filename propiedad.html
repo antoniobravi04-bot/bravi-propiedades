@@ -9,8 +9,9 @@
   <meta property="og:type" content="website" />
   <meta property="og:title" content="Propiedad | Bravi Propiedades" />
   <meta property="og:description" content="Bravi Propiedades — inmobiliaria familiar en General Rodríguez." />
-  <meta property="og:image" content="https://bravipropiedades.com.ar/hero-render-1.jpg" />
+  <meta property="og:image" content="https://bravipropiedades.com.ar/hero-bg-1.jpg" />
   <meta property="og:url" content="https://bravipropiedades.com.ar/propiedad.html" />
+  <link rel="canonical" href="" />
   <link rel="icon" href="logo-nuevo.png.jpg" type="image/jpeg" />
   <link rel="apple-touch-icon" href="logo-nuevo.png.jpg" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -152,7 +153,7 @@
     @media (max-width: 1100px) {
       .dp { padding: 116px 0 100px; }
       .dp-main { grid-template-columns: 1fr; }
-      .dp-sidebar { display: none; }
+      .dp-sidebar { display: block; margin-top: 32px; }
     }
     @media (max-width: 500px) {
       .dp-gallery__hero { aspect-ratio: 3/2; }
@@ -231,6 +232,10 @@
   <li><a href="index.html#nosotros">Nosotros</a></li>
   <li><a href="index.html#servicios">Servicios</a></li>
   <li><a href="index.html#contacto">Contacto</a></li>
+  <li class="nav__mobile-cta">
+    <a href="ventas.html" class="nav__cta-btn nav__cta-btn--venta">Ventas</a>
+    <a href="alquileres.html" class="nav__cta-btn nav__cta-btn--alquiler">Alquileres</a>
+  </li>
   <li class="nav__social">
     <a href="https://www.instagram.com/bravipropiedades/" target="_blank" rel="noopener" aria-label="Instagram">
       <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
@@ -347,6 +352,8 @@
       setMeta('meta[property="og:description"]', metaDesc);
       setMeta('meta[property="og:image"]',       ogImage);
       setMeta('meta[property="og:url"]',         pageUrl);
+      const canonical = document.querySelector('link[rel="canonical"]');
+      if (canonical) canonical.href = pageUrl;
 
       // Schema.org — datos estructurados para Google
       const schema = {
@@ -358,8 +365,7 @@
         "image": imgs,
         "offers": {
           "@type": "Offer",
-          "price": p.precio || 'Consultar',
-          "priceCurrency": p.moneda === 'USD' ? 'USD' : 'ARS',
+          ...(p.precioNum && { "price": p.precioNum, "priceCurrency": p.moneda === 'USD' ? 'USD' : 'ARS' }),
           "availability": "https://schema.org/InStock",
           "businessFunction": p.tipo === 'Alquiler'
             ? "https://schema.org/LeaseOut"
@@ -523,7 +529,7 @@
                 <a href="https://wa.me/5491162784642?text=${waMsg}" target="_blank" rel="noopener" class="btn btn--primary" style="display:flex;align-items:center;gap:8px">
                   ${waSVG} Consultar por WhatsApp
                 </a>
-                <a href="tel:+540237484002" class="btn btn--outline-dark">
+                <a href="tel:+5402374840027" class="btn btn--outline-dark">
                   Llamar
                 </a>
               </div>

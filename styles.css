@@ -16,6 +16,7 @@
   --shadow:    0 2px 20px rgba(0,61,165,.10);
   --shadow-md: 0 6px 32px rgba(0,61,165,.16);
   --t:         .22s ease;
+  --gold:      #c9a84c;
 }
 
 html { scroll-behavior: smooth; overflow-x: hidden; scroll-padding-top: 102px; }

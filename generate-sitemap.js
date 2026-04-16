@@ -22,18 +22,28 @@ const propPages = props.map(p => ({
   url:        `/propiedad.html?id=${p.id}`,
   priority:   '0.7',
   changefreq: 'weekly',
+  imagen:     p.imagen || '',
+  titulo:     p.titulo || '',
 }));
 
 const allPages = [...staticPages, ...propPages];
 
-const xml = `<?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-${allPages.map(p => `  <url>
+function renderUrl(p) {
+  const imageBlock = p.imagen
+    ? `\n    <image:image>\n      <image:loc>${p.imagen}</image:loc>${p.titulo ? `\n      <image:title>${p.titulo.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')}</image:title>` : ''}\n    </image:image>`
+    : '';
+  return `  <url>
     <loc>${BASE_URL}${p.url}</loc>
     <lastmod>${today}</lastmod>
     <changefreq>${p.changefreq}</changefreq>
-    <priority>${p.priority}</priority>
-  </url>`).join('\n')}
+    <priority>${p.priority}</priority>${imageBlock}
+  </url>`;
+}
+
+const xml = `<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+${allPages.map(renderUrl).join('\n')}
 </urlset>`;
 
 fs.writeFileSync(path.join(__dirname, 'sitemap.xml'), xml);
