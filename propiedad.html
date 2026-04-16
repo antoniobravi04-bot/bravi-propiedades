@@ -348,6 +348,45 @@
       setMeta('meta[property="og:image"]',       ogImage);
       setMeta('meta[property="og:url"]',         pageUrl);
 
+      // Schema.org — datos estructurados para Google
+      const schema = {
+        "@context": "https://schema.org",
+        "@type": "RealEstateListing",
+        "name": titulo,
+        "description": descripcion || metaDesc,
+        "url": pageUrl,
+        "image": imgs,
+        "offers": {
+          "@type": "Offer",
+          "price": p.precio || 'Consultar',
+          "priceCurrency": p.moneda === 'USD' ? 'USD' : 'ARS',
+          "availability": "https://schema.org/InStock",
+          "businessFunction": p.tipo === 'Alquiler'
+            ? "https://schema.org/LeaseOut"
+            : "https://schema.org/Sell"
+        },
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": p.direccion || '',
+          "addressLocality": p.ciudad || 'General Rodríguez',
+          "addressRegion": "Buenos Aires",
+          "addressCountry": "AR"
+        },
+        ...(p.ambientes   && { "numberOfRooms": p.ambientes }),
+        ...(p.dormitorios && { "numberOfBedrooms": p.dormitorios }),
+        ...(p.banos       && { "numberOfBathroomsTotal": p.banos }),
+        ...(p.supCubierta && { "floorSize": { "@type": "QuantitativeValue", "value": parseFloat(p.supCubierta), "unitCode": "MTK" } }),
+        "brand": {
+          "@type": "RealEstateAgent",
+          "name": "Bravi Propiedades",
+          "url": "https://bravipropiedades.com.ar"
+        }
+      };
+      const schemaScript = document.createElement('script');
+      schemaScript.type = 'application/ld+json';
+      schemaScript.text = JSON.stringify(schema);
+      document.head.appendChild(schemaScript);
+
       const badge = p.tipo === 'Alquiler'
         ? `<span class="badge badge--alq">Alquiler</span>`
         : `<span class="badge badge--venta">Venta</span>`;
