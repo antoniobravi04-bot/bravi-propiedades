@@ -1107,6 +1107,10 @@ a   { text-decoration: none; }
   transition: background 0.2s, color 0.2s;
   white-space: nowrap;
 }
+@media (max-width: 480px) {
+  .listado-switcher { width: 100%; }
+  .listado-sw { padding: 10px 0; flex: 1; text-align: center; }
+}
 .listado-sw:hover:not(.listado-sw--active) { color: var(--dark); }
 .listado-sw--active {
   background: var(--navy);
