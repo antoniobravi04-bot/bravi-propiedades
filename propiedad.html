@@ -346,7 +346,8 @@
       // Meta tags dinámicos para SEO y redes sociales
       const metaDesc   = [p.tipo, p.tipoProp, p.precio, locFull].filter(Boolean).join(' — ');
       const pageUrl    = 'https://bravipropiedades.com.ar/propiedad.html?id=' + p.id;
-      const waMsg      = encodeURIComponent('Hola! Quiero consultar por esta propiedad:\n' + titulo + '\n' + pageUrl);
+      const shareUrl   = 'https://bravipropiedades.com.ar/p/' + p.id;
+      const waMsg      = encodeURIComponent('Hola! Quiero consultar por esta propiedad:\n' + titulo + '\n' + shareUrl);
       const ogImage    = p.imagen || imgs[0] || '';
       const setMeta = (sel, val) => { const el = document.querySelector(sel); if (el) el.setAttribute(el.hasAttribute('content') ? 'content' : 'href', val); };
       setMeta('meta[name="description"]',        metaDesc);

@@ -29,9 +29,12 @@ jobs:
       - name: Generar sitemap.xml
         run: node generate-sitemap.js
 
+      - name: Generar páginas /p/ con OG tags estáticos
+        run: node generate-property-pages.js
+
       - name: Commit y push si hay cambios
         run: |
           git config user.name "GitHub Actions"
           git config user.email "actions@github.com"
-          git add properties.json sitemap.xml
+          git add properties.json sitemap.xml p/
           git diff --staged --quiet || (git commit -m "chore: actualizar propiedades [skip ci]" && git push)
