@@ -96,6 +96,12 @@
   to = "/"
   status = 301
 
+# Links viejos /p/UUID → nueva URL limpia /propiedad/UUID
+[[redirects]]
+  from = "/p/:id"
+  to   = "/propiedad/:id"
+  status = 301
+
 # Catch-all: cualquier URL inexistente → página 404 personalizada
 [[redirects]]
   from = "/*"

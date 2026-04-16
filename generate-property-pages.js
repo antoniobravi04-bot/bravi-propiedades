@@ -1,6 +1,6 @@
 /**
  * generate-property-pages.js
- * Genera una página HTML estática por cada propiedad en /p/UUID.html
+ * Genera una página HTML estática por cada propiedad en /propiedad/UUID
  * con los Open Graph tags correctos (título, imagen, descripción).
  *
  * Cómo funciona:
@@ -14,7 +14,7 @@ const fs   = require('fs');
 const path = require('path');
 
 const BASE_URL = 'https://bravipropiedades.com.ar';
-const OUT_DIR  = path.join(__dirname, 'p');
+const OUT_DIR  = path.join(__dirname, 'propiedad');
 
 // Leer properties.json
 const props = JSON.parse(
@@ -45,7 +45,7 @@ for (const p of props) {
   const desc      = [p.tipo, p.tipoProp, p.precio, p.ciudad || 'General Rodríguez']
                       .filter(Boolean).join(' — ');
   const imagen    = p.imagen || `${BASE_URL}/hero-bg-1.jpg`;
-  const shareUrl  = `${BASE_URL}/p/${p.id}`;
+  const shareUrl  = `${BASE_URL}/propiedad/${p.id}`;
   const propUrl   = `${BASE_URL}/propiedad.html?id=${p.id}`;
 
   const html = `<!DOCTYPE html>
