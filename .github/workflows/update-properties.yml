@@ -26,9 +26,12 @@ jobs:
           MAPAPROP_TOKEN: ${{ secrets.MAPAPROP_TOKEN }}
         run: node update-properties.js
 
+      - name: Generar sitemap.xml
+        run: node generate-sitemap.js
+
       - name: Commit y push si hay cambios
         run: |
           git config user.name "GitHub Actions"
           git config user.email "actions@github.com"
-          git add properties.json
+          git add properties.json sitemap.xml
           git diff --staged --quiet || (git commit -m "chore: actualizar propiedades [skip ci]" && git push)
