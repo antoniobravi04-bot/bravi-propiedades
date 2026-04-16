@@ -29,7 +29,7 @@ function renderPropiedades(props) {
     return `
     <article class="prop-card fade-up" data-tipoProp="${tipoPropInferido}">
       <div class="prop-card__img">
-        <a href="propiedad.html#${propIdx}" class="prop-card__img-link">
+        <a href="propiedad.html?id=${p.id}" class="prop-card__img-link">
           <img src="${img}" alt="${titulo}" loading="lazy" />
         </a>
         ${badge}

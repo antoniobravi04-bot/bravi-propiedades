@@ -64,7 +64,7 @@ function renderCards(props) {
     return `
     <article class="prop-card visible">
       <div class="prop-card__img">
-        <a href="propiedad.html#${globalIdx}" class="prop-card__img-link">
+        <a href="propiedad.html?id=${p.id}" class="prop-card__img-link">
           <img src="${img0}" alt="${titulo}" loading="lazy" class="prop-card__main-img" />
         </a>
         ${badge}
