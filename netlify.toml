@@ -102,6 +102,20 @@
   to   = "/propiedad/:id"
   status = 301
 
+# Favicon — Google busca /favicon.ico en la raíz; lo servimos como rewrite al PNG real
+[[redirects]]
+  from = "/favicon.ico"
+  to   = "/favicon.png"
+  status = 200
+  force  = true
+
+# favicon.svg sigue accesible pero ahora sirve el PNG real (evita que Google tome el logo viejo)
+[[redirects]]
+  from = "/favicon.svg"
+  to   = "/favicon.png"
+  status = 200
+  force  = true
+
 # Catch-all: cualquier URL inexistente → página 404 personalizada
 [[redirects]]
   from = "/*"

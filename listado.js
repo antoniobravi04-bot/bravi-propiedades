@@ -78,7 +78,7 @@ function renderCards(props) {
         </div>
         <div class="prop-card__footer">
           <span class="prop-card__price">${p.precio || 'Consultar'}</span>
-          <a href="https://wa.me/5491162784642?text=${encodeURIComponent('Hola! Me interesa: ' + titulo + (p.link ? ' — ' + p.link : ''))}" target="_blank" rel="noopener" class="btn btn--sm btn--wapp" aria-label="WhatsApp">
+          <a href="https://wa.me/5491162784642?text=${encodeURIComponent('Hola! Me interesa: ' + titulo + ' — https://bravipropiedades.com.ar/propiedad/' + p.id)}" target="_blank" rel="noopener" class="btn btn--sm btn--wapp" aria-label="WhatsApp">
             ${waSVG}
           </a>
         </div>
