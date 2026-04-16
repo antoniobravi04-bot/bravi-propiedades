@@ -96,9 +96,8 @@
   to = "/"
   status = 301
 
-# Catch-all: cualquier URL inexistente → inicio
+# Catch-all: cualquier URL inexistente → página 404 personalizada
 [[redirects]]
   from = "/*"
-  to = "/"
-  status = 301
-  force = false
+  to = "/404.html"
+  status = 404
