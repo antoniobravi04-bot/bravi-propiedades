@@ -4,6 +4,13 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Propiedad | Bravi Propiedades</title>
+  <meta name="description" content="Bravi Propiedades — inmobiliaria familiar en General Rodríguez." />
+  <meta property="og:site_name" content="Bravi Propiedades" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Propiedad | Bravi Propiedades" />
+  <meta property="og:description" content="Bravi Propiedades — inmobiliaria familiar en General Rodríguez." />
+  <meta property="og:image" content="https://bravipropiedades.com.ar/hero-render-1.jpg" />
+  <meta property="og:url" content="https://bravipropiedades.com.ar/propiedad.html" />
   <link rel="icon" href="logo-nuevo.png.jpg" type="image/jpeg" />
   <link rel="apple-touch-icon" href="logo-nuevo.png.jpg" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -329,6 +336,17 @@
       const waMsg   = encodeURIComponent('Hola! Me interesa: ' + titulo + (p.link ? ' — ' + p.link : ''));
       const imgs    = (p.imagenes && p.imagenes.length) ? p.imagenes : (p.imagen ? [p.imagen] : [FALLBACK]);
       document.title = titulo + ' | Bravi Propiedades';
+
+      // Meta tags dinámicos para SEO y redes sociales
+      const metaDesc   = [p.tipo, p.tipoProp, p.precio, locFull].filter(Boolean).join(' — ');
+      const pageUrl    = 'https://bravipropiedades.com.ar/propiedad.html?id=' + p.id;
+      const ogImage    = p.imagen || imgs[0] || '';
+      const setMeta = (sel, val) => { const el = document.querySelector(sel); if (el) el.setAttribute(el.hasAttribute('content') ? 'content' : 'href', val); };
+      setMeta('meta[name="description"]',        metaDesc);
+      setMeta('meta[property="og:title"]',       titulo + ' | Bravi Propiedades');
+      setMeta('meta[property="og:description"]', metaDesc);
+      setMeta('meta[property="og:image"]',       ogImage);
+      setMeta('meta[property="og:url"]',         pageUrl);
 
       const badge = p.tipo === 'Alquiler'
         ? `<span class="badge badge--alq">Alquiler</span>`
