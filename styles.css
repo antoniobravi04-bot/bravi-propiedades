@@ -420,14 +420,24 @@ a   { text-decoration: none; }
   cursor: pointer; font-size: 1.3rem; line-height: 1;
   color: var(--navy); z-index: 3;
   opacity: 0; transition: opacity .2s;
+  pointer-events: none; /* no interceptar toques cuando invisible */
 }
-.prop-card:hover .card-slide-btn { opacity: 1; }
+.prop-card:hover .card-slide-btn { opacity: 1; pointer-events: auto; }
 .card-slide-btn--prev { left: 8px; }
 .card-slide-btn--next { right: 8px; }
 .card-slide-count {
-  position: absolute; bottom: 44px; right: 10px;
+  position: absolute; bottom: 8px; left: 10px; /* izq: lejos del botón WA flotante */
   background: rgba(0,0,0,.48); color: #fff;
   font-size: .7rem; padding: 2px 8px; border-radius: 20px; z-index: 3;
+}
+/* Mobile: mostrar flechas siempre (no hay hover en touch) */
+@media (max-width: 768px) {
+  .card-slide-btn {
+    opacity: 0.82;
+    pointer-events: auto;
+    width: 28px; height: 28px;
+    font-size: 1.1rem;
+  }
 }
 
 /* Filtros collapsible */
