@@ -40,6 +40,30 @@ function get(url) {
   });
 }
 
+// Verifica si una URL de imagen responde 200. Timeout de 5s.
+function checkUrl(url) {
+  return new Promise(resolve => {
+    const req = https.request(url, { method: 'HEAD', timeout: 5000 }, res => {
+      resolve(res.statusCode === 200);
+    });
+    req.on('error', () => resolve(false));
+    req.on('timeout', () => { req.destroy(); resolve(false); });
+    req.end();
+  });
+}
+
+// Valida un array de URLs en paralelo (máx. CONCURRENCY a la vez)
+// Devuelve solo las URLs que responden 200.
+async function filterValidUrls(urls, concurrency = 10) {
+  const valid = [];
+  for (let i = 0; i < urls.length; i += concurrency) {
+    const batch = urls.slice(i, i + concurrency);
+    const results = await Promise.all(batch.map(u => checkUrl(u)));
+    batch.forEach((u, j) => { if (results[j]) valid.push(u); });
+  }
+  return valid;
+}
+
 const tipoMap = {
   'casa': 'casa', 'departamento': 'departamento', 'depto': 'departamento',
   'terreno': 'terreno', 'lote': 'terreno', 'local': 'local',
@@ -137,12 +161,53 @@ async function fetchAll(operation) {
   return unique.map(p => mapProperty(p, operation));
 }
 
+// Valida y limpia las imágenes de todas las propiedades.
+// Filtra URLs rotas (403/404) y sincroniza la imagen principal.
+async function validarImagenes(props) {
+  console.log('\n  Validando imágenes...');
+
+  // Recolectar todas las URLs únicas a chequear
+  const allUrls = new Set();
+  props.forEach(p => {
+    if (p.imagen) allUrls.add(p.imagen);
+    (p.imagenes || []).forEach(u => allUrls.add(u));
+  });
+
+  // Chequear todas en paralelo (lotes de 10)
+  const urlList = [...allUrls];
+  const valid = new Set();
+  for (let i = 0; i < urlList.length; i += 10) {
+    const batch = urlList.slice(i, i + 10);
+    const results = await Promise.all(batch.map(u => checkUrl(u)));
+    batch.forEach((u, j) => { if (results[j]) valid.add(u); });
+    process.stdout.write(`  Chequeando... ${Math.min(i + 10, urlList.length)}/${urlList.length}\r`);
+  }
+
+  let rotas = 0;
+  const cleaned = props.map(p => {
+    const imagenes = (p.imagenes || []).filter(u => valid.has(u));
+    const diff = (p.imagenes || []).length - imagenes.length;
+    if (diff > 0) rotas += diff;
+
+    // Si la imagen principal está rota, usar la primera válida del array
+    const imagen = valid.has(p.imagen) ? p.imagen : (imagenes[0] ? imagenes[0] + 't' : '');
+
+    return { ...p, imagen, imagenes };
+  });
+
+  console.log(`  ${rotas > 0 ? `⚠️  ${rotas} URLs rotas eliminadas` : '✅ Todas las imágenes OK'}`);
+  return cleaned;
+}
+
 (async () => {
   console.log('Actualizando properties.json...\n');
   try {
     const ventas     = await fetchAll(1);
     const alquileres = await fetchAll(2);
-    const all        = [...ventas, ...alquileres];
+    let all          = [...ventas, ...alquileres];
+
+    // Validar y limpiar imágenes rotas
+    all = await validarImagenes(all);
 
     const outPath = path.join(__dirname, 'properties.json');
     fs.writeFileSync(outPath, JSON.stringify(all, null, 2));
