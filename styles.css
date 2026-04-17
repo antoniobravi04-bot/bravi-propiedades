@@ -19,7 +19,8 @@
   --gold:      #c9a84c;
 }
 
-html { scroll-behavior: smooth; overflow-x: hidden; scroll-padding-top: 102px; }
+/* overflow-x NO va en html: Safari convierte position:fixed en absolute cuando html tiene overflow hidden */
+html { scroll-behavior: smooth; scroll-padding-top: 102px; }
 
 body {
   font-family: 'Inter', sans-serif;
@@ -27,7 +28,7 @@ body {
   line-height: 1.7;
   color: var(--text);
   background: var(--white);
-  overflow-x: hidden;
+  overflow-x: clip; /* clip no crea stacking context → position:fixed funciona correctamente en Safari */
 }
 
 img { display: block; width: 100%; object-fit: cover; }
@@ -1626,9 +1627,10 @@ a   { text-decoration: none; }
 /* ===== WHATSAPP FLOAT ===== */
 .whatsapp-float {
   position: fixed;
-  bottom: 28px;
-  right: 28px;
-  z-index: 999;
+  /* safe-area-inset-bottom: respeta la barra home y toolbar de Safari en iPhone X+ */
+  bottom: calc(20px + env(safe-area-inset-bottom));
+  right: 20px;
+  z-index: 1000;
   width: 56px;
   height: 56px;
   background: #25d366;
@@ -1643,4 +1645,11 @@ a   { text-decoration: none; }
 .whatsapp-float:hover {
   transform: scale(1.1);
   box-shadow: 0 6px 28px rgba(0,0,0,.32);
+}
+@media (max-width: 768px) {
+  .whatsapp-float {
+    width: 52px;
+    height: 52px;
+    right: 16px;
+  }
 }
