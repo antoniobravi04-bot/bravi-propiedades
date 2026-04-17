@@ -858,8 +858,10 @@ a   { text-decoration: none; }
     flex: 1 1 100%;
     max-width: none;
   }
-  .filtros-orden { flex: 1; min-width: 0; }
-  .filtros-toggle { width: auto; flex: 1; min-width: 0; }
+  /* Especificidad .filtros-barra .filtros-orden (0,2,0) para ganarle al base que tiene flex-shrink:0 */
+  .filtros-barra .filtros-orden { flex: 1 1 0; min-width: 0; }
+  .filtros-barra .filtros-orden select { width: 100%; min-width: 0; box-sizing: border-box; }
+  .filtros-toggle { width: auto; flex: 1 1 0; min-width: 0; }
   .hero__actions     { flex-direction: column; align-items: flex-start; }
   .form__row         { grid-template-columns: 1fr; }
   .contacto__form    { padding: 28px 20px; }
