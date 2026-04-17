@@ -8,11 +8,11 @@
   <link rel="icon" href="favicon.png" type="image/png" sizes="32x32" />
   <link rel="apple-touch-icon" sizes="180x180" href="favicon.png" />
   <link rel="manifest" href="site.webmanifest" />
-  <meta name="description" content="Propiedades en alquiler en General Rodríguez y zona. Departamentos, casas, locales y más. Bravi Propiedades, inmobiliaria familiar con más de 30 años." />
+  <meta name="description" content="Propiedades en alquiler en General Rodríguez y zona. Departamentos, casas, locales y más. Bravi Propiedades, más de 30 años en el mercado local." />
   <meta property="og:site_name" content="Bravi Propiedades" />
   <meta property="og:type" content="website" />
   <meta property="og:title" content="Propiedades en Alquiler | Bravi Propiedades — General Rodríguez" />
-  <meta property="og:description" content="Propiedades en alquiler en General Rodríguez y zona. Departamentos, casas, locales y más. Inmobiliaria familiar con más de 30 años." />
+  <meta property="og:description" content="Propiedades en alquiler en General Rodríguez y zona. Departamentos, casas, locales y más. Bravi Propiedades, más de 30 años en el mercado local." />
   <meta property="og:image" content="https://bravipropiedades.com.ar/hero-bg-1.jpg" />
   <meta property="og:url" content="https://bravipropiedades.com.ar/alquileres.html" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -92,8 +92,14 @@
   <!-- FILTROS -->
   <section class="listado-filtros">
     <div class="container">
+      <!-- Trigger mobile: solo visible en mobile (≤768px), oculta/muestra la barra de filtros -->
+      <button class="filtros-mobile-trigger" id="filtrosMobileTrigger" aria-expanded="false">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="4" y1="6" x2="20" y2="6"/><line x1="8" y1="12" x2="16" y2="12"/><line x1="11" y1="18" x2="13" y2="18"/></svg>
+        Filtrar propiedades
+        <span class="filtros-toggle__chevron"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></span>
+      </button>
       <!-- Búsqueda siempre visible -->
-      <div class="filtros-barra">
+      <div class="filtros-barra" id="filtrosBarra">
         <div class="filtros-busqueda">
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
           <input type="text" id="filtroTexto" placeholder="Dirección, zona, barrio o código..." />

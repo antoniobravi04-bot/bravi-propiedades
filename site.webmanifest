@@ -4,8 +4,8 @@
   "description": "Inmobiliaria familiar en General Rodríguez — ventas y alquileres",
   "start_url": "/",
   "display": "browser",
-  "theme_color": "#003DA5",
-  "background_color": "#003DA5",
+  "theme_color": "#123E8A",
+  "background_color": "#123E8A",
   "icons": [
     {
       "src": "/favicon.png",

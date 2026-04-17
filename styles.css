@@ -2,10 +2,10 @@
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
 :root {
-  --navy:      #003DA5;
-  --navy-md:   #00358f;
-  --navy-lt:   #1a52b8;
-  --navy-card: #002e80;
+  --navy:      #123E8A;
+  --navy-md:   #0e3578;
+  --navy-lt:   #2a52a8;
+  --navy-card: #0d3070;
   --blue-mid:  #5b8fd4;
   --white:     #ffffff;
   --off-white: #f0f4fb;
@@ -13,8 +13,8 @@
   --text:      #0d2054;
   --text-muted:#5a6a8e;
   --radius:    8px;
-  --shadow:    0 2px 20px rgba(0,61,165,.10);
-  --shadow-md: 0 6px 32px rgba(0,61,165,.16);
+  --shadow:    0 2px 20px rgba(18,62,138,.10);
+  --shadow-md: 0 6px 32px rgba(18,62,138,.16);
   --t:         .22s ease;
   --gold:      #c9a84c;
 }
@@ -139,7 +139,7 @@ a   { text-decoration: none; }
   position: fixed;
   top: 30px; left: 0; right: 0;
   z-index: 100;
-  background: rgba(0,61,165,.97);
+  background: rgba(18,62,138,.97);
   backdrop-filter: blur(10px);
   border-bottom: 1px solid rgba(255,255,255,.08);
   transition: box-shadow var(--t);
@@ -849,10 +849,13 @@ a   { text-decoration: none; }
   .props-filters { display: none; margin-bottom: 16px; }
   .props-filters.open { display: flex; }
 
-  /* Filtros mobile: barra compacta en 2 filas */
-  .filtros-barra {
+  /* Filtros mobile: barra oculta por defecto, se abre con el trigger */
+  .filtros-barra { display: none; }
+  .filtros-barra.open {
+    display: flex;
     flex-wrap: wrap;
     gap: 10px;
+    padding-top: 12px;
   }
   .filtros-busqueda {
     flex: 1 1 100%;
@@ -862,6 +865,26 @@ a   { text-decoration: none; }
   .filtros-barra .filtros-orden { flex: 1 1 0; min-width: 0; }
   .filtros-barra .filtros-orden select { width: 100%; min-width: 0; box-sizing: border-box; }
   .filtros-toggle { width: auto; flex: 1 1 0; min-width: 0; }
+
+  /* Trigger mobile: botón "Filtrar propiedades" */
+  .filtros-mobile-trigger {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    width: 100%;
+    margin-bottom: 0;
+    padding-bottom: 20px;
+    border: none;
+    background: none;
+    font-family: inherit;
+    font-size: .9rem;
+    font-weight: 500;
+    color: var(--text);
+    cursor: pointer;
+    text-align: left;
+  }
+  .filtros-mobile-trigger .filtros-toggle__chevron { margin-left: auto; transition: transform .25s; display: flex; align-items: center; }
+  .filtros-mobile-trigger.active .filtros-toggle__chevron { transform: rotate(180deg); }
   .hero__actions     { flex-direction: column; align-items: flex-start; }
   .form__row         { grid-template-columns: 1fr; }
   .contacto__form    { padding: 28px 20px; }
@@ -1144,6 +1167,12 @@ a   { text-decoration: none; }
 
 /* Filtros */
 .listado-filtros { padding: 28px 0 0; border-bottom: 1px solid #e8e9ec; }
+
+/* Trigger mobile — oculto en desktop, visible en mobile */
+.filtros-mobile-trigger {
+  display: none;
+}
+
 .filtros-barra {
   display: flex;
   align-items: center;
@@ -1304,7 +1333,7 @@ a   { text-decoration: none; }
   background: var(--white);
   border: 1px solid var(--border);
   border-radius: 8px;
-  box-shadow: 0 8px 24px rgba(0,61,165,.12);
+  box-shadow: 0 8px 24px rgba(18,62,138,.12);
   min-width: 130px;
   list-style: none;
   padding: 14px 0 6px;
@@ -1535,7 +1564,7 @@ a   { text-decoration: none; }
 .prop-modal__overlay {
   position: absolute;
   inset: 0;
-  background: rgba(0,61,165,.6);
+  background: rgba(18,62,138,.6);
   backdrop-filter: blur(4px);
   cursor: pointer;
 }

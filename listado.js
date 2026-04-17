@@ -326,13 +326,24 @@ fetch('properties.json?v=' + Date.now())
       aplicarFiltros();
     });
 
-    // Filter toggle
+    // Filter toggle (Más filtros)
     const toggleBtn  = document.getElementById('filtrosToggle');
     const filtrosBody = document.getElementById('filtrosBody');
     if (toggleBtn && filtrosBody) {
       toggleBtn.addEventListener('click', () => {
         const open = filtrosBody.classList.toggle('open');
         toggleBtn.classList.toggle('active', open);
+      });
+    }
+
+    // Trigger mobile: mostrar/ocultar toda la barra de filtros en mobile
+    const mobileTrigger = document.getElementById('filtrosMobileTrigger');
+    const filtrosBarra  = document.getElementById('filtrosBarra');
+    if (mobileTrigger && filtrosBarra) {
+      mobileTrigger.addEventListener('click', () => {
+        const open = filtrosBarra.classList.toggle('open');
+        mobileTrigger.classList.toggle('active', open);
+        mobileTrigger.setAttribute('aria-expanded', open);
       });
     }
   })
