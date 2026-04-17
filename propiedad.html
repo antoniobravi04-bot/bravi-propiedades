@@ -138,6 +138,15 @@
     .dp-card__hl-lbl { display: block; color: var(--text-muted); font-size: .72rem; margin-top: 1px; }
     .dp-card__actions { display: flex; flex-direction: column; gap: 8px; }
     .dp-card__actions .btn { justify-content: center; font-size: .9rem; }
+    .dp-card__share {
+      display: flex; align-items: center; justify-content: center; gap: 7px;
+      margin-top: 2px; padding: 9px 16px; width: 100%;
+      background: none; border: 1.5px solid var(--border); border-radius: 50px;
+      font-size: .82rem; font-weight: 500; color: var(--text-muted);
+      cursor: pointer; transition: border-color .2s, color .2s;
+    }
+    .dp-card__share:hover { border-color: var(--navy); color: var(--navy); }
+    .dp-card__share--copied { border-color: #22c55e !important; color: #22c55e !important; }
     .dp-card__id {
       margin-top: 14px; padding-top: 12px; border-top: 1px solid var(--border);
       font-size: .75rem; color: var(--text-muted);
@@ -535,6 +544,10 @@
                 <a href="tel:+5402374840027" class="btn btn--outline-dark">
                   Llamar
                 </a>
+                <button class="dp-card__share" id="btnCompartir" data-url="${shareUrl}" data-titulo="${titulo.replace(/"/g,'&quot;')}">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg>
+                  Compartir propiedad
+                </button>
               </div>
               <div class="dp-card__id">Código: ${p.codigo || '—'}</div>
             </div>
@@ -561,6 +574,28 @@
         document.getElementById('gPrev').addEventListener('click', () => goTo(cur-1));
         document.getElementById('gNext').addEventListener('click', () => goTo(cur+1));
         thumbs.forEach((t,i) => t.addEventListener('click', () => goTo(i)));
+      }
+
+      // ── Compartir ────────────────────────────────────────────────────────
+      const btnCompartir = document.getElementById('btnCompartir');
+      if (btnCompartir) {
+        btnCompartir.addEventListener('click', () => {
+          const url    = btnCompartir.dataset.url;
+          const titulo = btnCompartir.dataset.titulo;
+          const reset  = () => {
+            btnCompartir.classList.remove('dp-card__share--copied');
+            btnCompartir.innerHTML = `<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg> Compartir propiedad`;
+          };
+          if (navigator.share) {
+            navigator.share({ title: titulo + ' | Bravi Propiedades', text: 'Mirá esta propiedad en Bravi Propiedades', url }).catch(() => {});
+          } else {
+            navigator.clipboard.writeText(url).then(() => {
+              btnCompartir.classList.add('dp-card__share--copied');
+              btnCompartir.innerHTML = `<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> ¡Enlace copiado!`;
+              setTimeout(reset, 2500);
+            }).catch(() => {});
+          }
+        });
       }
 
       // ── Mapa OSM via proxy ────────────────────────────────────────────────
