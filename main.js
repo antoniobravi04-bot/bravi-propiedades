@@ -335,6 +335,9 @@ document.getElementById('contactForm').addEventListener('submit', function(e) {
     .then(() => {
       success.style.display = 'flex';
       this.reset();
+      // Tracking de conversión — formulario enviado
+      if (typeof gtag === 'function') gtag('event', 'form_submit', { event_category: 'conversion', tipo_form: 'contacto' });
+      if (typeof fbq  === 'function') fbq('track', 'Lead', { content_name: 'formulario_contacto' });
       setTimeout(() => { success.style.display = 'none'; }, 6000);
     })
     .catch(() => {
