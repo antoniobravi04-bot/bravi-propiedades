@@ -3,21 +3,52 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
-  <title>Propiedades en Alquiler | Bravi Propiedades — General Rodríguez</title>
+  <title>Contacto | Bravi Propiedades — General Rodríguez</title>
   <link rel="shortcut icon" href="favicon.ico" />
   <link rel="icon" href="favicon.png" type="image/png" sizes="32x32" />
   <link rel="apple-touch-icon" sizes="180x180" href="favicon.png" />
   <link rel="manifest" href="site.webmanifest" />
-  <meta name="description" content="Propiedades en alquiler en General Rodríguez y zona. Departamentos, casas, locales y más. Bravi Propiedades, más de 30 años en el mercado local." />
-  <meta property="og:site_name" content="Bravi Propiedades" />
+
+  <meta name="description" content="Contactate con Bravi Propiedades en General Rodríguez. Teléfono, WhatsApp, email y formulario. Atención personalizada para compra, venta, alquiler y tasaciones." />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://bravipropiedades.com.ar/contacto.html" />
+
   <meta property="og:type" content="website" />
-  <meta property="og:title" content="Propiedades en Alquiler | Bravi Propiedades — General Rodríguez" />
-  <meta property="og:description" content="Propiedades en alquiler en General Rodríguez y zona. Departamentos, casas, locales y más. Bravi Propiedades, más de 30 años en el mercado local." />
+  <meta property="og:url" content="https://bravipropiedades.com.ar/contacto.html" />
+  <meta property="og:title" content="Contacto | Bravi Propiedades — General Rodríguez" />
+  <meta property="og:description" content="Contactate con Bravi Propiedades en General Rodríguez. Teléfono, WhatsApp, email y formulario de contacto." />
   <meta property="og:image" content="https://bravipropiedades.com.ar/hero-bg-1.jpg" />
-  <meta property="og:url" content="https://bravipropiedades.com.ar/alquileres.html" />
+  <meta property="og:site_name" content="Bravi Propiedades" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ContactPage",
+    "url": "https://bravipropiedades.com.ar/contacto.html",
+    "name": "Contacto | Bravi Propiedades",
+    "description": "Contactate con Bravi Propiedades en General Rodríguez.",
+    "mainEntity": {
+      "@type": "RealEstateAgent",
+      "name": "Bravi Propiedades",
+      "url": "https://bravipropiedades.com.ar",
+      "telephone": "+5402374840027",
+      "email": "bravipropiedades@yahoo.com.ar",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Carlos Pellegrini 769",
+        "addressLocality": "General Rodríguez",
+        "addressRegion": "Buenos Aires",
+        "addressCountry": "AR"
+      },
+      "openingHours": ["Mo-Fr 09:00-17:00", "Sa 10:00-13:00"]
+    }
+  }
+  </script>
+
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
+
   <!-- Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-9PK8W3X26H"></script>
   <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-9PK8W3X26H');</script>
@@ -54,7 +85,7 @@
       <ul class="nav__links" id="navLinks">
         <li><a href="nosotros.html">Nosotros</a></li>
         <li><a href="tasacion.html">Tasaciones</a></li>
-        <li><a href="contacto.html">Contacto</a></li>
+        <li><a href="contacto.html" class="nav__active">Contacto</a></li>
         <li class="nav__mobile-cta">
           <a href="ventas.html" class="nav__cta-btn nav__cta-btn--venta">Ventas</a>
           <a href="alquileres.html" class="nav__cta-btn nav__cta-btn--alquiler">Alquileres</a>
@@ -80,138 +111,95 @@
   <!-- HEADER -->
   <section class="listado-header">
     <div class="container">
-      <div class="listado-switcher">
-        <a href="ventas.html" class="listado-sw">Venta</a>
-        <a href="alquileres.html" class="listado-sw listado-sw--active">Alquiler</a>
-      </div>
-      <h1 class="listado-header__title">Propiedades en Alquiler</h1>
-      <p class="listado-header__count" id="listadoCount">Cargando…</p>
+      <h1 class="listado-header__title">Contacto</h1>
+      <p class="listado-header__count">Estamos para ayudarte — sin compromiso</p>
     </div>
   </section>
 
-  <!-- FILTROS -->
-  <section class="listado-filtros">
-    <div class="container">
-      <!-- Trigger mobile: solo visible en mobile (≤768px), oculta/muestra la barra de filtros -->
-      <button class="filtros-mobile-trigger" id="filtrosMobileTrigger" aria-expanded="false">
-        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="4" y1="6" x2="20" y2="6"/><line x1="8" y1="12" x2="16" y2="12"/><line x1="11" y1="18" x2="13" y2="18"/></svg>
-        Filtrar propiedades
-        <span class="filtros-toggle__chevron"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></span>
-      </button>
-      <!-- Búsqueda siempre visible -->
-      <div class="filtros-barra" id="filtrosBarra">
-        <div class="filtros-busqueda">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
-          <input type="text" id="filtroTexto" placeholder="Dirección, zona, barrio o código..." />
-        </div>
-        <div class="filtros-orden">
-          <select id="filtroOrden">
-            <option value="">Ordenar</option>
-            <option value="precio-asc">Precio ↑</option>
-            <option value="precio-desc">Precio ↓</option>
-          </select>
-        </div>
-        <button class="filtros-toggle" id="filtrosToggle">
-          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="4" y1="6" x2="20" y2="6"/><line x1="8" y1="12" x2="16" y2="12"/><line x1="11" y1="18" x2="13" y2="18"/></svg>
-          Más filtros
-          <span class="filtros-toggle__chevron"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></span>
-        </button>
+  <!-- CONTACTO -->
+  <section class="contacto section" id="contacto" style="padding-top:60px">
+    <div class="container contacto__inner">
+      <div class="contacto__info">
+        <p class="eyebrow">Hablemos</p>
+        <h2 class="section__title">¿Tenés una consulta?</h2>
+        <p>Estamos para ayudarte. Visitanos en nuestra oficina en General Rodríguez, llamanos o mandanos un mensaje.</p>
+        <ul class="contacto__datos">
+          <li>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            Carlos Pellegrini 769, General Rodríguez
+          </li>
+          <li>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.09 10.8 19.79 19.79 0 01.01 2.18 2 2 0 012 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+            <a href="tel:+5402374840027" style="color:inherit;text-decoration:none">02374-840027</a>
+          </li>
+          <li>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            <a href="mailto:bravipropiedades@yahoo.com.ar" style="color:inherit;text-decoration:none">bravipropiedades@yahoo.com.ar</a>
+          </li>
+          <li>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            Lun–Vie 9:00–17:00 hs · Sáb 10:00–13:00 hs
+          </li>
+        </ul>
+        <a href="https://wa.me/5491162784642" class="btn btn--whatsapp" target="_blank" rel="noopener">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          Escribinos por WhatsApp
+        </a>
       </div>
-      <div class="filtros-body" id="filtrosBody">
-        <div class="props-filters">
-        <div class="filter-group">
-          <label>Precio mín.</label>
-          <input type="number" id="filtroMin" placeholder="0" min="0" />
+      <form class="contacto__form" id="contactForm" novalidate>
+        <div class="form__row">
+          <div class="form__group">
+            <label for="nombre">Nombre</label>
+            <input type="text" id="nombre" name="nombre" placeholder="Tu nombre" required />
+          </div>
+          <div class="form__group">
+            <label for="tel">Teléfono</label>
+            <input type="tel" id="tel" name="tel" placeholder="(0237) ..." />
+          </div>
         </div>
-        <div class="filter-group">
-          <label>Precio máx.</label>
-          <input type="number" id="filtroMax" placeholder="Sin límite" min="0" />
+        <div class="form__group">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" placeholder="tu@email.com" required />
         </div>
-        <div class="filter-group">
-          <label>Moneda</label>
-          <select id="filtroMoneda">
-            <option value="">Todas</option>
-            <option value="USD">USD</option>
-            <option value="ARS">$ (Pesos)</option>
+        <div class="form__group">
+          <label for="interes">¿En qué podemos ayudarte?</label>
+          <select id="interes" name="interes">
+            <option value="">Seleccioná una opción</option>
+            <option>Comprar una propiedad</option>
+            <option>Alquilar una propiedad</option>
+            <option>Vender mi propiedad</option>
+            <option>Alquilar mi propiedad</option>
+            <option>Tasación de mi propiedad</option>
+            <option>Consulta general</option>
           </select>
         </div>
-        <div class="filter-group">
-          <label>Tipo de propiedad</label>
-          <select id="filtroTipoProp">
-            <option value="">Todos</option>
-            <option value="casa">Casa</option>
-            <option value="departamento">Departamento</option>
-            <option value="duplex">Dúplex</option>
-            <option value="quinta">Quinta</option>
-            <option value="terreno">Terreno</option>
-            <option value="local">Local</option>
-            <option value="oficina">Oficina</option>
-            <option value="galpon">Galpón</option>
-            <option value="cochera">Cochera</option>
-          </select>
+        <div class="form__group">
+          <label for="mensaje">Mensaje</label>
+          <textarea id="mensaje" name="mensaje" rows="4" placeholder="Contanos en qué podemos ayudarte..."></textarea>
         </div>
-        <div class="filter-group">
-          <label>Ambientes</label>
-          <select id="filtroAmbientes">
-            <option value="">Todos</option>
-            <option value="1">1</option>
-            <option value="2">2</option>
-            <option value="3">3</option>
-            <option value="4">4+</option>
-          </select>
-        </div>
-        <div class="filter-group">
-          <label>Dormitorios</label>
-          <select id="filtroDorm">
-            <option value="">Todos</option>
-            <option value="1">1</option>
-            <option value="2">2</option>
-            <option value="3">3</option>
-            <option value="4">4+</option>
-          </select>
-        </div>
-        <div class="filter-group">
-          <label>Baños</label>
-          <select id="filtroBanos">
-            <option value="">Todos</option>
-            <option value="1">1</option>
-            <option value="2">2</option>
-            <option value="3">3+</option>
-          </select>
-        </div>
-        <div class="filter-group">
-          <label>Cochera</label>
-          <select id="filtroCochera">
-            <option value="">Todos</option>
-            <option value="si">Con cochera</option>
-          </select>
-        </div>
-        <div class="filter-group">
-          <label>Sup. mín. (m²)</label>
-          <input type="number" id="filtroSupMin" placeholder="m²" min="0" />
-        </div>
-        <div class="filter-group">
-          <label>Sup. máx. (m²)</label>
-          <input type="number" id="filtroSupMax" placeholder="m²" min="0" />
-        </div>
-        <div class="filter-group">
-          <label>ID propiedad</label>
-          <input type="text" id="filtroId" placeholder="Ej: BR-ALQ-0155" />
-        </div>
-        <button class="btn btn--sm btn--outline" id="filtroLimpiar">Limpiar</button>
-        </div>
-      </div>
+        <button type="submit" class="btn btn--primary btn--full">Enviar consulta</button>
+        <p class="form__success" id="formSuccess">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+          Mensaje enviado. Te contactamos pronto.
+        </p>
+        <p class="form__error" id="formError">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+          Hubo un error al enviar. Probá de nuevo o escribinos por WhatsApp.
+        </p>
+      </form>
     </div>
   </section>
 
-  <!-- GRID -->
-  <section class="listado-grid section">
-    <div class="container">
-      <div class="propiedades__grid" id="propiedadesGrid">
-        <div class="props-loading">Cargando propiedades…</div>
-      </div>
-      <div class="paginacion" id="paginacion"></div>
-    </div>
+  <!-- MAPA -->
+  <section class="mapa">
+    <iframe
+      class="mapa__iframe"
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3282.867!2d-58.94847!3d-34.60558!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bc7a1a5a5a5a5b%3A0x0!2sCarlos+Pellegrini+769%2C+General+Rodr%C3%ADguez%2C+Provincia+de+Buenos+Aires!5e0!3m2!1ses-419!2sar!4v1"
+      allowfullscreen=""
+      loading="lazy"
+      referrerpolicy="no-referrer-when-downgrade"
+      title="Ubicación Bravi Propiedades — Carlos Pellegrini 769, General Rodríguez">
+    </iframe>
   </section>
 
   <!-- FOOTER -->
@@ -242,35 +230,46 @@
     </div>
   </footer>
 
-  <!-- Modal propiedad -->
-  <div class="prop-modal" id="propModal" role="dialog" aria-modal="true">
-    <div class="prop-modal__overlay" id="propModalOverlay"></div>
-    <div class="prop-modal__panel">
-      <button class="prop-modal__close" id="propModalClose" aria-label="Cerrar">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
-      </button>
-      <div class="prop-modal__img-wrap">
-        <img id="propModalImg" src="" alt="" />
-        <span class="prop-modal__badge" id="propModalBadge"></span>
-      </div>
-      <div class="prop-modal__body">
-        <h2 class="prop-modal__title" id="propModalTitle"></h2>
-        <p class="prop-modal__loc"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg> General Rodríguez</p>
-        <div class="prop-modal__specs" id="propModalSpecs"></div>
-        <div class="prop-modal__price" id="propModalPrice"></div>
-        <div class="prop-modal__actions">
-          <a id="propModalLink" href="#" target="_blank" rel="noopener" class="btn btn--primary">Ver en sitio completo</a>
-          <a id="propModalWA" href="#" target="_blank" rel="noopener" class="btn btn--whatsapp"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg> Consultar por WhatsApp</a>
-        </div>
-      </div>
-    </div>
-  </div>
-
+  <!-- Botón flotante WhatsApp -->
   <a href="https://wa.me/5491162784642" class="whatsapp-float" target="_blank" rel="noopener" aria-label="Escribinos por WhatsApp">
     <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
   </a>
 
-  <script src="listado.js" data-tipo="Alquiler"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+  <script>
+  // EmailJS config
+  const EMAILJS_PUBLIC_KEY  = '6XBHIEsvyF-zOwXP2';
+  const EMAILJS_SERVICE_ID  = 'service_2xf4exi';
+  const EMAILJS_TEMPLATE_ID = 'template_mn9frxv';
+  emailjs.init({ publicKey: EMAILJS_PUBLIC_KEY });
+
+  document.getElementById('contactForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+    var btn     = this.querySelector('button[type=submit]');
+    var success = document.getElementById('formSuccess');
+    var error   = document.getElementById('formError');
+    btn.disabled = true;
+    btn.textContent = 'Enviando…';
+    success.style.display = 'none';
+    error.style.display   = 'none';
+
+    emailjs.sendForm(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, this)
+      .then(function() {
+        success.style.display = 'flex';
+        btn.textContent = 'Enviar consulta';
+        btn.disabled = false;
+        document.getElementById('contactForm').reset();
+        if (typeof gtag === 'function') gtag('event', 'form_submit', { event_category: 'conversion', tipo_form: 'contacto' });
+        if (typeof fbq  === 'function') fbq('track', 'Lead', { content_name: 'formulario_contacto' });
+      })
+      .catch(function() {
+        error.style.display = 'flex';
+        btn.textContent = 'Enviar consulta';
+        btn.disabled = false;
+      });
+  });
+  </script>
+  <script src="nav.js"></script>
   <script src="tracking.js"></script>
 </body>
 </html>

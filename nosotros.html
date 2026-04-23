@@ -3,21 +3,52 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
-  <title>Propiedades en Alquiler | Bravi Propiedades — General Rodríguez</title>
+  <title>Quiénes Somos | Bravi Propiedades — Inmobiliaria General Rodríguez</title>
   <link rel="shortcut icon" href="favicon.ico" />
   <link rel="icon" href="favicon.png" type="image/png" sizes="32x32" />
   <link rel="apple-touch-icon" sizes="180x180" href="favicon.png" />
   <link rel="manifest" href="site.webmanifest" />
-  <meta name="description" content="Propiedades en alquiler en General Rodríguez y zona. Departamentos, casas, locales y más. Bravi Propiedades, más de 30 años en el mercado local." />
-  <meta property="og:site_name" content="Bravi Propiedades" />
+
+  <meta name="description" content="Somos la familia Bravi, inmobiliaria con más de 30 años en General Rodríguez. Conocenos y descubrí por qué cientos de familias nos eligieron para comprar, vender y alquilar." />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://bravipropiedades.com.ar/nosotros.html" />
+
   <meta property="og:type" content="website" />
-  <meta property="og:title" content="Propiedades en Alquiler | Bravi Propiedades — General Rodríguez" />
-  <meta property="og:description" content="Propiedades en alquiler en General Rodríguez y zona. Departamentos, casas, locales y más. Bravi Propiedades, más de 30 años en el mercado local." />
+  <meta property="og:url" content="https://bravipropiedades.com.ar/nosotros.html" />
+  <meta property="og:title" content="Quiénes Somos | Bravi Propiedades — Inmobiliaria General Rodríguez" />
+  <meta property="og:description" content="Somos la familia Bravi, inmobiliaria con más de 30 años en General Rodríguez. Conocenos." />
   <meta property="og:image" content="https://bravipropiedades.com.ar/hero-bg-1.jpg" />
-  <meta property="og:url" content="https://bravipropiedades.com.ar/alquileres.html" />
+  <meta property="og:site_name" content="Bravi Propiedades" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "AboutPage",
+    "url": "https://bravipropiedades.com.ar/nosotros.html",
+    "name": "Quiénes Somos | Bravi Propiedades",
+    "description": "Somos la familia Bravi, inmobiliaria en General Rodríguez con más de 30 años de experiencia.",
+    "mainEntity": {
+      "@type": "RealEstateAgent",
+      "name": "Bravi Propiedades",
+      "url": "https://bravipropiedades.com.ar",
+      "telephone": "+5402374840027",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Carlos Pellegrini 769",
+        "addressLocality": "General Rodríguez",
+        "addressRegion": "Buenos Aires",
+        "addressCountry": "AR"
+      },
+      "foundingDate": "1993",
+      "description": "Inmobiliaria con más de 30 años de trayectoria en General Rodríguez y zona."
+    }
+  }
+  </script>
+
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
+
   <!-- Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-9PK8W3X26H"></script>
   <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-9PK8W3X26H');</script>
@@ -52,7 +83,7 @@
         <img src="logo.svg" alt="Bravi Propiedades" class="nav__logo-img" />
       </a>
       <ul class="nav__links" id="navLinks">
-        <li><a href="nosotros.html">Nosotros</a></li>
+        <li><a href="nosotros.html" class="nav__active">Nosotros</a></li>
         <li><a href="tasacion.html">Tasaciones</a></li>
         <li><a href="contacto.html">Contacto</a></li>
         <li class="nav__mobile-cta">
@@ -80,137 +111,105 @@
   <!-- HEADER -->
   <section class="listado-header">
     <div class="container">
-      <div class="listado-switcher">
-        <a href="ventas.html" class="listado-sw">Venta</a>
-        <a href="alquileres.html" class="listado-sw listado-sw--active">Alquiler</a>
-      </div>
-      <h1 class="listado-header__title">Propiedades en Alquiler</h1>
-      <p class="listado-header__count" id="listadoCount">Cargando…</p>
+      <h1 class="listado-header__title">Quiénes somos</h1>
+      <p class="listado-header__count">La familia Bravi — inmobiliaria en General Rodríguez</p>
     </div>
   </section>
 
-  <!-- FILTROS -->
-  <section class="listado-filtros">
-    <div class="container">
-      <!-- Trigger mobile: solo visible en mobile (≤768px), oculta/muestra la barra de filtros -->
-      <button class="filtros-mobile-trigger" id="filtrosMobileTrigger" aria-expanded="false">
-        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="4" y1="6" x2="20" y2="6"/><line x1="8" y1="12" x2="16" y2="12"/><line x1="11" y1="18" x2="13" y2="18"/></svg>
-        Filtrar propiedades
-        <span class="filtros-toggle__chevron"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></span>
-      </button>
-      <!-- Búsqueda siempre visible -->
-      <div class="filtros-barra" id="filtrosBarra">
-        <div class="filtros-busqueda">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
-          <input type="text" id="filtroTexto" placeholder="Dirección, zona, barrio o código..." />
+  <!-- NOSOTROS -->
+  <section class="nosotros section" id="nosotros">
+    <div class="container nosotros__inner">
+      <div class="nosotros__img">
+        <div class="nosotros__img-frame">
+          <div class="slideshow" id="nosotrosSlide">
+            <img src="nos-bg-1.jpg" alt="Living moderno con chimenea" class="slide active" />
+            <img src="nos-bg-2.jpg" alt="Estar premium con bodega" class="slide" />
+            <img src="nos-bg-3.jpg" alt="Dormitorio elegante" class="slide" />
+            <img src="nos-bg-4.jpg" alt="Comedor moderno" class="slide" />
+            <img src="nos-bg-5.jpg" alt="Edificio moderno" class="slide" />
+            <img src="nos-bg-6.jpg" alt="Casa en General Rodríguez" class="slide" />
+          </div>
         </div>
-        <div class="filtros-orden">
-          <select id="filtroOrden">
-            <option value="">Ordenar</option>
-            <option value="precio-asc">Precio ↑</option>
-            <option value="precio-desc">Precio ↓</option>
-          </select>
-        </div>
-        <button class="filtros-toggle" id="filtrosToggle">
-          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="4" y1="6" x2="20" y2="6"/><line x1="8" y1="12" x2="16" y2="12"/><line x1="11" y1="18" x2="13" y2="18"/></svg>
-          Más filtros
-          <span class="filtros-toggle__chevron"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></span>
-        </button>
       </div>
-      <div class="filtros-body" id="filtrosBody">
-        <div class="props-filters">
-        <div class="filter-group">
-          <label>Precio mín.</label>
-          <input type="number" id="filtroMin" placeholder="0" min="0" />
+      <div class="nosotros__text">
+        <p class="eyebrow">Nuestra historia</p>
+        <h2 class="section__title">Una familia que<br>cuida tu inversión</h2>
+        <p>Somos la familia Bravi, y llevamos más de tres décadas ayudando a personas y familias a encontrar su hogar en General Rodríguez y la zona.</p>
+        <p>Trabajamos con honestidad, trato personal y compromiso real. Para nosotros, cada operación es única: no somos una cadena ni un portal, somos personas que conocen el barrio, el mercado y a los vecinos.</p>
+        <p>Nuestra oficina está en el corazón de General Rodríguez, en Carlos Pellegrini 769, y atendemos de lunes a viernes de 9 a 17 hs y los sábados de 10 a 13 hs.</p>
+        <a href="contacto.html" class="btn btn--primary mt">Contactanos</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- STATS -->
+  <section class="stats">
+    <div class="container stats__grid">
+      <div class="stat">
+        <span class="stat__num">500+</span>
+        <span class="stat__label">Familias asesoradas</span>
+      </div>
+      <div class="stat stat--div">
+        <span class="stat__num">30+</span>
+        <span class="stat__label">Años en la zona</span>
+      </div>
+      <div class="stat stat--div">
+        <span class="stat__num">100+</span>
+        <span class="stat__label">Operaciones por año</span>
+      </div>
+      <div class="stat stat--div">
+        <span class="stat__num">3</span>
+        <span class="stat__label">Generaciones</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICIOS -->
+  <section class="servicios section bg-soft">
+    <div class="container">
+      <div class="section__header">
+        <p class="eyebrow">Lo que hacemos</p>
+        <h2 class="section__title">Nuestros servicios</h2>
+      </div>
+      <div class="servicios__grid">
+        <div class="card">
+          <div class="card__icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9.5L12 3l9 6.5V20a1 1 0 01-1 1H4a1 1 0 01-1-1V9.5z"/><path d="M9 21V12h6v9"/></svg>
+          </div>
+          <h3>Venta de propiedades</h3>
+          <p>Tasación, fotografía profesional y difusión en los principales portales. Acompañamos todo el proceso hasta la escritura.</p>
+          <a href="ventas.html" style="font-size:.85rem;color:var(--navy);font-weight:500;text-decoration:none;display:inline-block;margin-top:8px">Ver propiedades en venta →</a>
         </div>
-        <div class="filter-group">
-          <label>Precio máx.</label>
-          <input type="number" id="filtroMax" placeholder="Sin límite" min="0" />
+        <div class="card">
+          <div class="card__icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 00-1-1.73l-7-4a2 2 0 00-2 0l-7 4A2 2 0 003 8v8a2 2 0 001 1.73l7 4a2 2 0 002 0l7-4A2 2 0 0021 16z"/></svg>
+          </div>
+          <h3>Alquileres</h3>
+          <p>Publicación, selección de inquilinos, contratos y administración mensual. Simplificamos la gestión para propietarios.</p>
+          <a href="alquileres.html" style="font-size:.85rem;color:var(--navy);font-weight:500;text-decoration:none;display:inline-block;margin-top:8px">Ver alquileres →</a>
         </div>
-        <div class="filter-group">
-          <label>Moneda</label>
-          <select id="filtroMoneda">
-            <option value="">Todas</option>
-            <option value="USD">USD</option>
-            <option value="ARS">$ (Pesos)</option>
-          </select>
-        </div>
-        <div class="filter-group">
-          <label>Tipo de propiedad</label>
-          <select id="filtroTipoProp">
-            <option value="">Todos</option>
-            <option value="casa">Casa</option>
-            <option value="departamento">Departamento</option>
-            <option value="duplex">Dúplex</option>
-            <option value="quinta">Quinta</option>
-            <option value="terreno">Terreno</option>
-            <option value="local">Local</option>
-            <option value="oficina">Oficina</option>
-            <option value="galpon">Galpón</option>
-            <option value="cochera">Cochera</option>
-          </select>
-        </div>
-        <div class="filter-group">
-          <label>Ambientes</label>
-          <select id="filtroAmbientes">
-            <option value="">Todos</option>
-            <option value="1">1</option>
-            <option value="2">2</option>
-            <option value="3">3</option>
-            <option value="4">4+</option>
-          </select>
-        </div>
-        <div class="filter-group">
-          <label>Dormitorios</label>
-          <select id="filtroDorm">
-            <option value="">Todos</option>
-            <option value="1">1</option>
-            <option value="2">2</option>
-            <option value="3">3</option>
-            <option value="4">4+</option>
-          </select>
-        </div>
-        <div class="filter-group">
-          <label>Baños</label>
-          <select id="filtroBanos">
-            <option value="">Todos</option>
-            <option value="1">1</option>
-            <option value="2">2</option>
-            <option value="3">3+</option>
-          </select>
-        </div>
-        <div class="filter-group">
-          <label>Cochera</label>
-          <select id="filtroCochera">
-            <option value="">Todos</option>
-            <option value="si">Con cochera</option>
-          </select>
-        </div>
-        <div class="filter-group">
-          <label>Sup. mín. (m²)</label>
-          <input type="number" id="filtroSupMin" placeholder="m²" min="0" />
-        </div>
-        <div class="filter-group">
-          <label>Sup. máx. (m²)</label>
-          <input type="number" id="filtroSupMax" placeholder="m²" min="0" />
-        </div>
-        <div class="filter-group">
-          <label>ID propiedad</label>
-          <input type="text" id="filtroId" placeholder="Ej: BR-ALQ-0155" />
-        </div>
-        <button class="btn btn--sm btn--outline" id="filtroLimpiar">Limpiar</button>
+        <div class="card">
+          <div class="card__icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg>
+          </div>
+          <h3>Tasaciones</h3>
+          <p>Valuación profesional y gratuita de tu propiedad. Conocemos el mercado local como nadie.</p>
+          <a href="tasacion.html" style="font-size:.85rem;color:var(--navy);font-weight:500;text-decoration:none;display:inline-block;margin-top:8px">Solicitar tasación →</a>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- GRID -->
-  <section class="listado-grid section">
+  <!-- CTA FINAL -->
+  <section class="section" style="text-align:center;padding-block:60px">
     <div class="container">
-      <div class="propiedades__grid" id="propiedadesGrid">
-        <div class="props-loading">Cargando propiedades…</div>
+      <p class="eyebrow">¿Listo para empezar?</p>
+      <h2 class="section__title">Trabajemos juntos</h2>
+      <p style="max-width:520px;margin:0 auto 32px;color:var(--text-muted)">Consultanos sin compromiso. Estamos para asesorarte en la compra, venta, alquiler o tasación de tu propiedad.</p>
+      <div style="display:flex;gap:14px;justify-content:center;flex-wrap:wrap">
+        <a href="contacto.html" class="btn btn--primary">Contacto</a>
+        <a href="tasacion.html" class="btn btn--outline-dark">Tasar mi propiedad</a>
       </div>
-      <div class="paginacion" id="paginacion"></div>
     </div>
   </section>
 
@@ -242,35 +241,12 @@
     </div>
   </footer>
 
-  <!-- Modal propiedad -->
-  <div class="prop-modal" id="propModal" role="dialog" aria-modal="true">
-    <div class="prop-modal__overlay" id="propModalOverlay"></div>
-    <div class="prop-modal__panel">
-      <button class="prop-modal__close" id="propModalClose" aria-label="Cerrar">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
-      </button>
-      <div class="prop-modal__img-wrap">
-        <img id="propModalImg" src="" alt="" />
-        <span class="prop-modal__badge" id="propModalBadge"></span>
-      </div>
-      <div class="prop-modal__body">
-        <h2 class="prop-modal__title" id="propModalTitle"></h2>
-        <p class="prop-modal__loc"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg> General Rodríguez</p>
-        <div class="prop-modal__specs" id="propModalSpecs"></div>
-        <div class="prop-modal__price" id="propModalPrice"></div>
-        <div class="prop-modal__actions">
-          <a id="propModalLink" href="#" target="_blank" rel="noopener" class="btn btn--primary">Ver en sitio completo</a>
-          <a id="propModalWA" href="#" target="_blank" rel="noopener" class="btn btn--whatsapp"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg> Consultar por WhatsApp</a>
-        </div>
-      </div>
-    </div>
-  </div>
-
+  <!-- Botón flotante WhatsApp -->
   <a href="https://wa.me/5491162784642" class="whatsapp-float" target="_blank" rel="noopener" aria-label="Escribinos por WhatsApp">
     <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
   </a>
 
-  <script src="listado.js" data-tipo="Alquiler"></script>
+  <script src="nav.js"></script>
   <script src="tracking.js"></script>
 </body>
 </html>
