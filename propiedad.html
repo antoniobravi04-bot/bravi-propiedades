@@ -591,12 +591,28 @@
         const counter = document.getElementById('gCounter');
         const thumbs  = document.querySelectorAll('.dp-gallery__thumb');
 
+        // Cache de imágenes precargadas
+        const imgCache = {};
+        function preload(i) {
+          const idx = (i + imgs.length) % imgs.length;
+          if (!imgCache[idx]) {
+            imgCache[idx] = new Image();
+            imgCache[idx].src = imgs[idx];
+          }
+        }
+
+        // Precarga las primeras 4 fotos al cargar la página
+        imgs.slice(0, Math.min(4, imgs.length)).forEach((_, i) => preload(i));
+
         function goTo(i) {
           cur = (i + imgs.length) % imgs.length;
           heroImg.src = imgs[cur];
           counter.textContent = `${cur+1} / ${imgs.length}`;
           thumbs.forEach((t,j) => t.classList.toggle('active', j===cur));
           thumbs[cur].scrollIntoView({ behavior:'smooth', block:'nearest', inline:'center' });
+          // Precarga la siguiente y la anterior para que estén listas
+          preload(cur + 1);
+          preload(cur - 1);
         }
 
         document.getElementById('gPrev').addEventListener('click', () => goTo(cur-1));
