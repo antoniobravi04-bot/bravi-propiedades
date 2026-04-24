@@ -256,7 +256,7 @@ a   { text-decoration: none; }
   position: relative;
   z-index: 2;
   max-width: clamp(680px, 52%, 860px); /* crece con el ancho disponible */
-  padding-top: clamp(32px, 5vh, 80px);
+  padding-top: clamp(80px, 14vh, 160px);
   padding-bottom: clamp(16px, 3vh, 40px);
 }
 .hero__logo {
