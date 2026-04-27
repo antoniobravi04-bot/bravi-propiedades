@@ -642,27 +642,40 @@
         });
       }
 
-      // ── Mapa OSM via proxy ────────────────────────────────────────────────
-      const geoAddr = [p.direccion, p.ciudad || 'General Rodríguez', 'Buenos Aires', 'Argentina'].filter(Boolean).join(', ');
-      fetch(`/api/geocode?q=${encodeURIComponent(geoAddr)}`)
-        .then(r => r.ok ? r.json() : Promise.reject())
-        .then(results => {
-          const mapEl = document.getElementById('propMap');
-          if (!mapEl) return;
-          if (!results || !results.length) {
-            mapEl.innerHTML = `<div class="dp-map-placeholder"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>No se encontró la dirección exacta</div>`;
-            return;
-          }
-          const lat = parseFloat(results[0].lat);
-          const lon = parseFloat(results[0].lon);
-          const d = 0.006;
-          const bbox = `${lon-d},${lat-d},${lon+d},${lat+d}`;
-          mapEl.innerHTML = `<iframe src="https://www.openstreetmap.org/export/embed.html?bbox=${encodeURIComponent(bbox)}&layer=mapnik&marker=${lat},${lon}" loading="lazy" allowfullscreen title="Ubicación"></iframe>`;
-        })
-        .catch(() => {
-          const mapEl = document.getElementById('propMap');
-          if (mapEl) mapEl.innerHTML = `<div class="dp-map-placeholder"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>No se pudo cargar el mapa</div>`;
-        });
+      // ── Mapa OSM ──────────────────────────────────────────────────────────
+      function renderMapa(lat, lon) {
+        const mapEl = document.getElementById('propMap');
+        if (!mapEl) return;
+        const d = 0.006;
+        const bbox = `${lon-d},${lat-d},${lon+d},${lat+d}`;
+        mapEl.innerHTML = `<iframe src="https://www.openstreetmap.org/export/embed.html?bbox=${encodeURIComponent(bbox)}&layer=mapnik&marker=${lat},${lon}" loading="lazy" allowfullscreen title="Ubicación"></iframe>`;
+      }
+
+      if (p.lat && p.lon) {
+        // Coordenadas GPS directas desde MapaProp — siempre exactas
+        renderMapa(p.lat, p.lon);
+      } else {
+        // Fallback: geocodificación por dirección
+        const dirLimpia = (p.direccion || '')
+          .replace(/^\s*esq(?:uina)?\.?\s*/i, '')
+          .replace(/\s+y\s+/i, ' & ');
+        const geoAddr = [dirLimpia || p.direccion, p.ciudad || 'General Rodríguez', 'Buenos Aires', 'Argentina'].filter(Boolean).join(', ');
+        fetch(`/api/geocode?q=${encodeURIComponent(geoAddr)}`)
+          .then(r => r.ok ? r.json() : Promise.reject())
+          .then(results => {
+            const mapEl = document.getElementById('propMap');
+            if (!mapEl) return;
+            if (!results || !results.length) {
+              mapEl.innerHTML = `<div class="dp-map-placeholder"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>No se encontró la dirección exacta</div>`;
+              return;
+            }
+            renderMapa(parseFloat(results[0].lat), parseFloat(results[0].lon));
+          })
+          .catch(() => {
+            const mapEl = document.getElementById('propMap');
+            if (mapEl) mapEl.innerHTML = `<div class="dp-map-placeholder"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>No se pudo cargar el mapa</div>`;
+          });
+      }
     });
   </script>
   <script src="tracking.js"></script>

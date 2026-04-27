@@ -114,6 +114,8 @@ function mapProperty(p, operation) {
     zona:        p.zone || p.county || '',
     cochera:     cocheraVal,
     amenities,
+    lat:         p.location && p.location.lat ? parseFloat(p.location.lat) : null,
+    lon:         p.location && p.location.lon ? parseFloat(p.location.lon) : null,
   };
 }
 
