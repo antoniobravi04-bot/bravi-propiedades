@@ -73,7 +73,7 @@ for (const p of props) {
   <meta name="twitter:description" content="${esc(desc)}" />
   <meta name="twitter:image"       content="${esc(imagen)}" />
 
-  <link rel="canonical" href="${esc(propUrl)}" />
+  <link rel="canonical" href="${esc(shareUrl)}" />
 </head>
 <body>
   <script>window.location.replace('${propUrl}');</script>
