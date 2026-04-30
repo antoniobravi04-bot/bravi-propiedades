@@ -40,12 +40,13 @@ let count = 0;
 for (const p of props) {
   if (!p.id) continue;
 
+  const slug      = p.slug || p.id; // usar slug SEO si existe, si no el ID
   const titulo    = p.titulo || 'Propiedad en General Rodríguez';
   const tituloFull = `${titulo} | Bravi Propiedades`;
   const desc      = [p.tipo, p.tipoProp, p.precio, p.ciudad || 'General Rodríguez']
                       .filter(Boolean).join(' — ');
   const imagen    = p.imagen || `${BASE_URL}/hero-bg-1.jpg`;
-  const shareUrl  = `${BASE_URL}/propiedad/${p.id}`;
+  const shareUrl  = `${BASE_URL}/propiedad/${slug}`;
   const propUrl   = `${BASE_URL}/propiedad.html?id=${p.id}`;
 
   const html = `<!DOCTYPE html>
@@ -82,7 +83,7 @@ for (const p of props) {
 </body>
 </html>`;
 
-  fs.writeFileSync(path.join(OUT_DIR, `${p.id}.html`), html, 'utf8');
+  fs.writeFileSync(path.join(OUT_DIR, `${slug}.html`), html, 'utf8');
   count++;
 }
 

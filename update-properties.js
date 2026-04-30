@@ -64,6 +64,15 @@ async function filterValidUrls(urls, concurrency = 10) {
   return valid;
 }
 
+// Genera slug SEO: "venta-casa-general-rodriguez-ID"
+function makeSlug(tipo, tipoProp, ciudad, id) {
+  const norm = s => (s || '').toLowerCase()
+    .replace(/[áä]/g,'a').replace(/[éë]/g,'e').replace(/[íï]/g,'i')
+    .replace(/[óö]/g,'o').replace(/[úü]/g,'u').replace(/ñ/g,'n')
+    .replace(/\s+/g,'-').replace(/[^a-z0-9-]/g,'').replace(/-+/g,'-').replace(/^-|-$/g,'');
+  return [norm(tipo), norm(tipoProp), norm(ciudad), id].filter(Boolean).join('-');
+}
+
 const tipoMap = {
   'casa': 'casa', 'departamento': 'departamento', 'depto': 'departamento',
   'terreno': 'terreno', 'lote': 'terreno', 'local': 'local',
@@ -116,7 +125,15 @@ function mapProperty(p, operation) {
     amenities,
     lat:         p.location && p.location.lat ? parseFloat(p.location.lat) : null,
     lon:         p.location && p.location.lon ? parseFloat(p.location.lon) : null,
+    slug:        null, // se asigna abajo después de tener tipo y tipoProp
   };
+}
+
+// Wrapper que agrega el slug después de mapear
+function mapPropertyWithSlug(p, operation) {
+  const prop = mapProperty(p, operation);
+  prop.slug = makeSlug(prop.tipo, prop.tipoProp, prop.ciudad, prop.id);
+  return prop;
 }
 
 async function fetchAll(operation) {
@@ -161,7 +178,7 @@ async function fetchAll(operation) {
   });
   console.log(`  (${raw.length} raw → ${unique.length} únicos después de deduplicar)`);
 
-  return unique.map(p => mapProperty(p, operation));
+  return unique.map(p => mapPropertyWithSlug(p, operation));
 }
 
 // Valida y limpia las imágenes de todas las propiedades.

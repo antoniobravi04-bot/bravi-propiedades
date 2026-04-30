@@ -30,7 +30,8 @@
     "cochera": 0,
     "amenities": [],
     "lat": -34.6137462,
-    "lon": -58.9525993
+    "lon": -58.9525993,
+    "slug": "venta-terreno-general-rodriguez-0a61c1c2d37092d56caa6b49d4d4b249"
   },
   {
     "id": "e32570b02a8c9cd882d89033bffe8a0b",
@@ -67,7 +68,8 @@
     "cochera": 0,
     "amenities": [],
     "lat": -34.60549230350244,
-    "lon": -58.94631551188135
+    "lon": -58.94631551188135,
+    "slug": "venta-galpon-general-rodriguez-e32570b02a8c9cd882d89033bffe8a0b"
   },
   {
     "id": "c7ca8cbab5f4af6a044d2f49734fb1e4",
@@ -101,7 +103,8 @@
     "cochera": 0,
     "amenities": [],
     "lat": -34.59005379063584,
-    "lon": -59.0175975975573
+    "lon": -59.0175975975573,
+    "slug": "venta-terreno-general-rodriguez-c7ca8cbab5f4af6a044d2f49734fb1e4"
   },
   {
     "id": "24fd81daa856c900a239c9e9e91c8cb6",
@@ -156,7 +159,8 @@
       "Piscina"
     ],
     "lat": -34.59970313267015,
-    "lon": -58.92586672024529
+    "lon": -58.92586672024529,
+    "slug": "venta-casa-general-rodriguez-24fd81daa856c900a239c9e9e91c8cb6"
   },
   {
     "id": "08e2204af8bb1439bec2c0894556522e",
@@ -192,7 +196,8 @@
     "cochera": 0,
     "amenities": [],
     "lat": -34.61850073939601,
-    "lon": -58.93046362085625
+    "lon": -58.93046362085625,
+    "slug": "venta-terreno-general-rodriguez-08e2204af8bb1439bec2c0894556522e"
   },
   {
     "id": "9534877da402e62388dd951502de6e36",
@@ -229,7 +234,8 @@
     "cochera": 2,
     "amenities": [],
     "lat": -34.615326586144946,
-    "lon": -58.90773453284913
+    "lon": -58.90773453284913,
+    "slug": "venta-quinta-general-rodriguez-9534877da402e62388dd951502de6e36"
   },
   {
     "id": "39f562012cbb3abcc44fe7e9ac2a101c",
@@ -274,7 +280,8 @@
       "Apto crédito"
     ],
     "lat": -34.601846333371014,
-    "lon": -58.949308116691235
+    "lon": -58.949308116691235,
+    "slug": "venta-duplex-general-rodriguez-39f562012cbb3abcc44fe7e9ac2a101c"
   },
   {
     "id": "b166dab9d0a14c7ab46bf403d0bb601b",
@@ -304,7 +311,8 @@
     "cochera": 0,
     "amenities": [],
     "lat": -34.6055042795784,
-    "lon": -58.95842544706569
+    "lon": -58.95842544706569,
+    "slug": "venta-casa-general-rodriguez-b166dab9d0a14c7ab46bf403d0bb601b"
   },
   {
     "id": "16993fc7670484e277c9d9db9ccb93c7",
@@ -340,7 +348,8 @@
     "cochera": 1,
     "amenities": [],
     "lat": -34.607195,
-    "lon": -58.94732899999997
+    "lon": -58.94732899999997,
+    "slug": "venta-departamento-general-rodriguez-16993fc7670484e277c9d9db9ccb93c7"
   },
   {
     "id": "6ac20ed2088d2cfd935139733ae49181",
@@ -375,7 +384,8 @@
     "cochera": 0,
     "amenities": [],
     "lat": -34.60417123276305,
-    "lon": -58.94937104337771
+    "lon": -58.94937104337771,
+    "slug": "venta-departamento-general-rodriguez-6ac20ed2088d2cfd935139733ae49181"
   },
   {
     "id": "8bbd215d6254f7e6db53aab019a4085a",
@@ -414,7 +424,8 @@
     "cochera": 0,
     "amenities": [],
     "lat": -34.6041327100235,
-    "lon": -58.9495034717784
+    "lon": -58.9495034717784,
+    "slug": "venta-departamento-general-rodriguez-8bbd215d6254f7e6db53aab019a4085a"
   },
   {
     "id": "f8b7b0c973f3b671b438be0f34d0a4e2",
@@ -459,7 +470,8 @@
     "cochera": 1,
     "amenities": [],
     "lat": -34.6170622,
-    "lon": -58.9193884
+    "lon": -58.9193884,
+    "slug": "venta-casa-general-rodriguez-f8b7b0c973f3b671b438be0f34d0a4e2"
   },
   {
     "id": "b62e26c3c8f3f4b42376f50d83663a03",
@@ -491,7 +503,8 @@
     "cochera": 0,
     "amenities": [],
     "lat": -34.59204349260812,
-    "lon": -58.95665385114745
+    "lon": -58.95665385114745,
+    "slug": "venta-campo-general-rodriguez-b62e26c3c8f3f4b42376f50d83663a03"
   },
   {
     "id": "a9ce94e27bb6ea233c582b78ba12fa5c",
@@ -530,7 +543,8 @@
     "cochera": 0,
     "amenities": [],
     "lat": -34.59689250632477,
-    "lon": -58.93997362317991
+    "lon": -58.93997362317991,
+    "slug": "venta-terreno-general-rodriguez-a9ce94e27bb6ea233c582b78ba12fa5c"
   },
   {
     "id": "758e3e0756aae6b19a6b2a07497cb81c",
@@ -571,7 +585,8 @@
     "cochera": 0,
     "amenities": [],
     "lat": -34.6086796634213,
-    "lon": -58.94930465813434
+    "lon": -58.94930465813434,
+    "slug": "venta-casa-general-rodriguez-758e3e0756aae6b19a6b2a07497cb81c"
   },
   {
     "id": "17a15fa5cec16f155b7ef35e0c7d6dd8",
@@ -601,7 +616,8 @@
     "cochera": 0,
     "amenities": [],
     "lat": -34.60785445229702,
-    "lon": -58.948165817680334
+    "lon": -58.948165817680334,
+    "slug": "venta-casa-general-rodriguez-17a15fa5cec16f155b7ef35e0c7d6dd8"
   },
   {
     "id": "b1319c94d5b92a4383560c17337f87fd",
@@ -648,7 +664,8 @@
     "cochera": 4,
     "amenities": [],
     "lat": -34.60149277293391,
-    "lon": -58.94767462164307
+    "lon": -58.94767462164307,
+    "slug": "venta-casa-general-rodriguez-b1319c94d5b92a4383560c17337f87fd"
   },
   {
     "id": "f0b2c907cd8288ea9911f73b56eeccb6",
@@ -694,7 +711,8 @@
     "cochera": 0,
     "amenities": [],
     "lat": -34.6087001,
-    "lon": -58.9582206
+    "lon": -58.9582206,
+    "slug": "venta-casa-general-rodriguez-f0b2c907cd8288ea9911f73b56eeccb6"
   },
   {
     "id": "e4c4723ed2f053d783e79dd4991ded57",
@@ -732,7 +750,8 @@
     "cochera": 0,
     "amenities": [],
     "lat": -34.60869031528366,
-    "lon": -58.957572070026956
+    "lon": -58.957572070026956,
+    "slug": "venta-casa-general-rodriguez-e4c4723ed2f053d783e79dd4991ded57"
   },
   {
     "id": "fbcca523a3ae7d457609a37d71cbf889",
@@ -763,7 +782,8 @@
     "cochera": 1,
     "amenities": [],
     "lat": -34.60408430754074,
-    "lon": -58.95187684682162
+    "lon": -58.95187684682162,
+    "slug": "venta-casa-general-rodriguez-fbcca523a3ae7d457609a37d71cbf889"
   },
   {
     "id": "535002855e22367f4c491c2664026d4a",
@@ -808,7 +828,8 @@
     "cochera": 0,
     "amenities": [],
     "lat": -34.5963984581874,
-    "lon": -58.94323764890369
+    "lon": -58.94323764890369,
+    "slug": "venta-terreno-general-rodriguez-535002855e22367f4c491c2664026d4a"
   },
   {
     "id": "21146ac24db2dad10e2b973e557966c5",
@@ -856,7 +877,8 @@
     "cochera": 2,
     "amenities": [],
     "lat": -34.62013496231608,
-    "lon": -58.89137352311653
+    "lon": -58.89137352311653,
+    "slug": "venta-quinta-general-rodriguez-21146ac24db2dad10e2b973e557966c5"
   },
   {
     "id": "48d1b687453d639d7572fca656930ef5",
@@ -887,7 +909,8 @@
     "cochera": 0,
     "amenities": [],
     "lat": -34.60241719368015,
-    "lon": -58.91147826200938
+    "lon": -58.91147826200938,
+    "slug": "venta-terreno-general-rodriguez-48d1b687453d639d7572fca656930ef5"
   },
   {
     "id": "6569dffdca6df72e2b73c63e17b314a2",
@@ -938,7 +961,8 @@
     "cochera": 0,
     "amenities": [],
     "lat": -34.6033887,
-    "lon": -58.95295300000001
+    "lon": -58.95295300000001,
+    "slug": "venta-casa-general-rodriguez-6569dffdca6df72e2b73c63e17b314a2"
   },
   {
     "id": "60378d3cd4246ede0821c233f15b53f1",
@@ -991,7 +1015,8 @@
     "cochera": 1,
     "amenities": [],
     "lat": -34.6051893032562,
-    "lon": -58.93075680069368
+    "lon": -58.93075680069368,
+    "slug": "venta-casa-general-rodriguez-60378d3cd4246ede0821c233f15b53f1"
   },
   {
     "id": "3d1e1992a7560eedb995a31be0a44087",
@@ -1024,7 +1049,8 @@
     "cochera": 0,
     "amenities": [],
     "lat": -34.59698420480424,
-    "lon": -58.93977217844513
+    "lon": -58.93977217844513,
+    "slug": "venta-galpon-general-rodriguez-3d1e1992a7560eedb995a31be0a44087"
   },
   {
     "id": "7fed15767f379a3feeb21282f27a9129",
@@ -1072,7 +1098,8 @@
     "cochera": 0,
     "amenities": [],
     "lat": -34.6113332,
-    "lon": -58.96371079999999
+    "lon": -58.96371079999999,
+    "slug": "venta-quinta-general-rodriguez-7fed15767f379a3feeb21282f27a9129"
   },
   {
     "id": "35e7b32b31d8b2a4bc1cf77b6620f6b7",
@@ -1120,7 +1147,8 @@
     "cochera": 0,
     "amenities": [],
     "lat": -34.59270119948321,
-    "lon": -59.01741537177676
+    "lon": -59.01741537177676,
+    "slug": "venta-casa-general-rodriguez-35e7b32b31d8b2a4bc1cf77b6620f6b7"
   },
   {
     "id": "b5b7b8366e54f425553e5e3959904b97",
@@ -1153,7 +1181,8 @@
     "cochera": 0,
     "amenities": [],
     "lat": -34.60376979999999,
-    "lon": -58.9544521
+    "lon": -58.9544521,
+    "slug": "venta-casa-general-rodriguez-b5b7b8366e54f425553e5e3959904b97"
   },
   {
     "id": "4acb28f6569232d9547752535873e592",
@@ -1205,7 +1234,8 @@
     "cochera": 0,
     "amenities": [],
     "lat": -34.64919786457577,
-    "lon": -58.971327530115886
+    "lon": -58.971327530115886,
+    "slug": "venta-casa-country-club-el-nacional-4acb28f6569232d9547752535873e592"
   },
   {
     "id": "caa10774e3534ebbb5435e8df2af4eaf",
@@ -1243,7 +1273,8 @@
     "cochera": 0,
     "amenities": [],
     "lat": -34.6189537,
-    "lon": -58.9216297
+    "lon": -58.9216297,
+    "slug": "venta-quinta-general-rodriguez-caa10774e3534ebbb5435e8df2af4eaf"
   },
   {
     "id": "f500c5462a144148f22919426ca29b6e",
@@ -1278,7 +1309,8 @@
     "cochera": 2,
     "amenities": [],
     "lat": -34.6055659,
-    "lon": -58.94881160000001
+    "lon": -58.94881160000001,
+    "slug": "venta-casa-general-rodriguez-f500c5462a144148f22919426ca29b6e"
   },
   {
     "id": "0298b6f7a825b6d36e0a60886195367a",
@@ -1315,7 +1347,8 @@
     "cochera": 2,
     "amenities": [],
     "lat": -34.6034244,
-    "lon": -58.9232709
+    "lon": -58.9232709,
+    "slug": "venta-casa-general-rodriguez-0298b6f7a825b6d36e0a60886195367a"
   },
   {
     "id": "c3ecf5d26b4fe9151681573c3015a0c7",
@@ -1349,7 +1382,8 @@
       "Apto profesional"
     ],
     "lat": -34.60691504717621,
-    "lon": -58.95370988709129
+    "lon": -58.95370988709129,
+    "slug": "venta-local-comercial-general-rodriguez-c3ecf5d26b4fe9151681573c3015a0c7"
   },
   {
     "id": "a3cc7349007a2a60b56e9f8b7d3def9c",
@@ -1386,7 +1420,8 @@
     "cochera": 0,
     "amenities": [],
     "lat": -34.603402276698546,
-    "lon": -58.9463269962681
+    "lon": -58.9463269962681,
+    "slug": "venta-departamento-general-rodriguez-a3cc7349007a2a60b56e9f8b7d3def9c"
   },
   {
     "id": "412815b7333e3c4e4149a969779a02ff",
@@ -1426,7 +1461,8 @@
     "cochera": 0,
     "amenities": [],
     "lat": -34.6128801,
-    "lon": -58.9601674
+    "lon": -58.9601674,
+    "slug": "venta-casa-general-rodriguez-412815b7333e3c4e4149a969779a02ff"
   },
   {
     "id": "389d51ea37ee8d9eeaa2b76a4838e907",
@@ -1457,7 +1493,8 @@
     "cochera": 0,
     "amenities": [],
     "lat": -34.6028577,
-    "lon": -58.947841900000014
+    "lon": -58.947841900000014,
+    "slug": "venta-casa-general-rodriguez-389d51ea37ee8d9eeaa2b76a4838e907"
   },
   {
     "id": "97d05273d3fad792ee3ae08603643cd7",
@@ -1494,7 +1531,8 @@
     "cochera": 0,
     "amenities": [],
     "lat": -34.56283872189669,
-    "lon": -58.98096684264612
+    "lon": -58.98096684264612,
+    "slug": "venta-campo-general-rodriguez-97d05273d3fad792ee3ae08603643cd7"
   },
   {
     "id": "7c87ec83f45d64bc11cb742c7d499488",
@@ -1523,7 +1561,8 @@
     "cochera": 1,
     "amenities": [],
     "lat": -34.60026899532401,
-    "lon": -58.94862386104487
+    "lon": -58.94862386104487,
+    "slug": "venta-casa-general-rodriguez-7c87ec83f45d64bc11cb742c7d499488"
   },
   {
     "id": "03226db2a70093d3b14ffbc79becddc2",
@@ -1554,7 +1593,8 @@
     "cochera": 1,
     "amenities": [],
     "lat": -34.60376979999999,
-    "lon": -58.9544521
+    "lon": -58.9544521,
+    "slug": "venta-casa-general-rodriguez-03226db2a70093d3b14ffbc79becddc2"
   },
   {
     "id": "d8574b3bcbcae681a3bd173dcd331124",
@@ -1595,7 +1635,8 @@
     "cochera": 1,
     "amenities": [],
     "lat": -34.6110036,
-    "lon": -58.9567427
+    "lon": -58.9567427,
+    "slug": "venta-casa-general-rodriguez-d8574b3bcbcae681a3bd173dcd331124"
   },
   {
     "id": "17915252a2c0b4757d010f8c79605495",
@@ -1635,7 +1676,8 @@
     "cochera": 0,
     "amenities": [],
     "lat": -34.590952173858625,
-    "lon": -58.94808160684323
+    "lon": -58.94808160684323,
+    "slug": "venta-quinta-general-rodriguez-17915252a2c0b4757d010f8c79605495"
   },
   {
     "id": "7e13763af9c552da7db708a08a14e85d",
@@ -1674,7 +1716,8 @@
     "cochera": 0,
     "amenities": [],
     "lat": -34.60992998011422,
-    "lon": -58.94311514036582
+    "lon": -58.94311514036582,
+    "slug": "venta-casa-general-rodriguez-7e13763af9c552da7db708a08a14e85d"
   },
   {
     "id": "15608bb95ae108fa121996ecf5ee5bd7",
@@ -1715,7 +1758,8 @@
     "cochera": 1,
     "amenities": [],
     "lat": -34.60871544678211,
-    "lon": -58.948801177770974
+    "lon": -58.948801177770974,
+    "slug": "venta-casa-general-rodriguez-15608bb95ae108fa121996ecf5ee5bd7"
   },
   {
     "id": "ab2494b1f00bbd28be1e23940aba90ed",
@@ -1757,7 +1801,8 @@
     "cochera": 0,
     "amenities": [],
     "lat": -34.614984332409804,
-    "lon": -58.952239923484036
+    "lon": -58.952239923484036,
+    "slug": "venta-casa-general-rodriguez-ab2494b1f00bbd28be1e23940aba90ed"
   },
   {
     "id": "084f63b3ba455fe2bfb4a50143e2f150",
@@ -1794,7 +1839,8 @@
     "cochera": 1,
     "amenities": [],
     "lat": -34.6074792630369,
-    "lon": -58.95005305186771
+    "lon": -58.95005305186771,
+    "slug": "venta-duplex-general-rodriguez-084f63b3ba455fe2bfb4a50143e2f150"
   },
   {
     "id": "15a0ca2e3f4b4f6816f3c6a3ca59bc28",
@@ -1829,7 +1875,8 @@
     "cochera": 0,
     "amenities": [],
     "lat": -34.59702662034043,
-    "lon": -58.940016222088424
+    "lon": -58.940016222088424,
+    "slug": "venta-casa-general-rodriguez-15a0ca2e3f4b4f6816f3c6a3ca59bc28"
   },
   {
     "id": "6d995f6ed562531b33e2f8065c7a5330",
@@ -1867,7 +1914,8 @@
     "cochera": 1,
     "amenities": [],
     "lat": -34.60453,
-    "lon": -58.9465705
+    "lon": -58.9465705,
+    "slug": "venta-casa-general-rodriguez-6d995f6ed562531b33e2f8065c7a5330"
   },
   {
     "id": "07246397914440b036896d4a99066782",
@@ -1900,7 +1948,8 @@
     "cochera": 0,
     "amenities": [],
     "lat": -34.60810593367908,
-    "lon": -58.9476676029323
+    "lon": -58.9476676029323,
+    "slug": "venta-terreno-general-rodriguez-07246397914440b036896d4a99066782"
   },
   {
     "id": "6d4052c610552965b0a799d2d249a72f",
@@ -1933,7 +1982,8 @@
     "cochera": 0,
     "amenities": [],
     "lat": -34.57767055810577,
-    "lon": -58.92093135718696
+    "lon": -58.92093135718696,
+    "slug": "venta-casa-general-rodriguez-6d4052c610552965b0a799d2d249a72f"
   },
   {
     "id": "93d7787e43c2155b0970a9499a87b217",
@@ -1984,7 +2034,8 @@
       "Apto crédito"
     ],
     "lat": -34.59280216582822,
-    "lon": -58.93930913178152
+    "lon": -58.93930913178152,
+    "slug": "venta-casa-general-rodriguez-93d7787e43c2155b0970a9499a87b217"
   },
   {
     "id": "e7cfd32e39af7815a6af0fa44c522cdc",
@@ -2014,7 +2065,8 @@
     "cochera": 0,
     "amenities": [],
     "lat": -34.6067528,
-    "lon": -58.951573199999984
+    "lon": -58.951573199999984,
+    "slug": "venta-local-comercial-general-rodriguez-e7cfd32e39af7815a6af0fa44c522cdc"
   },
   {
     "id": "b74fd26b5f0a0af6e4786c2bb6be8168",
@@ -2046,7 +2098,8 @@
     "cochera": 0,
     "amenities": [],
     "lat": -34.59457807297971,
-    "lon": -58.95855235167665
+    "lon": -58.95855235167665,
+    "slug": "venta-terreno-general-rodriguez-b74fd26b5f0a0af6e4786c2bb6be8168"
   },
   {
     "id": "f2a06dd1f9bf7110294c9d69e463d1f4",
@@ -2084,7 +2137,8 @@
     "cochera": 0,
     "amenities": [],
     "lat": -34.6014342,
-    "lon": -58.9471886
+    "lon": -58.9471886,
+    "slug": "venta-local-comercial-general-rodriguez-f2a06dd1f9bf7110294c9d69e463d1f4"
   },
   {
     "id": "165cea24443ab2c423abeb2aaae000d0",
@@ -2135,7 +2189,8 @@
     "cochera": 1,
     "amenities": [],
     "lat": -34.574262,
-    "lon": -59.1098038
+    "lon": -59.1098038,
+    "slug": "venta-casa-centro-165cea24443ab2c423abeb2aaae000d0"
   },
   {
     "id": "d56789b2e37e486e8494fd262de3427b",
@@ -2174,7 +2229,8 @@
     "cochera": 1,
     "amenities": [],
     "lat": -34.603816531047876,
-    "lon": -58.94869753314397
+    "lon": -58.94869753314397,
+    "slug": "venta-casa-general-rodriguez-d56789b2e37e486e8494fd262de3427b"
   },
   {
     "id": "5c7190c623458c872f48a1bda0886211",
@@ -2218,7 +2274,8 @@
     "cochera": 1,
     "amenities": [],
     "lat": -34.6208599,
-    "lon": -58.9235015
+    "lon": -58.9235015,
+    "slug": "venta-quinta-general-rodriguez-5c7190c623458c872f48a1bda0886211"
   },
   {
     "id": "0fbaf4de7f66104faa298ea8007c46cf",
@@ -2262,7 +2319,8 @@
       "Apto crédito"
     ],
     "lat": -34.60566266861694,
-    "lon": -58.95665583902639
+    "lon": -58.95665583902639,
+    "slug": "venta-duplex-general-rodriguez-0fbaf4de7f66104faa298ea8007c46cf"
   },
   {
     "id": "86adb9cde83cfb9efc3762e2f29c2fb0",
@@ -2302,7 +2360,8 @@
     "cochera": 0,
     "amenities": [],
     "lat": -34.601340162765254,
-    "lon": -58.92330929341101
+    "lon": -58.92330929341101,
+    "slug": "venta-casa-general-rodriguez-86adb9cde83cfb9efc3762e2f29c2fb0"
   },
   {
     "id": "a02f5f1d6e910e7f6727f9bf6214aa0c",
@@ -2336,7 +2395,8 @@
     "cochera": 1,
     "amenities": [],
     "lat": -34.607611137047584,
-    "lon": -58.95620401958826
+    "lon": -58.95620401958826,
+    "slug": "venta-casa-general-rodriguez-a02f5f1d6e910e7f6727f9bf6214aa0c"
   },
   {
     "id": "d510b64eb73f0f8a39fd5b6865304873",
@@ -2372,7 +2432,8 @@
     "cochera": 1,
     "amenities": [],
     "lat": -34.6041511,
-    "lon": -58.949680400000034
+    "lon": -58.949680400000034,
+    "slug": "venta-departamento-general-rodriguez-d510b64eb73f0f8a39fd5b6865304873"
   },
   {
     "id": "bbc2ba11e6e81da746f44d2ce2fb8a35",
@@ -2406,7 +2467,8 @@
     "cochera": 1,
     "amenities": [],
     "lat": -34.60023324802059,
-    "lon": -58.96091001086347
+    "lon": -58.96091001086347,
+    "slug": "venta-duplex-general-rodriguez-bbc2ba11e6e81da746f44d2ce2fb8a35"
   },
   {
     "id": "d25d0ee03fde3ef254a39450b2813b31",
@@ -2445,7 +2507,8 @@
     "cochera": 0,
     "amenities": [],
     "lat": -34.6024564,
-    "lon": -58.9558969
+    "lon": -58.9558969,
+    "slug": "venta-casa-general-rodriguez-d25d0ee03fde3ef254a39450b2813b31"
   },
   {
     "id": "f44632c6cd20d76b08320896f41c9481",
@@ -2480,7 +2543,8 @@
     "cochera": 0,
     "amenities": [],
     "lat": -34.60564092101958,
-    "lon": -58.95793751484696
+    "lon": -58.95793751484696,
+    "slug": "venta-casa-general-rodriguez-f44632c6cd20d76b08320896f41c9481"
   },
   {
     "id": "e2ff25098f795bdc92630b3ed9ceed6b",
@@ -2512,7 +2576,8 @@
     "cochera": 0,
     "amenities": [],
     "lat": -34.6123519,
-    "lon": -58.9582212
+    "lon": -58.9582212,
+    "slug": "venta-casa-general-rodriguez-e2ff25098f795bdc92630b3ed9ceed6b"
   },
   {
     "id": "8998779d3e4339bc6ee1983143c2e48a",
@@ -2548,7 +2613,8 @@
     "cochera": 1,
     "amenities": [],
     "lat": -34.5992258,
-    "lon": -58.94673470000001
+    "lon": -58.94673470000001,
+    "slug": "venta-casa-general-rodriguez-8998779d3e4339bc6ee1983143c2e48a"
   },
   {
     "id": "28bc0ff31e4bf7ee8aa106c583ddaf5c",
@@ -2583,7 +2649,8 @@
     "cochera": 2,
     "amenities": [],
     "lat": -34.6115109,
-    "lon": -58.955678499999976
+    "lon": -58.955678499999976,
+    "slug": "venta-casa-general-rodriguez-28bc0ff31e4bf7ee8aa106c583ddaf5c"
   },
   {
     "id": "4538f109e92e1b516a104a65dac95b74",
@@ -2621,7 +2688,8 @@
     "cochera": 0,
     "amenities": [],
     "lat": -34.61307646080535,
-    "lon": -58.94360934555127
+    "lon": -58.94360934555127,
+    "slug": "venta-casa-general-rodriguez-4538f109e92e1b516a104a65dac95b74"
   },
   {
     "id": "bd471886ceb87549cf90d8a3ed0fafaf",
@@ -2657,7 +2725,8 @@
     "cochera": 0,
     "amenities": [],
     "lat": -34.6031481,
-    "lon": -58.94507169999997
+    "lon": -58.94507169999997,
+    "slug": "venta-casa-general-rodriguez-bd471886ceb87549cf90d8a3ed0fafaf"
   },
   {
     "id": "208b5d4a54b59d6384ad72bef3e0b330",
@@ -2691,7 +2760,8 @@
     "cochera": 0,
     "amenities": [],
     "lat": -34.6088196,
-    "lon": -58.9577135
+    "lon": -58.9577135,
+    "slug": "venta-casa-general-rodriguez-208b5d4a54b59d6384ad72bef3e0b330"
   },
   {
     "id": "37377b14626b54de216bddd0a6672d30",
@@ -2724,7 +2794,8 @@
     "cochera": 0,
     "amenities": [],
     "lat": -34.60885510239504,
-    "lon": -58.88311053821688
+    "lon": -58.88311053821688,
+    "slug": "venta-otro-inmueble-agua-de-oro-37377b14626b54de216bddd0a6672d30"
   },
   {
     "id": "47803c8db017110a09d8c244b99fa7e9",
@@ -2774,7 +2845,8 @@
     "cochera": 0,
     "amenities": [],
     "lat": -34.60306158326873,
-    "lon": -58.95229478294948
+    "lon": -58.95229478294948,
+    "slug": "venta-departamento-general-rodriguez-47803c8db017110a09d8c244b99fa7e9"
   },
   {
     "id": "45ac0e4ff22aa51e8fc7459850058170",
@@ -2817,7 +2889,8 @@
     "cochera": 0,
     "amenities": [],
     "lat": -34.6081184,
-    "lon": -58.94513629999999
+    "lon": -58.94513629999999,
+    "slug": "venta-casa-general-rodriguez-45ac0e4ff22aa51e8fc7459850058170"
   },
   {
     "id": "35c6cb9fc4b418353ce657400f0515a1",
@@ -2856,7 +2929,8 @@
     "cochera": 0,
     "amenities": [],
     "lat": -34.59798924377625,
-    "lon": -58.940176292545516
+    "lon": -58.940176292545516,
+    "slug": "venta-casa-general-rodriguez-35c6cb9fc4b418353ce657400f0515a1"
   },
   {
     "id": "76fe801de4a36233d724fe912e32785a",
@@ -2894,7 +2968,8 @@
     "cochera": 0,
     "amenities": [],
     "lat": -34.61102899999999,
-    "lon": -58.933595500000024
+    "lon": -58.933595500000024,
+    "slug": "venta-casa-la-soberana-76fe801de4a36233d724fe912e32785a"
   },
   {
     "id": "e49f028b12d88c542113cd5bc3b2ee79",
@@ -2934,7 +3009,8 @@
     "cochera": 0,
     "amenities": [],
     "lat": -34.6004297,
-    "lon": -58.9438496
+    "lon": -58.9438496,
+    "slug": "alquiler-departamento-general-rodriguez-e49f028b12d88c542113cd5bc3b2ee79"
   },
   {
     "id": "58eaf994f3789a127044da0cf1133eec",
@@ -2970,7 +3046,8 @@
     "cochera": 0,
     "amenities": [],
     "lat": -34.59844858516209,
-    "lon": -58.94702265640773
+    "lon": -58.94702265640773,
+    "slug": "alquiler-departamento-general-rodriguez-58eaf994f3789a127044da0cf1133eec"
   },
   {
     "id": "94627b8e502cc1130540759ff5fd0299",
@@ -3012,7 +3089,8 @@
     "cochera": 1,
     "amenities": [],
     "lat": -34.64791109776507,
-    "lon": -58.96685101243737
+    "lon": -58.96685101243737,
+    "slug": "alquiler-departamento-country-club-el-nacional-94627b8e502cc1130540759ff5fd0299"
   },
   {
     "id": "7cdc2ba8006c071665d9bed47063d2d0",
@@ -3044,7 +3122,8 @@
     "cochera": 0,
     "amenities": [],
     "lat": -34.610419223421225,
-    "lon": -58.94409656524658
+    "lon": -58.94409656524658,
+    "slug": "alquiler-local-comercial-general-rodriguez-7cdc2ba8006c071665d9bed47063d2d0"
   },
   {
     "id": "3b5503b762e9fe7aec4ae9418707ad08",
@@ -3091,7 +3170,8 @@
       "Apto profesional"
     ],
     "lat": -34.608051958121955,
-    "lon": -58.95211466579217
+    "lon": -58.95211466579217,
+    "slug": "alquiler-casa-general-rodriguez-3b5503b762e9fe7aec4ae9418707ad08"
   },
   {
     "id": "56d713dfd3ffdb9b541cd0aa59f73ebe",
@@ -3126,7 +3206,8 @@
     "cochera": 0,
     "amenities": [],
     "lat": -34.59696586787906,
-    "lon": -58.9397900700381
+    "lon": -58.9397900700381,
+    "slug": "alquiler-galpon-general-rodriguez-56d713dfd3ffdb9b541cd0aa59f73ebe"
   },
   {
     "id": "64c104c4e37fc73a77aa22ab403769bd",
@@ -3163,7 +3244,8 @@
     "cochera": 0,
     "amenities": [],
     "lat": -34.6082678,
-    "lon": -58.9473785
+    "lon": -58.9473785,
+    "slug": "alquiler-departamento-general-rodriguez-64c104c4e37fc73a77aa22ab403769bd"
   },
   {
     "id": "e6fd518fda624961edf0ef4131dc3549",
@@ -3215,7 +3297,8 @@
     "cochera": 0,
     "amenities": [],
     "lat": -34.59113247932789,
-    "lon": -58.93530196639853
+    "lon": -58.93530196639853,
+    "slug": "alquiler-casa-country-club-las-lajas-e6fd518fda624961edf0ef4131dc3549"
   },
   {
     "id": "3a08a9ae34937281c92e236ec8e7d8bb",
@@ -3264,7 +3347,8 @@
     "cochera": 0,
     "amenities": [],
     "lat": -34.60415804416803,
-    "lon": -58.949597136236314
+    "lon": -58.949597136236314,
+    "slug": "alquiler-departamento-general-rodriguez-3a08a9ae34937281c92e236ec8e7d8bb"
   },
   {
     "id": "b26469120c57c11dd9ed16fb8581763a",
@@ -3303,7 +3387,8 @@
     "cochera": 0,
     "amenities": [],
     "lat": -34.60779400000001,
-    "lon": -58.9522708
+    "lon": -58.9522708,
+    "slug": "alquiler-departamento-general-rodriguez-b26469120c57c11dd9ed16fb8581763a"
   },
   {
     "id": "f7857b4d3c750a265849a9f1cd090215",
@@ -3344,7 +3429,8 @@
     "cochera": 0,
     "amenities": [],
     "lat": -34.602848,
-    "lon": -58.94905780000001
+    "lon": -58.94905780000001,
+    "slug": "alquiler-local-comercial-general-rodriguez-f7857b4d3c750a265849a9f1cd090215"
   },
   {
     "id": "6715437deb0f18b4e3ed530c642bfaab",
@@ -3390,6 +3476,7 @@
       "Cloacas"
     ],
     "lat": -34.6071922083843,
-    "lon": -58.95803203808412
+    "lon": -58.95803203808412,
+    "slug": "alquiler-casa-general-rodriguez-6715437deb0f18b4e3ed530c642bfaab"
   }
 ]

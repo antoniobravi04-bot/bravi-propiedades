@@ -64,7 +64,7 @@ function renderCards(props) {
     return `
     <article class="prop-card visible">
       <div class="prop-card__img">
-        <a href="propiedad.html?id=${p.id}" class="prop-card__img-link">
+        <a href="/propiedad/${p.slug || p.id}" class="prop-card__img-link">
           <img src="${img0}" alt="${titulo}" loading="lazy" class="prop-card__main-img" />
         </a>
         ${badge}
@@ -78,7 +78,7 @@ function renderCards(props) {
         </div>
         <div class="prop-card__footer">
           <span class="prop-card__price">${p.precio || 'Consultar'}</span>
-          <a href="https://wa.me/5491162784642?text=${encodeURIComponent('Hola! Me interesa: ' + titulo + ' — https://bravipropiedades.com.ar/propiedad/' + p.id)}" target="_blank" rel="noopener" class="btn btn--sm btn--wapp" aria-label="WhatsApp" data-prop-id="${p.id}" data-prop-tipo="${p.tipo || ''}" data-prop-precio="${p.precio || ''}">
+          <a href="https://wa.me/5491162784642?text=${encodeURIComponent('Hola! Me interesa: ' + titulo + ' — https://bravipropiedades.com.ar/propiedad/' + (p.slug || p.id))}" target="_blank" rel="noopener" class="btn btn--sm btn--wapp" aria-label="WhatsApp" data-prop-id="${p.id}" data-prop-tipo="${p.tipo || ''}" data-prop-precio="${p.precio || ''}">
             ${waSVG}
           </a>
         </div>
