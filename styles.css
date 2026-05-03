@@ -369,6 +369,7 @@ a   { text-decoration: none; }
   padding: 36px 28px;
   border: 1px solid var(--border);
   transition: var(--t);
+  text-align: center;
 }
 .card:hover {
   border-color: var(--navy-lt);
@@ -376,6 +377,8 @@ a   { text-decoration: none; }
   transform: translateY(-3px);
 }
 .card__icon {
+  display: flex;
+  justify-content: center;
   color: var(--navy);
   margin-bottom: 20px;
   opacity: .85;
