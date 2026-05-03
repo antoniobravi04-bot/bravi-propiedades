@@ -1706,5 +1706,83 @@ a   { text-decoration: none; }
     width: 52px;
     height: 52px;
     right: 16px;
+    /* Subir el botón para que no tape contenido en mobile */
+    bottom: calc(72px + env(safe-area-inset-bottom));
   }
+}
+
+/* ===== FIX 2: TOUCH TARGETS MÍNIMOS 44px (Apple/Google guideline) ===== */
+@media (max-width: 768px) {
+  .btn--sm {
+    min-height: 44px;
+    padding: .6rem 1.2rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .btn--wapp {
+    min-height: 44px;
+    min-width: 44px;
+    padding: 0 12px;
+  }
+  .prop-card__btns .btn { min-height: 44px; }
+  .pag-btn { min-height: 44px; padding: 10px 18px; }
+}
+
+/* ===== FIX 3: SLIDER PROPIEDAD — aspect-ratio 16/9 en mobile ===== */
+@media (max-width: 600px) {
+  .det-slider {
+    aspect-ratio: 16/9;
+    max-height: 260px;
+    border-radius: 12px;
+  }
+  /* Specs: 1 columna en phones pequeños */
+  .det-specs { grid-template-columns: 1fr 1fr; gap: 10px; }
+  .det-spec-item { padding: 12px 14px; }
+}
+
+/* ===== FIX 4: SELECT "ORDENAR" — flecha visual en mobile ===== */
+@media (max-width: 600px) {
+  .filtros-barra.open .filtros-orden select,
+  .filtros-orden select {
+    appearance: none;
+    -webkit-appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%235a6a8e' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 12px center;
+    padding-right: 32px;
+  }
+}
+
+/* ===== FIX 5: BREAKPOINT TELÉFONOS MUY PEQUEÑOS (≤375px) ===== */
+@media (max-width: 375px) {
+  /* Hero: título más compacto */
+  .hero__title { font-size: 1.65rem; }
+  .hero__sub   { font-size: 0.82rem; }
+
+  /* Botones Venta / Alquiler: texto no se corta */
+  .hero__op-btn { font-size: 0.88rem; padding: 10px 10px; }
+
+  /* Widget buscador: más compacto */
+  .hero__search { padding: 8px; gap: 6px; }
+  .hero__search-tipo,
+  .hero__search-input { padding: 9px 10px; font-size: 0.85rem; }
+
+  /* Stats: texto más pequeño */
+  .stat__num   { font-size: 2.4rem; }
+  .stat__label { font-size: .7rem; }
+
+  /* Cards en listado: sin padding excesivo */
+  .prop-card__body { padding: 16px 16px; }
+
+  /* Switcher Venta/Alquiler: texto no se corta */
+  .listado-sw { font-size: .88rem; }
+
+  /* Formulario: inputs más compactos */
+  .form__group input,
+  .form__group select,
+  .form__group textarea { padding: .55rem .75rem; font-size: .85rem; }
+
+  /* Footer links: más grandes para tocar */
+  .footer__nav a { font-size: .82rem; padding: 4px 0; }
 }
