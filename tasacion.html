@@ -9,7 +9,7 @@
   <link rel="apple-touch-icon" sizes="180x180" href="favicon.png" />
   <link rel="manifest" href="site.webmanifest" />
 
-  <meta name="description" content="Tasación de propiedades en General Rodríguez. Valuación profesional, gratuita y sin compromiso por expertos con más de 30 años en el mercado local." />
+  <meta name="description" content="Tasación de propiedades en General Rodríguez. Valuación profesional por expertos con más de 30 años en el mercado local. Conocé el valor real de tu propiedad." />
   <meta name="keywords" content="tasación de propiedades General Rodríguez, tasar casa General Rodríguez, valuación inmuebles, cuánto vale mi propiedad" />
   <meta name="robots" content="index, follow" />
   <link rel="canonical" href="https://bravipropiedades.com.ar/tasacion.html" />
@@ -17,7 +17,7 @@
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://bravipropiedades.com.ar/tasacion.html" />
   <meta property="og:title" content="Tasación de Propiedades | Bravi Propiedades — General Rodríguez" />
-  <meta property="og:description" content="Tasación profesional, gratuita y sin compromiso. Conocé el valor real de tu propiedad con expertos en General Rodríguez." />
+  <meta property="og:description" content="Conocé el valor real de tu propiedad con expertos en General Rodríguez. Más de 30 años valuando propiedades en la zona." />
   <meta property="og:image" content="https://bravipropiedades.com.ar/hero-bg-1.jpg" />
   <meta property="og:site_name" content="Bravi Propiedades" />
 
@@ -27,7 +27,7 @@
     "@type": "Service",
     "name": "Tasación de propiedades en General Rodríguez",
     "url": "https://bravipropiedades.com.ar/tasacion.html",
-    "description": "Valuación profesional, gratuita y sin compromiso de tu propiedad en General Rodríguez y zona. Más de 30 años de experiencia en el mercado local.",
+    "description": "Valuación profesional de tu propiedad en General Rodríguez y zona. Más de 30 años de experiencia en el mercado local.",
     "provider": {
       "@type": "RealEstateAgent",
       "name": "Bravi Propiedades",
@@ -47,9 +47,7 @@
     },
     "offers": {
       "@type": "Offer",
-      "price": "0",
-      "priceCurrency": "ARS",
-      "description": "Tasación gratuita y sin compromiso"
+      "description": "Tasación profesional de propiedades en General Rodríguez"
     }
   }
   </script>
@@ -121,7 +119,7 @@
   <section class="listado-header">
     <div class="container">
       <h1 class="listado-header__title">Tasación de tu propiedad</h1>
-      <p class="listado-header__count">Valuación profesional, gratuita y sin compromiso en General Rodríguez</p>
+      <p class="listado-header__count">Valuación profesional con criterio real del mercado en General Rodríguez</p>
     </div>
   </section>
 
@@ -138,8 +136,8 @@
           <div class="card__icon">
             <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><polyline points="12 16 12.01 16"/></svg>
           </div>
-          <h3>Gratuita y sin compromiso</h3>
-          <p>No cobramos por tasar tu propiedad. No hay ninguna obligación de vender ni alquilar con nosotros: si no te conviene, no hay problema.</p>
+          <h3>Sin presiones ni obligaciones</h3>
+          <p>No hay ninguna obligación de vender ni alquilar con nosotros después de la tasación. La decisión es tuya y la respetamos.</p>
         </div>
         <div class="card">
           <div class="card__icon">
@@ -197,7 +195,7 @@
       <div class="contacto__info">
         <p class="eyebrow">Pedí tu tasación</p>
         <h2 class="section__title">¿Querés saber<br>cuánto vale?</h2>
-        <p>Completá el formulario o escribinos por WhatsApp. Sin costo y sin compromiso.</p>
+        <p>Completá el formulario o escribinos por WhatsApp y te respondemos a la brevedad.</p>
         <ul class="contacto__datos">
           <li>
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.09 10.8 19.79 19.79 0 01.01 2.18 2 2 0 012 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
@@ -244,7 +242,7 @@
           <label for="mensaje">Dirección o descripción de la propiedad</label>
           <textarea id="mensaje" name="mensaje" rows="4" placeholder="Barrio, dirección, metros cuadrados, estado de la propiedad..."></textarea>
         </div>
-        <button type="submit" class="btn btn--primary btn--full">Solicitar tasación gratuita</button>
+        <button type="submit" class="btn btn--primary btn--full">Solicitar tasación</button>
         <p class="form__success" id="formSuccess">
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
           Solicitud enviada. Te contactamos a la brevedad.
@@ -311,7 +309,7 @@
     emailjs.sendForm(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, this)
       .then(function() {
         success.style.display = 'flex';
-        btn.textContent = 'Solicitar tasación gratuita';
+        btn.textContent = 'Solicitar tasación';
         btn.disabled = false;
         document.getElementById('contactForm').reset();
         if (typeof gtag === 'function') gtag('event', 'form_submit', { event_category: 'conversion', tipo_form: 'tasacion' });
@@ -319,7 +317,7 @@
       })
       .catch(function() {
         error.style.display = 'flex';
-        btn.textContent = 'Solicitar tasación gratuita';
+        btn.textContent = 'Solicitar tasación';
         btn.disabled = false;
       });
   });
