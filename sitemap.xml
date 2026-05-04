@@ -26,7 +26,17 @@
     <priority>0.7</priority>
     <image:image>
       <image:loc>https://images.mapaprop.app/photos/969/2614010/3208568t.jpg</image:loc>
-      <image:title>Terreno en venta en General Rodriguez</image:title>
+      <image:title>Terreno céntrico en venta en General Rodriguez</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://bravipropiedades.com.ar/propiedad.html?id=f1bd1c32765c9addc8e931e3494f79a4</loc>
+    <lastmod>2026-05-04</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://images.mapaprop.app/photos/969/2614095/3210320t.jpg</image:loc>
+      <image:title>Casa en venta en Barrio Granaderos, General Rodriguez</image:title>
     </image:image>
   </url>
   <url>
