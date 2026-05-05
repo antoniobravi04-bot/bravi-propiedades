@@ -46,46 +46,68 @@ a   { text-decoration: none; }
 
 .section__header {
   text-align: center;
-  margin-bottom: 60px;
+  margin-bottom: 76px;
 }
 
 .eyebrow {
   display: block;
-  font-size: .72rem;
-  font-weight: 600;
-  letter-spacing: .14em;
+  font-size: .66rem;
+  font-weight: 700;
+  letter-spacing: .22em;
   text-transform: uppercase;
   color: var(--blue-mid);
-  margin-bottom: 10px;
+  margin-bottom: 14px;
 }
-.eyebrow--light { color: rgba(255,255,255,.45); }
+.eyebrow--light { color: rgba(255,255,255,.5); }
 
 .section__title {
   font-family: 'Playfair Display', serif;
-  font-size: clamp(1.9rem, 3.5vw, 2.8rem);
+  font-size: clamp(2rem, 3.8vw, 3rem);
+  font-weight: 700;
   color: var(--navy);
-  line-height: 1.2;
+  line-height: 1.18;
+  letter-spacing: -0.025em;
 }
 .section__title--light { color: var(--white); }
 
 .section__sub {
-  margin-top: 10px;
-  font-size: .9rem;
+  margin-top: 16px;
+  font-size: .95rem;
   color: var(--text-muted);
+  line-height: 1.75;
+  max-width: 520px;
+  margin-inline: auto;
 }
 
 .mt { margin-top: 32px; display: inline-block; }
+
+/* Eyebrow accent — línea decorativa lateral (contextos centrados) */
+.section__header .eyebrow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+}
+.section__header .eyebrow::before,
+.section__header .eyebrow::after {
+  content: '';
+  flex: 0 0 28px;
+  height: 1px;
+  background: currentColor;
+  opacity: .45;
+}
 
 /* ===== BUTTONS ===== */
 .btn {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  padding: .75rem 1.8rem;
+  padding: .78rem 2rem;
   border-radius: var(--radius);
   font-family: 'Inter', sans-serif;
   font-weight: 600;
-  font-size: .875rem;
+  font-size: .8rem;
+  letter-spacing: .03em;
   cursor: pointer;
   transition: var(--t);
   border: 1.5px solid transparent;
@@ -171,8 +193,9 @@ a   { text-decoration: none; }
 }
 .nav__links a {
   color: rgba(255,255,255,.8);
-  font-size: .875rem;
+  font-size: .82rem;
   font-weight: 500;
+  letter-spacing: .02em;
   transition: color var(--t);
 }
 .nav__links a:hover { color: var(--white); }
@@ -264,24 +287,26 @@ a   { text-decoration: none; }
   display: block; margin-bottom: 28px; opacity: .92;
 }
 .hero__eyebrow {
-  font-size: .72rem;
-  font-weight: 600;
-  letter-spacing: .16em;
+  font-size: .66rem;
+  font-weight: 700;
+  letter-spacing: .22em;
   text-transform: uppercase;
-  color: rgba(255,255,255,.55);
-  margin-bottom: 18px;
+  color: rgba(255,255,255,.58);
+  margin-bottom: 20px;
 }
 .hero__title {
   font-family: 'Playfair Display', serif;
-  font-size: clamp(2.4rem, 5vw, 4rem);
+  font-size: clamp(2.6rem, 5.2vw, 4.2rem);
+  font-weight: 700;
   color: var(--white);
-  line-height: 1.12;
-  margin-bottom: 22px;
+  line-height: 1.08;
+  letter-spacing: -0.025em;
+  margin-bottom: 24px;
 }
 .hero__sub {
-  font-size: clamp(1rem, 1.1vw, 1.15rem); /* escala suavemente con el ancho */
+  font-size: clamp(1rem, 1.15vw, 1.18rem);
   color: rgba(255,255,255,.78);
-  line-height: 1.75;
+  line-height: 1.78;
   margin-bottom: clamp(24px, 3.5vh, 40px);
   max-width: 680px;
 }
@@ -316,15 +341,19 @@ a   { text-decoration: none; }
 .stat__num {
   display: block;
   font-family: 'Playfair Display', serif;
-  font-size: 2.8rem;
+  font-size: 3rem;
+  font-weight: 700;
   color: var(--white);
   line-height: 1;
+  letter-spacing: -0.04em;
 }
 .stat__label {
   display: block;
-  font-size: .78rem;
-  color: rgba(255,255,255,.45);
-  margin-top: 8px;
+  font-size: .72rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  color: rgba(255,255,255,.55);
+  margin-top: 10px;
   letter-spacing: .04em;
 }
 
@@ -385,11 +414,12 @@ a   { text-decoration: none; }
 }
 .card h3 {
   color: var(--navy);
-  font-size: .95rem;
-  font-weight: 600;
-  margin-bottom: 10px;
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  margin-bottom: 12px;
 }
-.card p { color: var(--text-muted); font-size: .875rem; line-height: 1.65; }
+.card p { color: var(--text-muted); font-size: .875rem; line-height: 1.7; }
 
 /* ===== PROPIEDADES ===== */
 .propiedades__grid {
@@ -512,7 +542,7 @@ a   { text-decoration: none; }
 .badge--alq   { background: var(--blue-mid); color: var(--white); }
 
 .prop-card__body { padding: 22px 24px; }
-.prop-card__body h3 { color: var(--navy); font-size: 1rem; margin-bottom: 6px; }
+.prop-card__body h3 { color: var(--navy); font-size: 1.05rem; font-weight: 600; letter-spacing: -0.01em; margin-bottom: 8px; }
 .prop-card__loc {
   display: flex;
   align-items: center;
@@ -539,7 +569,8 @@ a   { text-decoration: none; }
 }
 .prop-card__price {
   font-weight: 700;
-  font-size: .95rem;
+  font-size: 1rem;
+  letter-spacing: -0.01em;
   color: var(--navy);
 }
 .propiedades__cta { text-align: center; margin-top: 52px; }
@@ -566,9 +597,9 @@ a   { text-decoration: none; }
   margin-bottom: 20px;
 }
 .testimonial p {
-  color: rgba(255,255,255,.8);
+  color: rgba(255,255,255,.82);
   font-size: .9rem;
-  line-height: 1.75;
+  line-height: 1.82;
   margin-bottom: 28px;
   font-style: italic;
 }
@@ -641,10 +672,11 @@ a   { text-decoration: none; }
 }
 .form__group { display: flex; flex-direction: column; gap: 6px; }
 .form__group label {
-  font-size: .78rem;
-  font-weight: 600;
+  font-size: .68rem;
+  font-weight: 700;
   color: var(--navy);
-  letter-spacing: .02em;
+  letter-spacing: .08em;
+  text-transform: uppercase;
 }
 .form__group input,
 .form__group select,
