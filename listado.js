@@ -86,8 +86,17 @@ function renderCards(props) {
     </article>`;
   }).join('');
 
-  // Init mini-sliders
+  // Toda la card es clickeable → navega a la propiedad
   const cards = grid.querySelectorAll('.prop-card');
+  props.forEach((p, i) => {
+    const url = '/propiedad/' + (p.slug || p.id);
+    cards[i].addEventListener('click', function(e) {
+      if (e.target.closest('a, button')) return; // WA y slider siguen funcionando
+      window.location.href = url;
+    });
+  });
+
+  // Init mini-sliders
   props.forEach((p, i) => {
     if (!p.imagenes || p.imagenes.length <= 1) return;
     const card = cards[i];
