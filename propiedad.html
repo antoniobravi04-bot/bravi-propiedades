@@ -29,18 +29,9 @@
     }
     .dp-volver:hover { color: var(--navy); }
 
-    /* ─ Layout principal: galería + sidebar ─ */
-    .dp-main {
-      display: grid;
-      grid-template-columns: 1fr 340px;
-      gap: 32px;
-      align-items: start;
-    }
-    .dp-main > * { min-width: 0; }
-
-    /* ─ Galería ─ */
+    /* ─ Galería full width ─ */
     .dp-gallery { display: flex; flex-direction: column; gap: 8px; }
-    .dp-gallery__hero { position: relative; border-radius: 12px; overflow: hidden; aspect-ratio: 4/3; background: #eee; }
+    .dp-gallery__hero { position: relative; border-radius: 14px; overflow: hidden; aspect-ratio: 16/9; background: #eee; }
     .dp-gallery__hero img { width: 100%; height: 100%; object-fit: cover; display: block; }
     .dp-gallery__nav {
       position: absolute; top: 50%; transform: translateY(-50%);
@@ -111,46 +102,58 @@
       gap: 8px; color: var(--text-muted); font-size: .85rem; margin-top: 4px;
     }
 
-    /* ─ Sidebar ─ */
-    .dp-sidebar { position: sticky; top: 116px; }
-    .dp-card {
-      background: var(--white); border: 1.5px solid var(--border);
-      border-radius: 14px; padding: 24px 20px;
+    /* ─ Action bar debajo de la galería ─ */
+    .dp-action-bar {
+      display: grid;
+      grid-template-columns: 1fr auto 1fr;
+      align-items: center;
+      background: var(--white);
+      border: 1.5px solid var(--border);
+      border-radius: 14px;
+      margin: 20px 0 32px;
+      overflow: hidden;
     }
-    .dp-card__badge { margin-bottom: 12px; }
-    .dp-card__price {
-      font-size: 1.8rem; font-weight: 700; color: var(--navy); line-height: 1.1;
-      margin-bottom: 4px;
+    .dp-action-bar__info {
+      padding: 20px 24px;
     }
-    .dp-card__loc {
-      display: flex; align-items: center; gap: 5px;
-      font-size: .82rem; color: var(--text-muted); margin-bottom: 16px;
+    .dp-action-bar__price {
+      font-size: 1.9rem; font-weight: 700; color: var(--navy); line-height: 1.1;
+      margin-bottom: 5px;
     }
-    .dp-card__highlights {
-      display: flex; gap: 0; border: 1px solid var(--border);
-      border-radius: 8px; overflow: hidden; margin-bottom: 18px;
+    .dp-action-bar__loc {
+      display: flex; align-items: flex-start; gap: 5px;
+      font-size: .82rem; color: var(--text-muted); line-height: 1.4;
     }
-    .dp-card__hl {
-      flex: 1; text-align: center; padding: 10px 6px;
-      border-right: 1px solid var(--border); font-size: .8rem; color: var(--navy);
+    .dp-action-bar__hls {
+      display: flex; align-items: center; gap: 0;
+      padding: 20px 32px;
+      border-left: 1.5px solid var(--border);
+      border-right: 1.5px solid var(--border);
+      height: 100%;
     }
-    .dp-card__hl:last-child { border-right: none; }
-    .dp-card__hl-val { display: block; font-size: 1.1rem; font-weight: 700; }
-    .dp-card__hl-lbl { display: block; color: var(--text-muted); font-size: .72rem; margin-top: 1px; }
-    .dp-card__actions { display: flex; flex-direction: column; gap: 8px; }
-    .dp-card__actions .btn { justify-content: center; font-size: .9rem; }
+    .dp-action-bar__hl {
+      text-align: center; padding: 0 20px;
+      border-right: 1px solid var(--border);
+    }
+    .dp-action-bar__hl:last-child { border-right: none; }
+    .dp-action-bar__hl-val { display: block; font-size: 1.2rem; font-weight: 700; color: var(--navy); }
+    .dp-action-bar__hl-lbl { display: block; font-size: .72rem; color: var(--text-muted); margin-top: 2px; }
+    .dp-action-bar__btns {
+      padding: 20px 24px;
+      display: flex; flex-direction: column; gap: 8px;
+    }
+    .dp-action-bar__btns .btn { justify-content: center; font-size: .9rem; }
     .dp-card__share {
       display: flex; align-items: center; justify-content: center; gap: 7px;
-      margin-top: 2px; padding: 9px 16px; width: 100%;
+      padding: 9px 16px; width: 100%;
       background: none; border: 1.5px solid var(--border); border-radius: 50px;
       font-size: .82rem; font-weight: 500; color: var(--text-muted);
       cursor: pointer; transition: border-color .2s, color .2s;
     }
     .dp-card__share:hover { border-color: var(--navy); color: var(--navy); }
     .dp-card__share--copied { border-color: #22c55e !important; color: #22c55e !important; }
-    .dp-card__id {
-      margin-top: 14px; padding-top: 12px; border-top: 1px solid var(--border);
-      font-size: .75rem; color: var(--text-muted);
+    .dp-action-bar__id {
+      font-size: .72rem; color: var(--text-muted); margin-top: 4px; text-align: center;
     }
 
     /* ─ Título encima del grid ─ */
@@ -162,14 +165,21 @@
     }
 
     /* ─ Responsive ─ */
-    @media (max-width: 1100px) {
-      .dp { padding: 116px 0 100px; }
-      .dp-main { grid-template-columns: 1fr; }
-      .dp-sidebar { order: -1; position: static; margin-top: 0; margin-bottom: 24px; }
-      .dp-hl-bar { display: none !important; }
+    @media (max-width: 900px) {
+      .dp-action-bar {
+        grid-template-columns: 1fr;
+      }
+      .dp-action-bar__hls {
+        border-left: none; border-right: none;
+        border-top: 1.5px solid var(--border);
+        border-bottom: 1.5px solid var(--border);
+        padding: 16px 24px; justify-content: flex-start;
+      }
+      .dp-action-bar__hl { padding: 0 16px; }
+      .dp-action-bar__hl:first-child { padding-left: 0; }
     }
     @media (max-width: 500px) {
-      .dp-gallery__hero { aspect-ratio: 3/2; }
+      .dp-gallery__hero { aspect-ratio: 4/3; }
       .dp-specs-grid { grid-template-columns: 1fr; }
       .dp-specs-grid__item { border-right: none; }
       .dp-specs-grid__item:last-child { border-bottom: none; }
@@ -523,45 +533,48 @@
           </p>
         </div>
 
-        <div class="dp-main">
-          <div>
-            ${hlsHTML}
-            <div class="dp-gallery">
-              <div class="dp-gallery__hero">
-                <img id="dpHeroImg" src="${imgs[0]}" alt="${titulo}" />
-                ${navBtns}
-              </div>
-              ${thumbsHTML}
-            </div>
-            ${descHTML}
-            ${specsHTML}
-            ${mapHTML}
+        <!-- Galería full width -->
+        <div class="dp-gallery">
+          <div class="dp-gallery__hero">
+            <img id="dpHeroImg" src="${imgs[0]}" alt="${titulo}" />
+            ${navBtns}
           </div>
+          ${thumbsHTML}
+        </div>
 
-          <div class="dp-sidebar">
-            <div class="dp-card">
-              <div class="dp-card__price">${p.precio || 'Consultar'}</div>
-              <div class="dp-card__loc">
-                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
-                ${locFull}
-              </div>
-              ${sideHlsHTML}
-              <div class="dp-card__actions">
-                <a href="https://wa.me/5491162784642?text=${waMsg}" target="_blank" rel="noopener" class="btn btn--primary" style="display:flex;align-items:center;gap:8px" data-prop-id="${p.id}" data-prop-tipo="${p.tipo || ''}" data-prop-precio="${p.precio || ''}">
-                  ${waSVG} Consultar por WhatsApp
-                </a>
-                <a href="tel:+5402374840027" class="btn btn--outline-dark">
-                  Llamar
-                </a>
-                <button class="dp-card__share" id="btnCompartir" data-url="${shareUrl}" data-titulo="${titulo.replace(/"/g,'&quot;')}">
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg>
-                  Compartir propiedad
-                </button>
-              </div>
-              <div class="dp-card__id">Código: ${p.codigo || '—'}</div>
+        <!-- Action bar: precio | highlights | botones -->
+        <div class="dp-action-bar">
+          <div class="dp-action-bar__info">
+            <div class="dp-action-bar__price">${p.precio || 'Consultar'}</div>
+            <div class="dp-action-bar__loc">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;margin-top:2px"><path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              ${locFull}
             </div>
+          </div>
+          ${sideHls.length ? `
+          <div class="dp-action-bar__hls">
+            ${sideHls.map(h => `<div class="dp-action-bar__hl"><span class="dp-action-bar__hl-val">${h.val}</span><span class="dp-action-bar__hl-lbl">${h.lbl}</span></div>`).join('')}
+          </div>` : ''}
+          <div class="dp-action-bar__btns">
+            <a href="https://wa.me/5491162784642?text=${waMsg}" target="_blank" rel="noopener" class="btn btn--primary" style="display:flex;align-items:center;gap:8px" data-prop-id="${p.id}" data-prop-tipo="${p.tipo || ''}" data-prop-precio="${p.precio || ''}">
+              ${waSVG} Consultar por WhatsApp
+            </a>
+            <a href="tel:+5402374840027" class="btn btn--outline-dark">
+              Llamar
+            </a>
+            <button class="dp-card__share" id="btnCompartir" data-url="${shareUrl}" data-titulo="${titulo.replace(/"/g,'&quot;')}">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg>
+              Compartir propiedad
+            </button>
+            <div class="dp-action-bar__id">Código: ${p.codigo || '—'}</div>
           </div>
         </div>
+
+        <!-- Contenido -->
+        ${hlsHTML}
+        ${descHTML}
+        ${specsHTML}
+        ${mapHTML}
 
         `;
 
