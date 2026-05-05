@@ -403,6 +403,8 @@ a   { text-decoration: none; }
   overflow: hidden;
   border: 1px solid var(--border);
   transition: var(--t);
+  position: relative; /* necesario para el stretched-link */
+  cursor: pointer;
 }
 .prop-card:hover {
   transform: translateY(-4px);
@@ -412,6 +414,18 @@ a   { text-decoration: none; }
 .prop-card__img { position: relative; aspect-ratio: 4/3; overflow: hidden; }
 .prop-card__img img { height: 100%; }
 .prop-card__img-link { display: block; width: 100%; height: 100%; }
+
+/* Stretched-link: extiende el link de la foto a toda la card */
+.prop-card__img-link::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+}
+/* Botones que deben quedar clicables por encima del overlay */
+.card-slide-btn,
+.btn--wapp,
+.prop-card__body a { position: relative; z-index: 2; }
 .prop-card__img-link img { width: 100%; height: 100%; object-fit: cover; }
 
 /* Card mini-slider */
