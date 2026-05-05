@@ -780,6 +780,16 @@
     </image:image>
   </url>
   <url>
+    <loc>https://bravipropiedades.com.ar/propiedad.html?id=3a08a9ae34937281c92e236ec8e7d8bb</loc>
+    <lastmod>2026-05-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://images.mapaprop.app/photos/969/2612699/3211559t.jpg</image:loc>
+      <image:title>Departamento en Av San Martin N° 461, 2° B</image:title>
+    </image:image>
+  </url>
+  <url>
     <loc>https://bravipropiedades.com.ar/propiedad.html?id=6715437deb0f18b4e3ed530c642bfaab</loc>
     <lastmod>2026-05-05</lastmod>
     <changefreq>weekly</changefreq>
@@ -857,16 +867,6 @@
     <image:image>
       <image:loc>https://images.mapaprop.app/photos/969/2612705/3184363t.jpg</image:loc>
       <image:title>Casa de 4 ambientes en CC Las Lajas</image:title>
-    </image:image>
-  </url>
-  <url>
-    <loc>https://bravipropiedades.com.ar/propiedad.html?id=3a08a9ae34937281c92e236ec8e7d8bb</loc>
-    <lastmod>2026-05-05</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-    <image:image>
-      <image:loc>https://images.mapaprop.app/photos/969/2612699/3184251t.jpg</image:loc>
-      <image:title>Departamento en Av San Martin N° 461, 2° B</image:title>
     </image:image>
   </url>
   <url>
