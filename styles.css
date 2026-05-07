@@ -958,11 +958,14 @@ a   { text-decoration: none; }
 .hero__widget {
   background: #fff;
   border-radius: 50px;
-  overflow: hidden;
+  /* overflow: hidden removido — cortaba el dropdown de tipo de propiedad */
   box-shadow: 0 12px 48px rgba(0,0,0,.28);
   max-width: clamp(560px, 55vw, 720px); /* se adapta al ancho disponible */
   width: 100%;
 }
+/* Los hijos necesitan clip para mantener el border-radius visual */
+.hero__search-tabs { overflow: hidden; border-radius: 50px 50px 0 0; }
+.hero__search      { overflow: visible; }
 
 /* ===== HERO SEARCH TABS (Venta / Alquiler) ===== */
 .hero__search-tabs {
