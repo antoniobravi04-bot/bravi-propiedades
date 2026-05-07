@@ -157,16 +157,23 @@
           <button class="hero__search-tab" data-op="alquiler">Alquiler</button>
         </div>
         <div class="hero__search">
-          <select class="hero__search-tipo" id="heroTipoProp">
-            <option value="">Propiedad</option>
-            <option value="casa">Casa</option>
-            <option value="departamento">Departamento</option>
-            <option value="duplex">Dúplex</option>
-            <option value="terreno">Terreno</option>
-            <option value="quinta">Quinta</option>
-            <option value="local">Local comercial</option>
-            <option value="galpon">Galpón</option>
-          </select>
+          <input type="hidden" id="heroTipoProp" value="">
+          <div class="hero__tipo" id="heroTipoWrap">
+            <button class="hero__tipo-btn" id="heroTipoBtn" type="button" aria-haspopup="listbox" aria-expanded="false">
+              <span id="heroTipoLabel">Propiedad</span>
+              <svg class="hero__tipo-chevron" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+            </button>
+            <ul class="hero__tipo-menu" id="heroTipoMenu" role="listbox">
+              <li role="option" data-value="">Todos</li>
+              <li role="option" data-value="casa">Casa</li>
+              <li role="option" data-value="departamento">Departamento</li>
+              <li role="option" data-value="duplex">Dúplex</li>
+              <li role="option" data-value="terreno">Terreno</li>
+              <li role="option" data-value="quinta">Quinta</li>
+              <li role="option" data-value="local">Local comercial</li>
+              <li role="option" data-value="galpon">Galpón</li>
+            </ul>
+          </div>
           <div class="hero__search-divider"></div>
           <svg class="hero__search-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
           <input class="hero__search-input" id="heroTexto" type="text" placeholder="Barrio, localidad o dirección..." />
@@ -517,6 +524,36 @@
   <script src="main.js"></script>
   <script src="tracking.js"></script>
   <script>
+  // Custom dropdown de tipo de propiedad en el hero
+  (function () {
+    var wrap   = document.getElementById('heroTipoWrap');
+    var btn    = document.getElementById('heroTipoBtn');
+    var label  = document.getElementById('heroTipoLabel');
+    var menu   = document.getElementById('heroTipoMenu');
+    var hidden = document.getElementById('heroTipoProp');
+    if (!wrap) return;
+    btn.addEventListener('click', function (e) {
+      e.stopPropagation();
+      var open = wrap.classList.toggle('open');
+      btn.setAttribute('aria-expanded', open);
+    });
+    menu.querySelectorAll('li').forEach(function (li) {
+      li.addEventListener('click', function () {
+        hidden.value = li.dataset.value;
+        label.textContent = li.dataset.value ? li.textContent : 'Propiedad';
+        menu.querySelectorAll('li').forEach(function (l) { l.classList.remove('active'); });
+        li.classList.add('active');
+        wrap.classList.remove('open');
+        btn.setAttribute('aria-expanded', 'false');
+      });
+    });
+    document.addEventListener('click', function () {
+      wrap.classList.remove('open');
+      btn.setAttribute('aria-expanded', 'false');
+    });
+    menu.addEventListener('click', function (e) { e.stopPropagation(); });
+  })();
+
   // Hero background slider — crossfade cada 6 segundos
   (function () {
     var slides = document.querySelectorAll('.hero__slide');

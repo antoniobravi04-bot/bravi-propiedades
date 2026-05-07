@@ -1003,17 +1003,58 @@ a   { text-decoration: none; }
   box-shadow: none;
   gap: 0;
 }
-.hero__search-tipo {
+/* Custom tipo dropdown */
+.hero__tipo {
+  position: relative;
+  flex-shrink: 0;
+}
+.hero__tipo-btn {
+  display: flex;
+  align-items: center;
+  gap: 5px;
   border: none;
-  outline: none;
   background: transparent;
   font-size: .9rem;
   font-weight: 600;
   color: var(--navy);
   cursor: pointer;
-  padding-right: 12px;
-  min-width: 80px;
+  padding: 0 12px 0 0;
+  white-space: nowrap;
+  font-family: inherit;
 }
+.hero__tipo-chevron { transition: transform .2s; flex-shrink: 0; }
+.hero__tipo.open .hero__tipo-chevron { transform: rotate(180deg); }
+.hero__tipo-menu {
+  display: none;
+  position: absolute;
+  top: calc(100% + 14px);
+  left: -16px;
+  background: #fff;
+  border-radius: 14px;
+  box-shadow: 0 8px 32px rgba(18,62,138,.16);
+  list-style: none;
+  padding: 6px;
+  min-width: 178px;
+  z-index: 20;
+}
+.hero__tipo.open .hero__tipo-menu {
+  display: block;
+  animation: tipoDrop .15s ease;
+}
+@keyframes tipoDrop {
+  from { opacity: 0; transform: translateY(-6px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.hero__tipo-menu li {
+  padding: 10px 14px;
+  border-radius: 8px;
+  font-size: .88rem;
+  color: var(--text);
+  cursor: pointer;
+  transition: background .15s;
+}
+.hero__tipo-menu li:hover { background: var(--off-white); }
+.hero__tipo-menu li.active { color: var(--navy); font-weight: 600; background: var(--off-white); }
 .hero__search-divider {
   width: 1px;
   height: 22px;
@@ -1092,13 +1133,20 @@ a   { text-decoration: none; }
     padding: 10px;                  /* reducido de 14px → menos altura total */
     gap: 7px;                       /* reducido de 10px */
   }
-  .hero__search-tipo {
+  .hero__tipo-btn {
     width: 100%;
-    padding: 10px 12px;             /* reducido de 11px 14px */
+    padding: 10px 12px;
     border: 1.5px solid #e0e0e0;
     border-radius: 8px;
     font-size: 0.9rem;
     background: #f7f7f7;
+    justify-content: space-between;
+  }
+  .hero__tipo-menu {
+    left: 0;
+    right: 0;
+    min-width: unset;
+    border-radius: 10px;
   }
   .hero__search-divider { display: none; }
   .hero__search-icon    { display: none; }
@@ -1806,7 +1854,7 @@ a   { text-decoration: none; }
 
   /* Widget buscador: más compacto */
   .hero__search { padding: 8px; gap: 6px; }
-  .hero__search-tipo,
+  .hero__tipo-btn,
   .hero__search-input { padding: 9px 10px; font-size: 0.85rem; }
 
   /* Stats: texto más pequeño */
