@@ -232,8 +232,14 @@ async function validarImagenes(props) {
     const outPath = path.join(__dirname, 'properties.json');
     fs.writeFileSync(outPath, JSON.stringify(all, null, 2));
 
+    // Archivos divididos por tipo (optimización de carga)
+    const ventasPath = path.join(__dirname, 'properties-venta.json');
+    const alqPath    = path.join(__dirname, 'properties-alquiler.json');
+    fs.writeFileSync(ventasPath,  JSON.stringify(ventas,     null, 2));
+    fs.writeFileSync(alqPath,     JSON.stringify(alquileres, null, 2));
+
     console.log(`\n✅ Listo! ${ventas.length} ventas + ${alquileres.length} alquileres = ${all.length} propiedades`);
-    console.log(`   Guardado en: ${outPath}`);
+    console.log(`   Guardado en: ${outPath} + properties-venta.json + properties-alquiler.json`);
     console.log('\n   Ahora hacé deploy para publicar los cambios.');
   } catch (err) {
     console.error('Error:', err.message);

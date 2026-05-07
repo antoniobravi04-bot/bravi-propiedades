@@ -306,12 +306,13 @@ function aplicarFiltros() {
   mostrarPagina();
 }
 
-// Cargar propiedades desde properties.json estático
-fetch('properties.json?v=' + Date.now())
+// Cargar solo el archivo correspondiente al tipo de página
+const jsonFile = TIPO_PAGINA === 'Alquiler' ? 'properties-alquiler.json' : 'properties-venta.json';
+fetch(jsonFile + '?v=' + Date.now())
   .then(r => r.json())
   .then(data => {
-    rawAll         = data;                                    // array completo, para índices correctos
-    const props    = data.filter(x => x.tipo === TIPO_PAGINA);
+    rawAll         = data;
+    const props    = data; // ya filtrado por tipo
     fullProps      = props;
     allProps       = props;
     propsFiltradas = [...allProps];
