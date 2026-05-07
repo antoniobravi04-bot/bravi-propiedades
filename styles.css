@@ -1030,17 +1030,25 @@ a   { text-decoration: none; }
 .hero__tipo-menu {
   display: none;
   position: absolute;
-  bottom: calc(100% + 14px);
+  bottom: calc(100% + 10px);
   top: auto;
   left: -16px;
   background: #fff;
-  border-radius: 14px;
-  box-shadow: 0 8px 32px rgba(18,62,138,.16);
+  border-radius: 14px 14px 8px 8px;
+  box-shadow: 0 -4px 32px rgba(18,62,138,.14);
   list-style: none;
   padding: 6px;
   min-width: 178px;
+  max-height: 220px;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  scrollbar-width: thin;
+  scrollbar-color: var(--border) transparent;
   z-index: 20;
 }
+.hero__tipo-menu::-webkit-scrollbar { width: 4px; }
+.hero__tipo-menu::-webkit-scrollbar-track { background: transparent; }
+.hero__tipo-menu::-webkit-scrollbar-thumb { background: var(--border); border-radius: 4px; }
 .hero__tipo.open .hero__tipo-menu {
   display: block;
   animation: tipoDrop .15s ease;
