@@ -2,6 +2,9 @@
   publish = "."
   functions = "netlify/functions"
 
+[images]
+  remote_images = ["https://images\\.mapaprop\\.app/.*", "https://images\\.unsplash\\.com/.*"]
+
 [[headers]]
   for = "/*"
   [headers.values]
