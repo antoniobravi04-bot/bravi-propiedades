@@ -671,7 +671,7 @@
       .then(function (r) { return r.json(); }).catch(function () { return []; })
       .then(function (props) {
         var totals = {};
-        props.forEach(function (p) { totals[p.tipoProp] = (totals[p.tipoProp] || 0) + 1; });
+        props.forEach(function (p) { var t = inferirTipoProp(p); if (t) { totals[t] = (totals[t] || 0) + 1; } });
         els.forEach(function (el) {
           var tipo = el.dataset.tipo;
           var n = totals[tipo] || 0;
