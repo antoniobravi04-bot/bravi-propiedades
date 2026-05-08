@@ -214,6 +214,48 @@
     </div>
   </section>
 
+  <!-- TIPOS -->
+  <section class="tipos section">
+    <div class="container">
+      <div class="section__header">
+        <p class="eyebrow">Explorá por tipo</p>
+        <h2 class="section__title">¿Qué estás buscando?</h2>
+      </div>
+      <div class="tipos__grid">
+        <a href="ventas.html?tipo=casa" class="tipos__card tipos__card--featured" style="background-image:url('https://images.unsplash.com/photo-1570129477492-45c003edd2be?w=900&fit=crop&auto=format')">
+          <div class="tipos__info">
+            <h3 class="tipos__nombre">Casas</h3>
+            <span class="tipos__count" data-tipo="casa">cargando…</span>
+          </div>
+        </a>
+        <a href="ventas.html?tipo=departamento" class="tipos__card" style="background-image:url('https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?w=700&fit=crop&auto=format')">
+          <div class="tipos__info">
+            <h3 class="tipos__nombre">Departamentos</h3>
+            <span class="tipos__count" data-tipo="departamento">cargando…</span>
+          </div>
+        </a>
+        <a href="ventas.html?tipo=terreno" class="tipos__card" style="background-image:url('https://images.unsplash.com/photo-1500382017468-9049fed747ef?w=700&fit=crop&auto=format')">
+          <div class="tipos__info">
+            <h3 class="tipos__nombre">Terrenos</h3>
+            <span class="tipos__count" data-tipo="terreno">cargando…</span>
+          </div>
+        </a>
+        <a href="ventas.html?tipo=duplex" class="tipos__card" style="background-image:url('https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=700&fit=crop&auto=format')">
+          <div class="tipos__info">
+            <h3 class="tipos__nombre">Dúplex</h3>
+            <span class="tipos__count" data-tipo="duplex">cargando…</span>
+          </div>
+        </a>
+        <a href="ventas.html?tipo=local" class="tipos__card" style="background-image:url('https://images.unsplash.com/photo-1582407947304-fd86f028f716?w=700&fit=crop&auto=format')">
+          <div class="tipos__info">
+            <h3 class="tipos__nombre">Locales</h3>
+            <span class="tipos__count" data-tipo="local">cargando…</span>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
   <!-- NOSOTROS -->
   <section class="nosotros section" id="nosotros">
     <div class="container nosotros__inner">
@@ -593,6 +635,24 @@
       btn.setAttribute('aria-expanded', 'false');
     });
     menu.addEventListener('click', function (e) { e.stopPropagation(); });
+  })();
+
+  // Contadores de tipos en la sección categorías
+  (function () {
+    var els = document.querySelectorAll('.tipos__count[data-tipo]');
+    if (!els.length) return;
+    fetch('properties-venta.json?v=' + Date.now())
+      .then(function (r) { return r.json(); }).catch(function () { return []; })
+      .then(function (props) {
+        var totals = {};
+        props.forEach(function (p) { totals[p.tipoProp] = (totals[p.tipoProp] || 0) + 1; });
+        els.forEach(function (el) {
+          var tipo = el.dataset.tipo;
+          var n = totals[tipo] || 0;
+          el.textContent = n + (n === 1 ? ' propiedad' : ' propiedades');
+          if (n === 0) { var card = el.closest('.tipos__card'); if (card) card.style.display = 'none'; }
+        });
+      });
   })();
 
   // Hero background slider — crossfade cada 6 segundos
