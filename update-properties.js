@@ -78,7 +78,8 @@ const tipoMap = {
   'terreno': 'terreno', 'lote': 'terreno', 'local': 'local',
   'oficina': 'oficina', 'galpon': 'galpon', 'galpón': 'galpon',
   'quinta': 'quinta', 'ph': 'departamento', 'cochera': 'cochera',
-  'duplex': 'duplex', 'dúplex': 'duplex', 'townhouse': 'duplex', 'chalet': 'casa'
+  'duplex': 'duplex', 'dúplex': 'duplex', 'townhouse': 'duplex', 'chalet': 'casa',
+  'campo': 'campo', 'local comercial': 'local comercial'
 };
 
 function mapProperty(p, operation) {
