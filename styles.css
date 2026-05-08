@@ -1149,17 +1149,8 @@ a   { text-decoration: none; }
     font-size: 0.95rem;
   }
 
-  /* Op dropdown mobile */
-  .hero__op-btn {
-    width: 100%;
-    padding: 10px 12px;
-    border: 1.5px solid #e0e0e0;
-    border-radius: 8px;
-    font-size: 0.9rem;
-    background: #f7f7f7;
-    justify-content: space-between;
-  }
-  .hero__op-menu { left: 0; right: 0; min-width: unset; border-radius: 10px; }
+  /* Op dropdown: oculto en mobile — el usuario filtra venta/alquiler desde las páginas dedicadas */
+  .hero__op { display: none; }
 
   /* Buscador: menos peso visual, mismo confort táctil */
   .hero__widget {
@@ -1183,6 +1174,8 @@ a   { text-decoration: none; }
     justify-content: space-between;
   }
   .hero__tipo-menu {
+    bottom: auto;
+    top: calc(100% + 6px);
     left: 0;
     right: 0;
     min-width: unset;
