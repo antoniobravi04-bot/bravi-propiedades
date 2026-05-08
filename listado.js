@@ -25,16 +25,29 @@ function parsePrecio(str) {
 }
 
 function inferirTipoProp(p) {
-  const txt = ((p.tipoProp || '') + ' ' + (p.titulo || '')).toLowerCase();
-  if (/terreno|lote/.test(txt))                       return 'terreno';
-  if (/galpón|galpon|nave/.test(txt))                 return 'galpon';
-  if (/local|comerci/.test(txt))                      return 'local comercial';
-  if (/oficina/.test(txt))                            return 'oficina';
-  if (/duplex|dúplex|townhouse/.test(txt))            return 'duplex';
-  if (/depto|dpto|departamento|apart/.test(txt))      return 'departamento';
-  if (/quinta|country/.test(txt))                     return 'quinta';
-  if (/campo|estancia|chacra/.test(txt))              return 'campo';
-  if (/casa|chalet/.test(txt))                        return 'casa';
+  // Prioridad 1: tipoProp del JSON — evita falsos positivos por menciones en el título
+  const tipo = (p.tipoProp || '').toLowerCase().trim();
+  if (/terreno|lote/.test(tipo))                      return 'terreno';
+  if (/galpón|galpon|nave/.test(tipo))                return 'galpon';
+  if (/local|comerci/.test(tipo))                     return 'local comercial';
+  if (/oficina/.test(tipo))                           return 'oficina';
+  if (/duplex|dúplex|townhouse/.test(tipo))           return 'duplex';
+  if (/depto|dpto|departamento|apart/.test(tipo))     return 'departamento';
+  if (/quinta|country/.test(tipo))                    return 'quinta';
+  if (/campo|estancia|chacra/.test(tipo))             return 'campo';
+  if (/casa|chalet/.test(tipo))                       return 'casa';
+
+  // Prioridad 2: inferir por título solo si tipoProp no matcheó
+  const titulo = (p.titulo || '').toLowerCase();
+  if (/terreno|lote/.test(titulo))                    return 'terreno';
+  if (/galpón|galpon|nave/.test(titulo))              return 'galpon';
+  if (/local|comerci/.test(titulo))                   return 'local comercial';
+  if (/oficina/.test(titulo))                         return 'oficina';
+  if (/duplex|dúplex|townhouse/.test(titulo))         return 'duplex';
+  if (/depto|dpto|departamento|apart/.test(titulo))   return 'departamento';
+  if (/quinta|country/.test(titulo))                  return 'quinta';
+  if (/campo|estancia|chacra/.test(titulo))           return 'campo';
+  if (/casa|chalet/.test(titulo))                     return 'casa';
   return '';
 }
 
