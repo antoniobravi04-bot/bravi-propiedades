@@ -27,12 +27,13 @@ function parsePrecio(str) {
 function inferirTipoProp(p) {
   const txt = ((p.tipoProp || '') + ' ' + (p.titulo || '')).toLowerCase();
   if (/terreno|lote/.test(txt))                       return 'terreno';
-  if (/local|comerci/.test(txt))                      return 'local';
+  if (/local|comerci/.test(txt))                      return 'local comercial';
   if (/oficina/.test(txt))                            return 'oficina';
   if (/galpón|galpon|nave/.test(txt))                 return 'galpon';
   if (/duplex|dúplex|townhouse/.test(txt))            return 'duplex';
   if (/depto|dpto|departamento|apart/.test(txt))      return 'departamento';
   if (/quinta|country/.test(txt))                     return 'quinta';
+  if (/campo|estancia|chacra/.test(txt))              return 'campo';
   if (/casa|chalet/.test(txt))                        return 'casa';
   return '';
 }
