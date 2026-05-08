@@ -109,22 +109,24 @@ function inferirTipoProp(p) {
   const tipo = (p.tipoProp || '').toLowerCase().trim();
   if (/terreno|lote/.test(tipo))                      return 'terreno';
   if (/galpón|galpon|nave/.test(tipo))                return 'galpon';
-  if (/local|comerci/.test(tipo))                     return 'local';
+  if (/local|comerci/.test(tipo))                     return 'local comercial';
   if (/oficina/.test(tipo))                           return 'oficina';
   if (/duplex|dúplex|townhouse/.test(tipo))           return 'duplex';
   if (/depto|dpto|departamento|apart/.test(tipo))     return 'departamento';
-  if (/quinta|country/.test(tipo))                    return 'quinta';
+  if (/quinta/.test(tipo))                            return 'quinta';
+  if (/campo|estancia|chacra/.test(tipo))             return 'campo';
   if (/casa|chalet/.test(tipo))                       return 'casa';
 
   // Prioridad 2: inferir por título solo si tipoProp no matcheó
   const titulo = (p.titulo || '').toLowerCase();
   if (/terreno|lote/.test(titulo))                    return 'terreno';
   if (/galpón|galpon|nave/.test(titulo))              return 'galpon';
-  if (/local|comerci/.test(titulo))                   return 'local';
+  if (/local|comerci/.test(titulo))                   return 'local comercial';
   if (/oficina/.test(titulo))                         return 'oficina';
   if (/duplex|dúplex|townhouse/.test(titulo))         return 'duplex';
   if (/depto|dpto|departamento|apart/.test(titulo))   return 'departamento';
-  if (/quinta|country/.test(titulo))                  return 'quinta';
+  if (/quinta/.test(titulo))                          return 'quinta';
+  if (/campo|estancia|chacra/.test(titulo))           return 'campo';
   if (/casa|chalet/.test(titulo))                     return 'casa';
   return '';
 }
