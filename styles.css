@@ -972,14 +972,14 @@ a   { text-decoration: none; }
 .hero__op-btn {
   display: flex;
   align-items: center;
-  gap: 5px;
+  gap: 6px;
   border: none;
   background: transparent;
-  font-size: .9rem;
-  font-weight: 600;
+  font-size: 1rem;
+  font-weight: 700;
   color: var(--navy);
   cursor: pointer;
-  padding: 0 12px 0 14px;
+  padding: 0 14px 0 18px;
   white-space: nowrap;
   font-family: inherit;
 }
