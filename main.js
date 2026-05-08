@@ -245,19 +245,10 @@ document.addEventListener('keydown', e => { if (e.key === 'Escape') cerrarModal(
   });
 })();
 
-// ── Buscador del hero — tabs Venta / Alquiler + navegación con params URL ────
-let heroOp = 'venta'; // operación seleccionada en el widget
-
-document.querySelectorAll('.hero__search-tab').forEach(btn => {
-  btn.addEventListener('click', () => {
-    document.querySelectorAll('.hero__search-tab').forEach(b => b.classList.remove('hero__search-tab--active'));
-    btn.classList.add('hero__search-tab--active');
-    heroOp = btn.dataset.op;
-  });
-});
-
+// ── Buscador del hero — navegación con params URL ────
 document.getElementById('heroBuscar').addEventListener('click', () => {
   const tipoProp = document.getElementById('heroTipoProp').value;
+  const heroOp   = (document.getElementById('heroOpHidden') || {}).value || 'venta';
   const texto    = document.getElementById('heroTexto').value.trim();
 
   const params = new URLSearchParams();

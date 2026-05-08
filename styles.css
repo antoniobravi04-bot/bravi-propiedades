@@ -964,35 +964,54 @@ a   { text-decoration: none; }
   max-width: clamp(560px, 55vw, 720px); /* se adapta al ancho disponible */
   width: 100%;
 }
-/* Los hijos necesitan clip para mantener el border-radius visual */
-.hero__search-tabs { overflow: hidden; border-radius: 50px 50px 0 0; }
-.hero__search      { overflow: visible; }
-
-/* ===== HERO SEARCH TABS (Venta / Alquiler) ===== */
-.hero__search-tabs {
+/* ===== HERO OP DROPDOWN (Venta / Alquiler) ===== */
+.hero__op {
+  position: relative;
+  flex-shrink: 0;
+}
+.hero__op-btn {
   display: flex;
-  background: rgba(0,30,90,.06);
-  padding: 6px 6px 0;
-  gap: 2px;
-}
-.hero__search-tab {
-  flex: 1;
-  padding: 10px 0;
-  background: none;
+  align-items: center;
+  gap: 5px;
   border: none;
-  font-family: inherit;
-  font-size: .88rem;
+  background: transparent;
+  font-size: .9rem;
   font-weight: 600;
-  color: var(--text-muted);
-  cursor: pointer;
-  border-radius: 40px 40px 0 0;
-  transition: color .18s, background .18s;
-  letter-spacing: .02em;
-}
-.hero__search-tab--active {
-  background: #fff;
   color: var(--navy);
+  cursor: pointer;
+  padding: 0 12px 0 14px;
+  white-space: nowrap;
+  font-family: inherit;
 }
+.hero__op.open .hero__tipo-chevron { transform: rotate(180deg); }
+.hero__op-menu {
+  display: none;
+  position: absolute;
+  bottom: calc(100% + 10px);
+  top: auto;
+  left: 0;
+  background: #fff;
+  border-radius: 14px 14px 8px 8px;
+  box-shadow: 0 -4px 32px rgba(18,62,138,.14);
+  list-style: none;
+  padding: 6px;
+  min-width: 140px;
+  z-index: 20;
+}
+.hero__op.open .hero__op-menu {
+  display: block;
+  animation: tipoDrop .15s ease;
+}
+.hero__op-menu li {
+  padding: 10px 14px;
+  border-radius: 8px;
+  font-size: .88rem;
+  color: var(--text);
+  cursor: pointer;
+  transition: background .15s;
+}
+.hero__op-menu li:hover { background: var(--off-white); }
+.hero__op-menu li.active { color: var(--navy); font-weight: 600; background: var(--off-white); }
 
 /* ===== HERO SEARCH ===== */
 .hero__search {
@@ -1000,7 +1019,7 @@ a   { text-decoration: none; }
   align-items: center;
   background: transparent;
   border-radius: 0;
-  padding: 6px 6px 6px 20px;
+  padding: 6px 8px;
   max-width: 100%;
   width: 100%;
   margin: 0;
@@ -1130,9 +1149,17 @@ a   { text-decoration: none; }
     font-size: 0.95rem;
   }
 
-  /* Tabs mobile: se adaptan al widget rectangular */
-  .hero__search-tabs { padding: 5px 5px 0; }
-  .hero__search-tab  { font-size: .82rem; padding: 9px 0; }
+  /* Op dropdown mobile */
+  .hero__op-btn {
+    width: 100%;
+    padding: 10px 12px;
+    border: 1.5px solid #e0e0e0;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    background: #f7f7f7;
+    justify-content: space-between;
+  }
+  .hero__op-menu { left: 0; right: 0; min-width: unset; border-radius: 10px; }
 
   /* Buscador: menos peso visual, mismo confort táctil */
   .hero__widget {

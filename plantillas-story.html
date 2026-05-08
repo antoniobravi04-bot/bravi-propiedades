@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Plantillas Story — Bravi Propiedades</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'Inter', sans-serif;
+    background: #e8ecf2;
+    padding: 40px 20px 60px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 60px;
+  }
+
+  h1 {
+    font-size: 1.1rem;
+    color: #444;
+    text-align: center;
+    font-weight: 600;
+    letter-spacing: .04em;
+    text-transform: uppercase;
+  }
+
+  .variants {
+    display: flex;
+    gap: 32px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .variant-wrap {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .variant-label {
+    font-size: .8rem;
+    font-weight: 700;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    color: #555;
+  }
+
+  /* Story card: 9:16 scaled to 360x640 */
+  .story {
+    width: 360px;
+    height: 640px;
+    position: relative;
+    overflow: hidden;
+    border-radius: 16px;
+    box-shadow: 0 12px 48px rgba(0,0,0,.28);
+  }
+
+  /* ─── FONDO placeholder (simula foto de propiedad) ─── */
+  .story__bg {
+    position: absolute;
+    inset: 0;
+    background: #bdc8d8;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: .75rem;
+    color: #8899aa;
+    letter-spacing: .05em;
+  }
+  .story__bg img {
+    width: 100%; height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  /* ────────────────────────────────────────
+     VARIANTE A — Gradiente bottom + sello grande
+  ──────────────────────────────────────── */
+  .story-a .overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      to bottom,
+      rgba(0,61,165,.12) 0%,
+      rgba(0,61,165,.22) 40%,
+      rgba(0,30,90,.85)  68%,
+      rgba(0,20,70,1)    100%
+    );
+  }
+
+  .story-a .logo {
+    position: absolute;
+    top: 24px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    white-space: nowrap;
+  }
+  .story-a .logo-icon {
+    width: 34px; height: 34px;
+    background: white;
+    border-radius: 6px;
+    display: flex; align-items: center; justify-content: center;
+  }
+  .story-a .logo-icon span {
+    font-size: .85rem;
+    font-weight: 900;
+    color: #003DA5;
+    letter-spacing: -.03em;
+  }
+  .story-a .logo-text {
+    color: white;
+    font-size: .7rem;
+    font-weight: 600;
+    letter-spacing: .18em;
+    text-transform: uppercase;
+  }
+
+  .story-a .badge {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+  }
+  .story-a .badge-word {
+    font-size: 3.8rem;
+    font-weight: 900;
+    color: white;
+    letter-spacing: -.02em;
+    line-height: 1;
+    text-transform: uppercase;
+  }
+  .story-a .badge-line {
+    width: 60px;
+    height: 3px;
+    background: #5b8fd4;
+    margin: 10px auto 0;
+    border-radius: 2px;
+  }
+
+  .story-a .footer {
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    padding: 28px 28px 32px;
+    text-align: center;
+  }
+  .story-a .footer-tipo {
+    font-size: .65rem;
+    font-weight: 700;
+    letter-spacing: .18em;
+    text-transform: uppercase;
+    color: #5b8fd4;
+    margin-bottom: 6px;
+  }
+  .story-a .footer-titulo {
+    font-size: 1rem;
+    font-weight: 800;
+    color: white;
+    margin-bottom: 4px;
+    text-transform: uppercase;
+    letter-spacing: .04em;
+  }
+  .story-a .footer-dir {
+    font-size: .78rem;
+    font-weight: 400;
+    color: rgba(255,255,255,.75);
+    margin-bottom: 14px;
+  }
+  .story-a .footer-agente {
+    font-size: .68rem;
+    color: rgba(255,255,255,.5);
+    letter-spacing: .06em;
+  }
+
+
+  /* ────────────────────────────────────────
+     VARIANTE B — Panel inferior sólido + diagonal
+  ──────────────────────────────────────── */
+  .story-b .overlay-top {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      to bottom,
+      rgba(0,20,70,.55) 0%,
+      transparent 35%
+    );
+  }
+
+  .story-b .panel {
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    height: 52%;
+    background: #003DA5;
+    clip-path: polygon(0 18%, 100% 0%, 100% 100%, 0% 100%);
+  }
+
+  .story-b .logo {
+    position: absolute;
+    top: 22px;
+    left: 28px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .story-b .logo-icon {
+    width: 32px; height: 32px;
+    background: white;
+    border-radius: 5px;
+    display: flex; align-items: center; justify-content: center;
+  }
+  .story-b .logo-icon span {
+    font-size: .8rem;
+    font-weight: 900;
+    color: #003DA5;
+  }
+  .story-b .logo-text {
+    color: white;
+    font-size: .65rem;
+    font-weight: 600;
+    letter-spacing: .16em;
+    text-transform: uppercase;
+  }
+
+  .story-b .badge {
+    position: absolute;
+    top: 44%;
+    left: 28px;
+    transform: translateY(-50%);
+  }
+  .story-b .badge-word {
+    font-size: 3.4rem;
+    font-weight: 900;
+    color: white;
+    line-height: 1;
+    text-transform: uppercase;
+    text-shadow: 0 4px 24px rgba(0,0,0,.4);
+  }
+
+  .story-b .footer {
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    padding: 0 28px 32px;
+  }
+  .story-b .footer-tipo {
+    font-size: .6rem;
+    font-weight: 700;
+    letter-spacing: .2em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,.6);
+    margin-bottom: 4px;
+  }
+  .story-b .footer-titulo {
+    font-size: 1rem;
+    font-weight: 800;
+    color: white;
+    text-transform: uppercase;
+    letter-spacing: .05em;
+    margin-bottom: 2px;
+  }
+  .story-b .footer-dir {
+    font-size: .75rem;
+    color: rgba(255,255,255,.75);
+    margin-bottom: 16px;
+  }
+  .story-b .footer-divider {
+    width: 40px;
+    height: 2px;
+    background: rgba(255,255,255,.35);
+    margin-bottom: 10px;
+    border-radius: 1px;
+  }
+  .story-b .footer-agente {
+    font-size: .65rem;
+    color: rgba(255,255,255,.5);
+    letter-spacing: .06em;
+  }
+
+
+  /* ────────────────────────────────────────
+     VARIANTE C — Sello/stamp diagonal + barra top
+  ──────────────────────────────────────── */
+  .story-c .overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0,15,50,.45);
+  }
+
+  .story-c .topbar {
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    background: #003DA5;
+    padding: 18px 28px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .story-c .logo {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .story-c .logo-icon {
+    width: 30px; height: 30px;
+    background: white;
+    border-radius: 5px;
+    display: flex; align-items: center; justify-content: center;
+  }
+  .story-c .logo-icon span {
+    font-size: .75rem;
+    font-weight: 900;
+    color: #003DA5;
+  }
+  .story-c .logo-text {
+    color: white;
+    font-size: .62rem;
+    font-weight: 600;
+    letter-spacing: .16em;
+    text-transform: uppercase;
+  }
+
+  .story-c .stamp-wrap {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(-12deg);
+    text-align: center;
+  }
+  .story-c .stamp {
+    border: 5px solid white;
+    padding: 10px 22px;
+    display: inline-block;
+    border-radius: 6px;
+    opacity: .92;
+  }
+  .story-c .stamp-word {
+    font-size: 3.2rem;
+    font-weight: 900;
+    color: white;
+    line-height: 1;
+    text-transform: uppercase;
+    letter-spacing: .04em;
+  }
+
+  .story-c .footer {
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    background: linear-gradient(to top, rgba(0,10,40,.95) 0%, rgba(0,10,40,.7) 80%, transparent 100%);
+    padding: 40px 28px 32px;
+    text-align: center;
+  }
+  .story-c .footer-tipo {
+    font-size: .62rem;
+    font-weight: 700;
+    letter-spacing: .2em;
+    text-transform: uppercase;
+    color: #5b8fd4;
+    margin-bottom: 6px;
+  }
+  .story-c .footer-titulo {
+    font-size: .95rem;
+    font-weight: 800;
+    color: white;
+    text-transform: uppercase;
+    letter-spacing: .05em;
+    margin-bottom: 3px;
+  }
+  .story-c .footer-dir {
+    font-size: .75rem;
+    color: rgba(255,255,255,.7);
+    margin-bottom: 14px;
+  }
+  .story-c .footer-agente {
+    font-size: .65rem;
+    color: rgba(255,255,255,.45);
+    letter-spacing: .06em;
+  }
+
+  /* Nota */
+  .nota {
+    text-align: center;
+    font-size: .78rem;
+    color: #888;
+    max-width: 680px;
+    line-height: 1.6;
+  }
+  .nota strong { color: #555; }
+</style>
+</head>
+<body>
+
+<h1>Plantillas Story — Bravi Propiedades</h1>
+
+<div class="variants">
+
+  <!-- ── VARIANTE A ── -->
+  <div class="variant-wrap">
+    <span class="variant-label">A — Gradiente clásico</span>
+    <div class="story story-a">
+      <div class="story__bg">FOTO DE PROPIEDAD</div>
+      <div class="overlay"></div>
+
+      <div class="logo">
+        <div class="logo-icon"><span>BP</span></div>
+        <span class="logo-text">Bravi Propiedades</span>
+      </div>
+
+      <div class="badge">
+        <div class="badge-word">RESERVADO</div>
+        <div class="badge-line"></div>
+      </div>
+
+      <div class="footer">
+        <div class="footer-tipo">Casa • Venta</div>
+        <div class="footer-titulo">Los Álamos 1240</div>
+        <div class="footer-dir">General Rodríguez, Buenos Aires</div>
+        <div class="footer-agente">bravipropiedades.com.ar</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── VARIANTE B ── -->
+  <div class="variant-wrap">
+    <span class="variant-label">B — Panel diagonal</span>
+    <div class="story story-b">
+      <div class="story__bg">FOTO DE PROPIEDAD</div>
+      <div class="overlay-top"></div>
+      <div class="panel"></div>
+
+      <div class="logo">
+        <div class="logo-icon"><span>BP</span></div>
+        <span class="logo-text">Bravi Propiedades</span>
+      </div>
+
+      <div class="badge">
+        <div class="badge-word">RESER-<br>VADO</div>
+      </div>
+
+      <div class="footer">
+        <div class="footer-tipo">Casa • Venta</div>
+        <div class="footer-titulo">Los Álamos 1240</div>
+        <div class="footer-dir">General Rodríguez, Buenos Aires</div>
+        <div class="footer-divider"></div>
+        <div class="footer-agente">bravipropiedades.com.ar</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── VARIANTE C ── -->
+  <div class="variant-wrap">
+    <span class="variant-label">C — Sello / stamp</span>
+    <div class="story story-c">
+      <div class="story__bg">FOTO DE PROPIEDAD</div>
+      <div class="overlay"></div>
+
+      <div class="topbar">
+        <div class="logo">
+          <div class="logo-icon"><span>BP</span></div>
+          <span class="logo-text">Bravi Propiedades</span>
+        </div>
+      </div>
+
+      <div class="stamp-wrap">
+        <div class="stamp">
+          <div class="stamp-word">RESERVADO</div>
+        </div>
+      </div>
+
+      <div class="footer">
+        <div class="footer-tipo">Casa • Venta</div>
+        <div class="footer-titulo">Los Álamos 1240</div>
+        <div class="footer-dir">General Rodríguez, Buenos Aires</div>
+        <div class="footer-agente">bravipropiedades.com.ar</div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<p class="nota">
+  <strong>Gris = foto de la propiedad.</strong> El texto "BP" reemplazaría tu logo real.<br>
+  Decime cuál dirección preferís y lo refinamos — o combinamos elementos de distintas variantes.
+</p>
+
+</body>
+</html>

@@ -152,12 +152,20 @@
 
       <!-- Buscador -->
       <div class="hero__widget">
-        <div class="hero__search-tabs">
-          <button class="hero__search-tab hero__search-tab--active" data-op="venta">Venta</button>
-          <button class="hero__search-tab" data-op="alquiler">Alquiler</button>
-        </div>
         <div class="hero__search">
+          <input type="hidden" id="heroOpHidden" value="venta">
           <input type="hidden" id="heroTipoProp" value="">
+          <div class="hero__op" id="heroOpWrap">
+            <button class="hero__op-btn" id="heroOpBtn" type="button" aria-haspopup="listbox" aria-expanded="false">
+              <span id="heroOpLabel">Venta</span>
+              <svg class="hero__tipo-chevron" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+            </button>
+            <ul class="hero__op-menu" id="heroOpMenu" role="listbox">
+              <li role="option" data-value="venta" class="active">Venta</li>
+              <li role="option" data-value="alquiler">Alquiler</li>
+            </ul>
+          </div>
+          <div class="hero__search-divider"></div>
           <div class="hero__tipo" id="heroTipoWrap">
             <button class="hero__tipo-btn" id="heroTipoBtn" type="button" aria-haspopup="listbox" aria-expanded="false">
               <span id="heroTipoLabel">Propiedad</span>
@@ -524,7 +532,37 @@
   <script src="main.js"></script>
   <script src="tracking.js"></script>
   <script>
-  // Custom dropdown de tipo de propiedad en el hero
+  // Dropdown operación (Venta / Alquiler) en el hero
+  (function () {
+    var wrap   = document.getElementById('heroOpWrap');
+    var btn    = document.getElementById('heroOpBtn');
+    var label  = document.getElementById('heroOpLabel');
+    var menu   = document.getElementById('heroOpMenu');
+    var hidden = document.getElementById('heroOpHidden');
+    if (!wrap) return;
+    btn.addEventListener('click', function (e) {
+      e.stopPropagation();
+      var open = wrap.classList.toggle('open');
+      btn.setAttribute('aria-expanded', open);
+      // cerrar tipo si está abierto
+      var tw = document.getElementById('heroTipoWrap');
+      if (tw) { tw.classList.remove('open'); var tb = document.getElementById('heroTipoBtn'); if (tb) tb.setAttribute('aria-expanded', 'false'); }
+    });
+    menu.querySelectorAll('li').forEach(function (li) {
+      li.addEventListener('click', function () {
+        hidden.value = li.dataset.value;
+        label.textContent = li.textContent;
+        menu.querySelectorAll('li').forEach(function (l) { l.classList.remove('active'); });
+        li.classList.add('active');
+        wrap.classList.remove('open');
+        btn.setAttribute('aria-expanded', 'false');
+      });
+    });
+    document.addEventListener('click', function () { wrap.classList.remove('open'); btn.setAttribute('aria-expanded', 'false'); });
+    menu.addEventListener('click', function (e) { e.stopPropagation(); });
+  })();
+
+  // Dropdown tipo de propiedad en el hero
   (function () {
     var wrap   = document.getElementById('heroTipoWrap');
     var btn    = document.getElementById('heroTipoBtn');
@@ -536,6 +574,9 @@
       e.stopPropagation();
       var open = wrap.classList.toggle('open');
       btn.setAttribute('aria-expanded', open);
+      // cerrar op si está abierto
+      var ow = document.getElementById('heroOpWrap');
+      if (ow) { ow.classList.remove('open'); var ob = document.getElementById('heroOpBtn'); if (ob) ob.setAttribute('aria-expanded', 'false'); }
     });
     menu.querySelectorAll('li').forEach(function (li) {
       li.addEventListener('click', function () {
