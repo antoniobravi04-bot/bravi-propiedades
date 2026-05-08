@@ -423,8 +423,8 @@ a   { text-decoration: none; }
   .tipos__card--featured {
     grid-row: span 1;
     grid-column: span 2;
-    grid-auto-rows: unset;
-    min-height: 180px;
+    min-height: 0;
+    height: 150px;
   }
   .tipos__nombre { font-size: 1.1rem; }
   .tipos__info { padding: 16px 16px; }
