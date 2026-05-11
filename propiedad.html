@@ -186,6 +186,38 @@
     }
 
 
+    /* ─ Lightbox ─ */
+    .lb {
+      display: none; position: fixed; inset: 0; z-index: 9999;
+      background: rgba(0,0,0,.95); align-items: center; justify-content: center;
+      touch-action: none;
+    }
+    .lb.open { display: flex; }
+    .lb__img {
+      max-width: 100%; max-height: 100vh; object-fit: contain;
+      user-select: none; pointer-events: none;
+    }
+    .lb__close {
+      position: absolute; top: 16px; right: 16px;
+      background: rgba(255,255,255,.15); border: none; border-radius: 50%;
+      width: 40px; height: 40px; color: #fff; font-size: 1.4rem;
+      display: flex; align-items: center; justify-content: center;
+      cursor: pointer; z-index: 1;
+    }
+    .lb__nav {
+      position: absolute; top: 50%; transform: translateY(-50%);
+      background: rgba(255,255,255,.15); border: none; border-radius: 50%;
+      width: 44px; height: 44px; color: #fff; font-size: 1.5rem;
+      display: flex; align-items: center; justify-content: center;
+      cursor: pointer;
+    }
+    .lb__nav--prev { left: 12px; }
+    .lb__nav--next { right: 12px; }
+    .lb__counter {
+      position: absolute; bottom: 16px; left: 50%; transform: translateX(-50%);
+      color: rgba(255,255,255,.7); font-size: .8rem;
+    }
+
     /* ─ Highlights bar con íconos ─ */
     .dp-hl-bar {
       display: flex;
@@ -279,6 +311,15 @@
 
   <div id="propDetalle" class="container dp">
     <p class="props-loading">Cargando propiedad…</p>
+  </div>
+
+  <!-- LIGHTBOX -->
+  <div class="lb" id="dpLightbox">
+    <button class="lb__close" id="dpLbClose">&#x2715;</button>
+    <button class="lb__nav lb__nav--prev" id="dpLbPrev">&#8249;</button>
+    <img class="lb__img" id="dpLbImg" alt="Foto ampliada" />
+    <button class="lb__nav lb__nav--next" id="dpLbNext">&#8250;</button>
+    <span class="lb__counter" id="dpLbCounter"></span>
   </div>
 
   <!-- FOOTER -->
@@ -654,6 +695,46 @@
         document.getElementById('gPrev').addEventListener('click', () => goTo(cur-1));
         document.getElementById('gNext').addEventListener('click', () => goTo(cur+1));
         thumbs.forEach((t,i) => t.addEventListener('click', () => goTo(i)));
+
+        // ── Lightbox ────────────────────────────────────────────────────────
+        const lb       = document.getElementById('dpLightbox');
+        const lbImg    = document.getElementById('dpLbImg');
+        const lbCtr    = document.getElementById('dpLbCounter');
+
+        function lbGoTo(i) {
+          cur = (i + imgs.length) % imgs.length;
+          lbImg.src = netlifyImg(imgs[cur], 1920, 1080);
+          lbCtr.textContent = `${cur+1} / ${imgs.length}`;
+          preload(cur + 1); preload(cur - 1);
+        }
+
+        function lbOpen(i) { lbGoTo(i); lb.classList.add('open'); document.body.style.overflow = 'hidden'; }
+        function lbClose()  { lb.classList.remove('open'); document.body.style.overflow = ''; }
+
+        // Abrir al tocar/click la imagen hero
+        heroImg.style.cursor = 'zoom-in';
+        heroImg.addEventListener('click', () => lbOpen(cur));
+
+        document.getElementById('dpLbClose').addEventListener('click', lbClose);
+        document.getElementById('dpLbPrev').addEventListener('click', () => lbGoTo(cur - 1));
+        document.getElementById('dpLbNext').addEventListener('click', () => lbGoTo(cur + 1));
+        lb.addEventListener('click', e => { if (e.target === lb) lbClose(); });
+
+        // Swipe táctil
+        let tsX = 0;
+        lb.addEventListener('touchstart', e => { tsX = e.touches[0].clientX; }, { passive: true });
+        lb.addEventListener('touchend',   e => {
+          const dx = e.changedTouches[0].clientX - tsX;
+          if (Math.abs(dx) > 40) dx < 0 ? lbGoTo(cur + 1) : lbGoTo(cur - 1);
+        }, { passive: true });
+
+        // Cerrar con Escape / navegar con flechas del teclado
+        document.addEventListener('keydown', e => {
+          if (!lb.classList.contains('open')) return;
+          if (e.key === 'Escape')     lbClose();
+          if (e.key === 'ArrowLeft')  lbGoTo(cur - 1);
+          if (e.key === 'ArrowRight') lbGoTo(cur + 1);
+        });
       }
 
       // ── Compartir ────────────────────────────────────────────────────────
