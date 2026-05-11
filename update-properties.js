@@ -220,6 +220,15 @@ async function validarImagenes(props) {
   return cleaned;
 }
 
+// Aplica overrides manuales desde manual-overrides.json
+function applyOverrides(props) {
+  let overrides = {};
+  try {
+    overrides = JSON.parse(fs.readFileSync(path.join(__dirname, 'manual-overrides.json'), 'utf8'));
+  } catch (_) { return props; }
+  return props.map(p => overrides[p.id] ? { ...p, ...overrides[p.id] } : p);
+}
+
 (async () => {
   console.log('Actualizando properties.json...\n');
   try {
@@ -230,16 +239,21 @@ async function validarImagenes(props) {
     // Validar y limpiar imágenes rotas
     all = await validarImagenes(all);
 
+    // Aplicar overrides manuales
+    all       = applyOverrides(all);
+    const ventasFinal    = all.filter(p => p.tipo === 'Venta');
+    const alquileresFinal = all.filter(p => p.tipo === 'Alquiler');
+
     const outPath = path.join(__dirname, 'properties.json');
     fs.writeFileSync(outPath, JSON.stringify(all, null, 2));
 
     // Archivos divididos por tipo (optimización de carga)
     const ventasPath = path.join(__dirname, 'properties-venta.json');
     const alqPath    = path.join(__dirname, 'properties-alquiler.json');
-    fs.writeFileSync(ventasPath,  JSON.stringify(ventas,     null, 2));
-    fs.writeFileSync(alqPath,     JSON.stringify(alquileres, null, 2));
+    fs.writeFileSync(ventasPath,  JSON.stringify(ventasFinal,      null, 2));
+    fs.writeFileSync(alqPath,     JSON.stringify(alquileresFinal,  null, 2));
 
-    console.log(`\n✅ Listo! ${ventas.length} ventas + ${alquileres.length} alquileres = ${all.length} propiedades`);
+    console.log(`\n✅ Listo! ${ventasFinal.length} ventas + ${alquileresFinal.length} alquileres = ${all.length} propiedades`);
     console.log(`   Guardado en: ${outPath} + properties-venta.json + properties-alquiler.json`);
     console.log('\n   Ahora hacé deploy para publicar los cambios.');
   } catch (err) {
