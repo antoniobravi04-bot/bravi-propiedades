@@ -12,6 +12,12 @@
     X-Content-Type-Options = "nosniff"
 
 [[redirects]]
+  from = "https://www.bravipropiedades.com.ar/*"
+  to   = "https://bravipropiedades.com.ar/:splat"
+  status = 301
+  force  = true
+
+[[redirects]]
   from = "/api/*"
   to = "/.netlify/functions/:splat"
   status = 200
@@ -45,11 +51,8 @@
   to = "/buscar/"
   status = 301
 
-# Propiedades individuales
-[[redirects]]
-  from = "/propiedad/*"
-  to = "/ventas.html"
-  status = 301
+# Propiedades individuales — solo redirige URLs viejas de MapaProp (con año o número largo al final)
+# Las URLs nuevas tipo /propiedad/venta-casa-general-rodriguez-HASH son archivos .html y se sirven directo
 
 [[redirects]]
   from = "/propiedades/alquiler"
