@@ -601,7 +601,7 @@
         </div>
 
         <!-- Action bar: precio | highlights | botones -->
-        <div class="dp-action-bar">
+        <div class="dp-action-bar"${!sideHls.length ? ' style="grid-template-columns:1fr 1fr"' : ''}>
           <div class="dp-action-bar__info">
             <div class="dp-action-bar__price">${p.precio || 'Consultar'}</div>
             <div class="dp-action-bar__loc">
