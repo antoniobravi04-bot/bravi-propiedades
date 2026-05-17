@@ -37,5 +37,5 @@ jobs:
           git config user.name "GitHub Actions"
           git config user.email "actions@github.com"
           git add properties.json properties-alquiler.json properties-venta.json sitemap.xml propiedad/
-          git diff --staged --quiet || (git commit -m "chore: actualizar propiedades [skip ci]" && git push)
+          git diff --staged --quiet || (git commit -m "chore: actualizar propiedades" && git push)
           # Netlify detecta el push automáticamente y despliega — no se necesita CLI
