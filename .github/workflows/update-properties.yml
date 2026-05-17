@@ -38,11 +38,4 @@ jobs:
           git config user.email "actions@github.com"
           git add properties.json properties-alquiler.json properties-venta.json sitemap.xml propiedad/
           git diff --staged --quiet || (git commit -m "chore: actualizar propiedades [skip ci]" && git push)
-
-      - name: Deploy a Netlify
-        env:
-          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
-          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
-        run: |
-          npm install -g netlify-cli --silent
-          netlify deploy --prod --dir . --auth $NETLIFY_AUTH_TOKEN --site $NETLIFY_SITE_ID
+          # Netlify detecta el push automáticamente y despliega — no se necesita CLI
