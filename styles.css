@@ -647,7 +647,7 @@ a   { text-decoration: none; }
   letter-spacing: -0.01em;
   color: var(--navy);
 }
-.propiedades__cta { text-align: center; margin-top: 52px; }
+.propiedades__cta { display: flex; justify-content: center; align-items: center; flex-wrap: wrap; gap: 12px; margin-top: 52px; }
 .propiedades__note {
   font-size: .8rem;
   color: var(--text-muted);
