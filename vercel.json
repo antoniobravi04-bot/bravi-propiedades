@@ -1,10 +1,4 @@
 {
-  "images": {
-    "sizes": [320, 480, 640, 800, 1200, 1600],
-    "domains": ["images.mapaprop.app", "images.unsplash.com"],
-    "minimumCacheTTL": 3600,
-    "formats": ["image/webp"]
-  },
   "headers": [
     {
       "source": "/(.*)",
