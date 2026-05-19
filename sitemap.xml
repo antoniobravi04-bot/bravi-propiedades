@@ -55,7 +55,7 @@
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
     <image:image>
-      <image:loc>https://images.mapaprop.app/photos/969/2614095/3210320t.jpg</image:loc>
+      <image:loc>https://images.mapaprop.app/photos/969/2614095/3210334t.jpg</image:loc>
       <image:title>Casa en venta en Barrio Granaderos, General Rodriguez</image:title>
     </image:image>
   </url>
@@ -800,6 +800,16 @@
     </image:image>
   </url>
   <url>
+    <loc>https://bravipropiedades.com.ar/propiedad.html?id=94627b8e502cc1130540759ff5fd0299</loc>
+    <lastmod>2026-05-19</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://images.mapaprop.app/photos/969/2612711/3184569t.jpg</image:loc>
+      <image:title>Departamento en Club de campo El Nacional</image:title>
+    </image:image>
+  </url>
+  <url>
     <loc>https://bravipropiedades.com.ar/propiedad.html?id=0493211b6c085ef4cc7d8632d6519129</loc>
     <lastmod>2026-05-19</lastmod>
     <changefreq>weekly</changefreq>
@@ -857,16 +867,6 @@
     <image:image>
       <image:loc>https://images.mapaprop.app/photos/969/2614028/3209020t.jpg</image:loc>
       <image:title>Departamento en Maestro Argentino 2167, General Rodriguez</image:title>
-    </image:image>
-  </url>
-  <url>
-    <loc>https://bravipropiedades.com.ar/propiedad.html?id=94627b8e502cc1130540759ff5fd0299</loc>
-    <lastmod>2026-05-19</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-    <image:image>
-      <image:loc>https://images.mapaprop.app/photos/969/2612711/3184569t.jpg</image:loc>
-      <image:title>Departamento en Club de campo El Nacional</image:title>
     </image:image>
   </url>
   <url>
