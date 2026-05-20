@@ -1,11 +1,11 @@
 {
   "name": "Bravi Propiedades",
   "short_name": "Bravi",
-  "description": "Inmobiliaria familiar en General Rodríguez — ventas y alquileres",
+  "description": "Inmobiliaria en General Rodríguez — ventas y alquileres",
   "start_url": "/",
   "display": "browser",
-  "theme_color": "#123E8A",
-  "background_color": "#123E8A",
+  "theme_color": "#1B3A6B",
+  "background_color": "#1B3A6B",
   "icons": [
     {
       "src": "/favicon.png",
