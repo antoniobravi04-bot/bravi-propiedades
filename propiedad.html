@@ -11,7 +11,7 @@
   <meta property="og:title" content="Propiedad | Bravi Propiedades" />
   <meta property="og:description" content="Bravi Propiedades — inmobiliaria en General Rodríguez." />
   <meta property="og:image" content="https://bravipropiedades.com.ar/hero-bg-1.jpg" />
-  <meta property="og:url" content="https://bravipropiedades.com.ar/propiedad.html" />
+  <meta property="og:url" content="https://bravipropiedades.com.ar/propiedad" />
   <link rel="canonical" href="" />
   <link rel="shortcut icon" href="favicon.ico" />
   <link rel="icon" href="favicon.png" type="image/png" sizes="32x32" />
@@ -430,7 +430,7 @@
 
       // Meta tags dinámicos para SEO y redes sociales
       const metaDesc   = [p.tipo, p.tipoProp, p.precio, locFull].filter(Boolean).join(' — ');
-      const pageUrl    = 'https://bravipropiedades.com.ar/propiedad.html?id=' + p.id;
+      const pageUrl    = 'https://bravipropiedades.com.ar/propiedad?id=' + p.id;
       const shareUrl   = 'https://bravipropiedades.com.ar/propiedad/' + (p.slug || p.id);
       const waMsg      = encodeURIComponent('Hola! Quiero consultar por esta propiedad:\n' + titulo + '\n' + shareUrl);
       const ogImage    = p.imagen || imgs[0] || '';
