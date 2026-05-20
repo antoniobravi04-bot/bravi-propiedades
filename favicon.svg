@@ -1,12 +1,32 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
-  <rect width="64" height="64" rx="12" fill="#123E8A"/>
+  <rect width="64" height="64" rx="10" fill="#1B3A6B"/>
+  <!-- Silueta de edificios simplificada -->
+  <g fill="none" stroke="#ffffff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+    <!-- árbol izquierdo -->
+    <circle cx="10" cy="20" r="5"/>
+    <line x1="10" y1="25" x2="10" y2="30"/>
+    <!-- casa central -->
+    <polyline points="14,30 14,20 22,14 30,20 30,30"/>
+    <rect x="18" y="23" width="8" height="7"/>
+    <!-- edificio derecho -->
+    <rect x="32" y="18" width="10" height="12"/>
+    <line x1="35" y1="18" x2="35" y2="30"/>
+    <line x1="38" y1="18" x2="38" y2="30"/>
+    <line x1="32" y1="22" x2="42" y2="22"/>
+    <line x1="32" y1="26" x2="42" y2="26"/>
+    <!-- torre derecha -->
+    <rect x="44" y="14" width="8" height="16"/>
+    <line x1="48" y1="14" x2="48" y2="30"/>
+    <line x1="44" y1="19" x2="52" y2="19"/>
+    <line x1="44" y1="24" x2="52" y2="24"/>
+  </g>
+  <!-- Texto "bravi" -->
   <text
-    x="32" y="44"
-    font-family="Georgia, 'Times New Roman', serif"
-    font-size="28"
-    font-weight="700"
-    font-style="italic"
+    x="32" y="46"
+    font-family="Arial, Helvetica, sans-serif"
+    font-size="13"
+    font-weight="900"
     fill="#ffffff"
     text-anchor="middle"
-    letter-spacing="-0.5">bravi</text>
+    letter-spacing="0.5">bravi</text>
 </svg>
