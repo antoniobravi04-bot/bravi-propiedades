@@ -14,12 +14,12 @@ const props = JSON.parse(fs.readFileSync(path.join(__dirname, 'properties.json')
 
 const staticPages = [
   { url: '/',               priority: '1.0', changefreq: 'weekly'  },
-  { url: '/ventas.html',    priority: '0.9', changefreq: 'daily'   },
-  { url: '/alquileres.html',priority: '0.9', changefreq: 'daily'   },
+  { url: '/ventas',    priority: '0.9', changefreq: 'daily'   },
+  { url: '/alquileres',priority: '0.9', changefreq: 'daily'   },
 ];
 
 const propPages = props.map(p => ({
-  url:        `/propiedad.html?id=${p.id}`,
+  url:        `/propiedad?id=${p.id}`,
   priority:   '0.7',
   changefreq: 'weekly',
   imagen:     p.imagen || '',
