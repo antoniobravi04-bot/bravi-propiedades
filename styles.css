@@ -20,7 +20,7 @@
 }
 
 /* overflow-x NO va en html: Safari convierte position:fixed en absolute cuando html tiene overflow hidden */
-html { scroll-behavior: smooth; scroll-padding-top: 102px; }
+html { scroll-behavior: smooth; scroll-padding-top: clamp(80px, 10vh, 140px); }
 
 body {
   font-family: 'Inter', sans-serif;
