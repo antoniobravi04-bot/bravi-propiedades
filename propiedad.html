@@ -582,7 +582,6 @@
         </a>
 
         <div class="dp-header">
-          <div style="margin-bottom:10px">${badge}</div>
           <h1 class="dp-header__title">${titulo}</h1>
           <p class="dp-header__loc">
             <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
@@ -592,9 +591,10 @@
 
         <!-- Galería full width -->
         <div class="dp-gallery">
-          <div class="dp-gallery__hero">
+          <div class="dp-gallery__hero" style="position:relative">
             <img id="dpHeroImg" src="${netlifyImg(imgs[0], 1200, 675)}" alt="${titulo}" />
             ${navBtns}
+            <span style="position:absolute;top:14px;left:14px">${badge}</span>
           </div>
           ${thumbsHTML}
         </div>
