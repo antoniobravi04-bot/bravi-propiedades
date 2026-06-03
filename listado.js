@@ -97,7 +97,7 @@ function renderCards(props) {
           ${dormText}${supText}
         </div>
         <div class="prop-card__footer">
-          <span class="prop-card__price">${(!p.precio || (p.precioNum && p.precioNum < 1000 && p.moneda !== 'USD')) ? 'Consultar valor' : p.precio || 'Consultar valor'}</span>
+          <span class="prop-card__price">${(!p.precio || p.precio === 'Consultar' || (p.precioNum && p.precioNum < 1000 && p.moneda !== 'USD')) ? 'Consultar valor' : p.precio}</span>
           <a href="https://wa.me/5491162784642?text=${encodeURIComponent('Hola! Me interesa: ' + titulo + ' — https://bravipropiedades.com.ar/propiedad/' + (p.slug || p.id))}" target="_blank" rel="noopener" class="btn btn--sm btn--wapp" aria-label="WhatsApp" data-prop-id="${p.id}" data-prop-tipo="${p.tipo || ''}" data-prop-precio="${p.precio || ''}">
             ${waSVG}
           </a>
