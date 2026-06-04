@@ -20,6 +20,16 @@
     <priority>0.9</priority>
   </url>
   <url>
+    <loc>https://bravipropiedades.com.ar/propiedad?id=1d9936a7ace5d7453dfbf34c7631fd1f</loc>
+    <lastmod>2026-06-04</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://images.mapaprop.app/photos/969/2615082/3227850t.jpg</image:loc>
+      <image:title>Casa en Av. Eva Peron 466, General Rodríguez</image:title>
+    </image:image>
+  </url>
+  <url>
     <loc>https://bravipropiedades.com.ar/propiedad?id=39f562012cbb3abcc44fe7e9ac2a101c</loc>
     <lastmod>2026-06-04</lastmod>
     <changefreq>weekly</changefreq>
@@ -800,6 +810,26 @@
     </image:image>
   </url>
   <url>
+    <loc>https://bravipropiedades.com.ar/propiedad?id=e6fd518fda624961edf0ef4131dc3549</loc>
+    <lastmod>2026-06-04</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://images.mapaprop.app/photos/969/2612705/3184363t.jpg</image:loc>
+      <image:title>Casa de 4 ambientes en CC Las Lajas</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://bravipropiedades.com.ar/propiedad?id=a6c61594d299a6bc6a3a946f0491366c</loc>
+    <lastmod>2026-06-04</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://images.mapaprop.app/photos/969/2615093/3228018t.jpg</image:loc>
+      <image:title>Casa de 4 Ambientes en esquina Mitre y Bernardo Irigoyen, General Rodríguez</image:title>
+    </image:image>
+  </url>
+  <url>
     <loc>https://bravipropiedades.com.ar/propiedad?id=a59ee7692e680b881b0aa8a1caa8d39a</loc>
     <lastmod>2026-06-04</lastmod>
     <changefreq>weekly</changefreq>
@@ -937,16 +967,6 @@
     <image:image>
       <image:loc>https://images.mapaprop.app/photos/969/2613525/3200260t.jpg</image:loc>
       <image:title>Monoambiente en 2 de Abril N° 1141</image:title>
-    </image:image>
-  </url>
-  <url>
-    <loc>https://bravipropiedades.com.ar/propiedad?id=e6fd518fda624961edf0ef4131dc3549</loc>
-    <lastmod>2026-06-04</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-    <image:image>
-      <image:loc>https://images.mapaprop.app/photos/969/2612705/3184363t.jpg</image:loc>
-      <image:title>Casa de 4 ambientes en CC Las Lajas</image:title>
     </image:image>
   </url>
   <url>

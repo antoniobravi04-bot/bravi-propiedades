@@ -3252,7 +3252,7 @@
     "moneda": "ARS",
     "precio": "$ 1.000.000",
     "precioNum": 1000000,
-    "dormitorios": 3,
+    "dormitorios": 2,
     "banos": 1,
     "superficie": null,
     "tipoProp": "casa",
