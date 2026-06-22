@@ -5,6 +5,7 @@ const FALLBACK_IMG = 'https://images.unsplash.com/photo-1568605114967-8130f3a369
 // Retorna la URL directa de la imagen (sin transformación)
 function netlifyImg(url, w, h) {
   if (!url || url.startsWith('data:')) return url;
+  if (url.startsWith('https://images.mapaprop.app/')) return '/api/image?url=' + encodeURIComponent(url);
   return url;
 }
 

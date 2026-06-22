@@ -1,6 +1,12 @@
 // ── Cargar propiedades desde properties.json ────────────────────────────────
 const pinSVG = `<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>`;
 
+function netlifyImg(url) {
+  if (!url || url.startsWith('data:')) return url;
+  if (url.startsWith('https://images.mapaprop.app/')) return '/api/image?url=' + encodeURIComponent(url);
+  return url;
+}
+
 function renderPropiedades(props) {
   const grid = document.getElementById('propiedadesGrid');
   if (!grid) return;
@@ -21,7 +27,7 @@ function renderPropiedades(props) {
       const tp = p.tipoProp ? p.tipoProp.charAt(0).toUpperCase() + p.tipoProp.slice(1) : '';
       titulo = [p.tipo, tp, p.ciudad || 'General Rodríguez'].filter(Boolean).join(' ') || 'Propiedad en General Rodríguez';
     }
-    const img      = p.imagen || 'https://images.unsplash.com/photo-1568605114967-8130f3a36994?w=600&q=80';
+    const img      = netlifyImg(p.imagen) || 'https://images.unsplash.com/photo-1568605114967-8130f3a36994?w=600&q=80';
     const propIdx  = allProps.indexOf(p);
 
     const tipoPropInferido = inferirTipoProp(p);
@@ -65,7 +71,7 @@ function renderPropiedades(props) {
 function abrirModal(p) {
   if (!p) return;
   const titulo = p.titulo || 'Propiedad en General Rodríguez';
-  const img    = p.imagen || 'https://images.unsplash.com/photo-1568605114967-8130f3a36994?w=800&q=80';
+  const img    = netlifyImg(p.imagen) || 'https://images.unsplash.com/photo-1568605114967-8130f3a36994?w=800&q=80';
 
   document.getElementById('propModalImg').src = img;
   document.getElementById('propModalImg').alt = titulo;
