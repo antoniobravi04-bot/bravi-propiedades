@@ -6,7 +6,12 @@ module.exports = async function handler(req, res) {
   }
 
   try {
-    const upstream = await fetch(url, { headers: { Referer: 'https://mapaprop.app/' } });
+    const upstream = await fetch(url, {
+      headers: {
+        Referer: 'https://mapaprop.app/',
+        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0 Safari/537.36'
+      }
+    });
     if (!upstream.ok) {
       return res.status(upstream.status).send('Error al obtener imagen');
     }
