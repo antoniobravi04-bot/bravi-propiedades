@@ -43,7 +43,14 @@ function get(url) {
 // Verifica si una URL de imagen responde 200. Timeout de 5s.
 function checkUrl(url) {
   return new Promise(resolve => {
-    const req = https.request(url, { method: 'HEAD', timeout: 5000 }, res => {
+    const req = https.request(url, {
+      method: 'HEAD',
+      timeout: 5000,
+      headers: {
+        Referer: 'https://mapaprop.app/',
+        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0 Safari/537.36'
+      }
+    }, res => {
       resolve(res.statusCode === 200);
     });
     req.on('error', () => resolve(false));
@@ -202,6 +209,13 @@ async function validarImagenes(props) {
     const results = await Promise.all(batch.map(u => checkUrl(u)));
     batch.forEach((u, j) => { if (results[j]) valid.add(u); });
     process.stdout.write(`  Chequeando... ${Math.min(i + 10, urlList.length)}/${urlList.length}\r`);
+  }
+
+  // Salvaguarda: si casi todas las URLs fallan, probablemente el servidor de
+  // imágenes esté bloqueando/caído — no borrar imágenes de golpe en ese caso.
+  if (urlList.length > 5 && valid.size / urlList.length < 0.5) {
+    console.log(`\n  ⚠️  ${valid.size}/${urlList.length} URLs válidas — demasiadas fallas, se omite la limpieza de imágenes.`);
+    return props;
   }
 
   let rotas = 0;
