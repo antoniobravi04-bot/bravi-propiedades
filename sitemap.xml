@@ -810,6 +810,26 @@
     </image:image>
   </url>
   <url>
+    <loc>https://bravipropiedades.com.ar/propiedad?id=e6fd518fda624961edf0ef4131dc3549</loc>
+    <lastmod>2026-06-23</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://images.mapaprop.app/photos/noimage.gif</image:loc>
+      <image:title>Casa de 4 ambientes en CC Las Lajas</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://bravipropiedades.com.ar/propiedad?id=34d132422602ba7ac80da843e4f7cce4</loc>
+    <lastmod>2026-06-23</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://images.mapaprop.app/photos/969/2615557/3235540t.jpg</image:loc>
+      <image:title>Casa 4 ambientes en Guido Spano 1518, General Rodríguez</image:title>
+    </image:image>
+  </url>
+  <url>
     <loc>https://bravipropiedades.com.ar/propiedad?id=f6d30b19f2c684a093c6e5ca1d99b818</loc>
     <lastmod>2026-06-23</lastmod>
     <changefreq>weekly</changefreq>
@@ -827,16 +847,6 @@
     <image:image>
       <image:loc>https://images.mapaprop.app/photos/969/2615107/3228282t.jpg</image:loc>
       <image:title>Dúplex 3 ambientes en Alvear 2168, General Rodríguez</image:title>
-    </image:image>
-  </url>
-  <url>
-    <loc>https://bravipropiedades.com.ar/propiedad?id=e6fd518fda624961edf0ef4131dc3549</loc>
-    <lastmod>2026-06-23</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-    <image:image>
-      <image:loc>https://images.mapaprop.app/photos/969/2612705/3184363t.jpg</image:loc>
-      <image:title>Casa de 4 ambientes en CC Las Lajas</image:title>
     </image:image>
   </url>
   <url>
