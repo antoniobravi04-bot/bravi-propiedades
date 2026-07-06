@@ -20,6 +20,16 @@
     <priority>0.9</priority>
   </url>
   <url>
+    <loc>https://bravipropiedades.com.ar/propiedad?id=bb3acac2a574655678a9a40e97578a66</loc>
+    <lastmod>2026-07-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://images.mapaprop.app/photos/969/2615950/3242235t.jpg</image:loc>
+      <image:title>Casa Céntrica en Sarmiento 873, General Rodríguez</image:title>
+    </image:image>
+  </url>
+  <url>
     <loc>https://bravipropiedades.com.ar/propiedad?id=1d9936a7ace5d7453dfbf34c7631fd1f</loc>
     <lastmod>2026-07-06</lastmod>
     <changefreq>weekly</changefreq>
@@ -810,6 +820,26 @@
     </image:image>
   </url>
   <url>
+    <loc>https://bravipropiedades.com.ar/propiedad?id=01f85c3e2c5ce773d3c0c9a083388301</loc>
+    <lastmod>2026-07-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://images.mapaprop.app/photos/969/2615953/3242319t.jpg</image:loc>
+      <image:title>Quinta en calle San Andres, a 2 cuadras de colectora Acc. Oeste, General Rodríguez</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://bravipropiedades.com.ar/propiedad?id=56d713dfd3ffdb9b541cd0aa59f73ebe</loc>
+    <lastmod>2026-07-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://images.mapaprop.app/photos/969/2613910/3206752t.jpg</image:loc>
+      <image:title>Galpón Comercial en esquina Asturias y los Aromos</image:title>
+    </image:image>
+  </url>
+  <url>
     <loc>https://bravipropiedades.com.ar/propiedad?id=ad51c716d8c60deab4ce1d3d9176a385</loc>
     <lastmod>2026-07-06</lastmod>
     <changefreq>weekly</changefreq>
@@ -977,16 +1007,6 @@
     <image:image>
       <image:loc>https://images.mapaprop.app/photos/969/2612799/3186012t.jpg</image:loc>
       <image:title>Local comercial en Av. Bernardo de Irigoyen N° 1400</image:title>
-    </image:image>
-  </url>
-  <url>
-    <loc>https://bravipropiedades.com.ar/propiedad?id=56d713dfd3ffdb9b541cd0aa59f73ebe</loc>
-    <lastmod>2026-07-06</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-    <image:image>
-      <image:loc>https://images.mapaprop.app/photos/969/2613910/3206752t.jpg</image:loc>
-      <image:title>Galpón Comercial en esquina Asturias y los Aromos</image:title>
     </image:image>
   </url>
   <url>
