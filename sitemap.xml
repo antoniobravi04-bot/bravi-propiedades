@@ -20,6 +20,16 @@
     <priority>0.9</priority>
   </url>
   <url>
+    <loc>https://bravipropiedades.com.ar/propiedad?id=a3cc7349007a2a60b56e9f8b7d3def9c</loc>
+    <lastmod>2026-07-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://images.mapaprop.app/photos/969/2598163/2946749t.jpg</image:loc>
+      <image:title>Venta Departamento De Un Dormitorio Con Patio</image:title>
+    </image:image>
+  </url>
+  <url>
     <loc>https://bravipropiedades.com.ar/propiedad?id=27c32be94df21aa477bc9ff419f19214</loc>
     <lastmod>2026-07-18</lastmod>
     <changefreq>weekly</changefreq>
@@ -437,16 +447,6 @@
     <image:image>
       <image:loc>https://images.mapaprop.app/photos/969/2601765/3037330t.jpg</image:loc>
       <image:title>Importante propiedad en Av España  Gral. Rodríguez</image:title>
-    </image:image>
-  </url>
-  <url>
-    <loc>https://bravipropiedades.com.ar/propiedad?id=a3cc7349007a2a60b56e9f8b7d3def9c</loc>
-    <lastmod>2026-07-18</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-    <image:image>
-      <image:loc>https://images.mapaprop.app/photos/969/2598163/2946749t.jpg</image:loc>
-      <image:title>Venta Departamento Con Patio  Gral RodrÍGuez</image:title>
     </image:image>
   </url>
   <url>
