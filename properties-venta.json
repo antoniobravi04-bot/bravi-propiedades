@@ -1307,7 +1307,8 @@
       "https://images.mapaprop.app/photos/969/224090/2398568.jpg",
       "https://images.mapaprop.app/photos/969/224090/2398569.jpg",
       "https://images.mapaprop.app/photos/969/224090/2398570.jpg",
-      "https://images.mapaprop.app/photos/969/224090/2398571.jpg"
+      "https://images.mapaprop.app/photos/969/224090/2398571.jpg",
+      "https://images.mapaprop.app/photos/969/224090/2398572.jpg"
     ],
     "link": "https://mapaprop.app/propiedades/venta-de-casa-en-general-rodriguez-general-rodriguez-buenos-aires-969-224090",
     "codigo": "969-BR-VTA-0013",
@@ -1335,8 +1336,12 @@
   {
     "id": "60378d3cd4246ede0821c233f15b53f1",
     "titulo": "Casa en Sta. Maria N° 2750",
-    "imagen": "https://images.mapaprop.app/photos/969/2608680/3111070t.jpg",
+    "imagen": "https://images.mapaprop.app/photos/969/2608680/3111065t.jpg",
     "imagenes": [
+      "https://images.mapaprop.app/photos/969/2608680/3111065.jpg",
+      "https://images.mapaprop.app/photos/969/2608680/3111060.jpg",
+      "https://images.mapaprop.app/photos/969/2608680/3111072.jpg",
+      "https://images.mapaprop.app/photos/969/2608680/3111071.jpg",
       "https://images.mapaprop.app/photos/969/2608680/3111070.jpg",
       "https://images.mapaprop.app/photos/969/2608680/3111069.jpg",
       "https://images.mapaprop.app/photos/969/2608680/3111068.jpg",
@@ -2725,8 +2730,15 @@
   {
     "id": "bbc2ba11e6e81da746f44d2ce2fb8a35",
     "titulo": "Venta Duplex  A estrenar Gral Rodríguez",
-    "imagen": "",
-    "imagenes": [],
+    "imagen": "https://images.mapaprop.app/photos/969/2597720/2931756t.jpg",
+    "imagenes": [
+      "https://images.mapaprop.app/photos/969/2597720/2931756.jpg",
+      "https://images.mapaprop.app/photos/969/2597720/2931757.jpg",
+      "https://images.mapaprop.app/photos/969/2597720/2931758.jpg",
+      "https://images.mapaprop.app/photos/969/2597720/2931759.jpg",
+      "https://images.mapaprop.app/photos/969/2597720/2931760.jpg",
+      "https://images.mapaprop.app/photos/969/2597720/2931761.jpg"
+    ],
     "link": "https://mapaprop.app/propiedades/venta-de-duplex-en-general-rodriguez-general-rodriguez-buenos-aires-969-2597720",
     "codigo": "969-BR-VTA-CASA-0043",
     "tipo": "Venta",
