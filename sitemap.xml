@@ -630,16 +630,6 @@
     </image:image>
   </url>
   <url>
-    <loc>https://bravipropiedades.com.ar/propiedad?id=165cea24443ab2c423abeb2aaae000d0</loc>
-    <lastmod>2026-07-23</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-    <image:image>
-      <image:loc>https://images.mapaprop.app/photos/969/2607887/3095964t.jpg</image:loc>
-      <image:title>Venta Casa + Local en esquina, Luján</image:title>
-    </image:image>
-  </url>
-  <url>
     <loc>https://bravipropiedades.com.ar/propiedad?id=d56789b2e37e486e8494fd262de3427b</loc>
     <lastmod>2026-07-23</lastmod>
     <changefreq>weekly</changefreq>
@@ -827,6 +817,16 @@
     <image:image>
       <image:loc>https://images.mapaprop.app/photos/969/149229/1392275t.jpg</image:loc>
       <image:title>Casa En Barrio Cerrado La Soberana Gral. Rodriguez</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://bravipropiedades.com.ar/propiedad?id=4b2e9f39bcd6ea5ef943438dd21617bb</loc>
+    <lastmod>2026-07-23</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://images.mapaprop.app/photos/969/2616358/3249554t.jpg</image:loc>
+      <image:title>Oficina en Sarmiento 885, General Rodríguez</image:title>
     </image:image>
   </url>
   <url>
