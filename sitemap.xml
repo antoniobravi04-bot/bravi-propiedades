@@ -20,6 +20,16 @@
     <priority>0.9</priority>
   </url>
   <url>
+    <loc>https://bravipropiedades.com.ar/propiedad?id=6f47292799b85f5f693e5d8612a13d71</loc>
+    <lastmod>2026-07-24</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://images.mapaprop.app/photos/969/2616384/3250197t.jpg</image:loc>
+      <image:title>Terreno a metros de Autopista Acceso Oeste Km 50 bajada calle Leloir, General Rodríguez</image:title>
+    </image:image>
+  </url>
+  <url>
     <loc>https://bravipropiedades.com.ar/propiedad?id=a3cc7349007a2a60b56e9f8b7d3def9c</loc>
     <lastmod>2026-07-24</lastmod>
     <changefreq>weekly</changefreq>
@@ -267,16 +277,6 @@
     <image:image>
       <image:loc>https://images.mapaprop.app/photos/969/107332/1912632t.jpg</image:loc>
       <image:title>1 Hectarea sobre Acceso oeste km 51 Tres fracciones  Fracc 895/896b y 900</image:title>
-    </image:image>
-  </url>
-  <url>
-    <loc>https://bravipropiedades.com.ar/propiedad?id=a9ce94e27bb6ea233c582b78ba12fa5c</loc>
-    <lastmod>2026-07-24</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-    <image:image>
-      <image:loc>https://images.mapaprop.app/photos/969/2612712/3184599t.jpg</image:loc>
-      <image:title>Tres Extensos terrenos en Asturias N° 504 | General Rodriguez</image:title>
     </image:image>
   </url>
   <url>
