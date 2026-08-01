@@ -20,6 +20,16 @@
     <priority>0.9</priority>
   </url>
   <url>
+    <loc>https://bravipropiedades.com.ar/propiedad?id=d8574b3bcbcae681a3bd173dcd331124</loc>
+    <lastmod>2026-08-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://images.mapaprop.app/photos/969/256411/2868836t.jpg</image:loc>
+      <image:title>Venta Casa Céntrica  Gral Rodríguez</image:title>
+    </image:image>
+  </url>
+  <url>
     <loc>https://bravipropiedades.com.ar/propiedad?id=a3cc7349007a2a60b56e9f8b7d3def9c</loc>
     <lastmod>2026-08-01</lastmod>
     <changefreq>weekly</changefreq>
@@ -497,16 +507,6 @@
     <image:image>
       <image:loc>https://images.mapaprop.app/photos/969/2608978/3115576t.jpg</image:loc>
       <image:title>Casa en Balcarce N° 476</image:title>
-    </image:image>
-  </url>
-  <url>
-    <loc>https://bravipropiedades.com.ar/propiedad?id=d8574b3bcbcae681a3bd173dcd331124</loc>
-    <lastmod>2026-08-01</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-    <image:image>
-      <image:loc>https://images.mapaprop.app/photos/969/256411/2868836t.jpg</image:loc>
-      <image:title>Venta Casa Céntrica  Gral Rodríguez</image:title>
     </image:image>
   </url>
   <url>
