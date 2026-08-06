@@ -1,5 +1,38 @@
 [
   {
+    "id": "15545337d04c6b609e6446b8247355df",
+    "titulo": "Terreno en esquina Ruta 24, General Rodríguez",
+    "imagen": "https://images.mapaprop.app/photos/969/2616725/3256488t.jpg",
+    "imagenes": [
+      "https://images.mapaprop.app/photos/969/2616725/3256488.jpg",
+      "https://images.mapaprop.app/photos/969/2616725/3256487.jpg",
+      "https://images.mapaprop.app/photos/969/2616725/3256480.jpg",
+      "https://images.mapaprop.app/photos/969/2616725/3256481.jpg"
+    ],
+    "link": "https://mapaprop.app/propiedades/venta-de-terreno-en-general-rodriguez-general-rodriguez-buenos-aires-969-2616725",
+    "codigo": "969-BR-ALQ-6777",
+    "tipo": "Venta",
+    "moneda": "USD",
+    "precio": "U$S 50.000",
+    "precioNum": 50000,
+    "dormitorios": null,
+    "banos": null,
+    "superficie": "500 m²",
+    "tipoProp": "terreno",
+    "descripcion": "Lote en venta ubicado sobre Ruta Provincial N° 24, Km 18, en una zona de gran crecimiento y alto tránsito, con excelente conectividad y rápido acceso al Acceso Oeste.\n\nSu ubicación estratégica lo posiciona en uno de los corredores comerciales e industriales más importantes de la región, con cercanía a desarrollos de primer nivel como Terravista, al complejo industrial de AGCO Argentina y a numerosos emprendimientos comerciales, logísticos y residenciales.\n\nGracias a su excelente visibilidad, accesibilidad y entorno en constante expansión, representa una oportunidad ideal para el desarrollo de proyectos comerciales, industriales, logísticos o de inversión.\n\nUna excelente opción para quienes buscan un lote con gran potencial de crecimiento en un punto estratégico de General Rodríguez.",
+    "direccion": "Ruta 24",
+    "ciudad": "General Rodriguez",
+    "ambientes": null,
+    "supCubierta": null,
+    "supTerreno": "500 m²",
+    "zona": "General Rodriguez, General Rodriguez, Buenos Aires, Argentina",
+    "cochera": 0,
+    "amenities": [],
+    "lat": -34.59106259484641,
+    "lon": -58.8916687299805,
+    "slug": "venta-terreno-general-rodriguez-15545337d04c6b609e6446b8247355df"
+  },
+  {
     "id": "47803c8db017110a09d8c244b99fa7e9",
     "titulo": "Departamento en Edificio Exclusivo en Hipólito Irigoyen, Cercania a Acc. Oeste, General Rodríguez",
     "imagen": "https://images.mapaprop.app/photos/969/161417/3255291t.jpg",
@@ -628,7 +661,7 @@
   },
   {
     "id": "bb3acac2a574655678a9a40e97578a66",
-    "titulo": "Casa C��ntrica en Sarmiento 873, General Rodríguez",
+    "titulo": "Casa Céntrica en Sarmiento 873, General Rodríguez",
     "imagen": "https://images.mapaprop.app/photos/969/2615950/3242235t.jpg",
     "imagenes": [
       "https://images.mapaprop.app/photos/969/2615950/3242235.jpg",
