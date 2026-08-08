@@ -20,16 +20,6 @@
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://bravipropiedades.com.ar/propiedad?id=e19ca898b2fcb7b4804308d5d8647dd5</loc>
-    <lastmod>2026-08-08</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-    <image:image>
-      <image:loc>https://images.mapaprop.app/photos/969/2616766/3257466t.jpg</image:loc>
-      <image:title>Casa en Club de Campo El Nacional, General Rodríguez</image:title>
-    </image:image>
-  </url>
-  <url>
     <loc>https://bravipropiedades.com.ar/propiedad?id=15545337d04c6b609e6446b8247355df</loc>
     <lastmod>2026-08-08</lastmod>
     <changefreq>weekly</changefreq>
@@ -37,6 +27,26 @@
     <image:image>
       <image:loc>https://images.mapaprop.app/photos/969/2616725/3256488t.jpg</image:loc>
       <image:title>Terreno en esquina Ruta 24, General Rodríguez</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://bravipropiedades.com.ar/propiedad?id=208b5d4a54b59d6384ad72bef3e0b330</loc>
+    <lastmod>2026-08-08</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://images.mapaprop.app/photos/969/233445/2545479t.jpg</image:loc>
+      <image:title>Excelente esquina en  Gral Rodriguez  Importante Chalet con pileta y  Parrilla sobre 870 m2 de terreno.</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://bravipropiedades.com.ar/propiedad?id=e19ca898b2fcb7b4804308d5d8647dd5</loc>
+    <lastmod>2026-08-08</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://images.mapaprop.app/photos/969/2616766/3257466t.jpg</image:loc>
+      <image:title>Casa en Club de Campo El Nacional, General Rodríguez</image:title>
     </image:image>
   </url>
   <url>
@@ -800,16 +810,6 @@
     </image:image>
   </url>
   <url>
-    <loc>https://bravipropiedades.com.ar/propiedad?id=208b5d4a54b59d6384ad72bef3e0b330</loc>
-    <lastmod>2026-08-08</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-    <image:image>
-      <image:loc>https://images.mapaprop.app/photos/969/233445/2545479t.jpg</image:loc>
-      <image:title>Excelente esquina en  Gral Rodriguez  Importante Chalet con pileta y  Parrilla sobre 870 m2 de terreno.</image:title>
-    </image:image>
-  </url>
-  <url>
     <loc>https://bravipropiedades.com.ar/propiedad?id=45ac0e4ff22aa51e8fc7459850058170</loc>
     <lastmod>2026-08-08</lastmod>
     <changefreq>weekly</changefreq>
@@ -837,6 +837,16 @@
     <image:image>
       <image:loc>https://images.mapaprop.app/photos/969/149229/1392275t.jpg</image:loc>
       <image:title>Casa En Barrio Cerrado La Soberana Gral. Rodriguez</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://bravipropiedades.com.ar/propiedad?id=4c2d8d92ddd2f4517ca3492e276c9e97</loc>
+    <lastmod>2026-08-08</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://images.mapaprop.app/photos/969/2615107/3228282t.jpg</image:loc>
+      <image:title>Dúplex 3 ambientes en Alvear 2168, General Rodríguez</image:title>
     </image:image>
   </url>
   <url>
@@ -1017,16 +1027,6 @@
     <image:image>
       <image:loc>https://images.mapaprop.app/photos/969/2615557/3235540t.jpg</image:loc>
       <image:title>Casa 4 ambientes en Guido Spano 1518, General Rodríguez</image:title>
-    </image:image>
-  </url>
-  <url>
-    <loc>https://bravipropiedades.com.ar/propiedad?id=4c2d8d92ddd2f4517ca3492e276c9e97</loc>
-    <lastmod>2026-08-08</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-    <image:image>
-      <image:loc>https://images.mapaprop.app/photos/969/2615107/3228282t.jpg</image:loc>
-      <image:title>Dúplex 3 ambientes en Alvear 2168, General Rodríguez</image:title>
     </image:image>
   </url>
   <url>
