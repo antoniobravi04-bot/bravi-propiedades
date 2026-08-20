@@ -6,5 +6,9 @@
   "0493211b6c085ef4cc7d8632d6519129": {
     "precio": "$ 550.000",
     "precioNum": 550000
+  },
+  "e03f634ac52f2e607631cdb3c79e947b": {
+    "precio": "Consultar",
+    "precioNum": null
   }
 }
