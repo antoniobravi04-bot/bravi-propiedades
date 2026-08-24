@@ -20,6 +20,16 @@
     <priority>0.9</priority>
   </url>
   <url>
+    <loc>https://bravipropiedades.com.ar/propiedad?id=5c7190c623458c872f48a1bda0886211</loc>
+    <lastmod>2026-08-24</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://images.mapaprop.app/photos/969/2607349/3085908t.jpg</image:loc>
+      <image:title>Venta Quinta Malvinas, General Rodriguez</image:title>
+    </image:image>
+  </url>
+  <url>
     <loc>https://bravipropiedades.com.ar/propiedad?id=d510b64eb73f0f8a39fd5b6865304873</loc>
     <lastmod>2026-08-24</lastmod>
     <changefreq>weekly</changefreq>
@@ -687,16 +697,6 @@
     <image:image>
       <image:loc>https://images.mapaprop.app/photos/969/246694/2713597t.jpg</image:loc>
       <image:title>En Venta Casa centrica  Gral Rodriguez</image:title>
-    </image:image>
-  </url>
-  <url>
-    <loc>https://bravipropiedades.com.ar/propiedad?id=5c7190c623458c872f48a1bda0886211</loc>
-    <lastmod>2026-08-24</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-    <image:image>
-      <image:loc>https://images.mapaprop.app/photos/969/2607349/3085908t.jpg</image:loc>
-      <image:title>Venta Quinta Malvinas, General Rodriguez</image:title>
     </image:image>
   </url>
   <url>
