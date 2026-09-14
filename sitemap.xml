@@ -20,6 +20,16 @@
     <priority>0.9</priority>
   </url>
   <url>
+    <loc>https://bravipropiedades.com.ar/propiedad?id=8c656c3593a5cb2232974ab6f7f620ef</loc>
+    <lastmod>2026-09-14</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://images.mapaprop.app/photos/969/2617525/3271525t.jpg</image:loc>
+      <image:title>Lote en La Esperanza Club de Campo, General Rodríguez</image:title>
+    </image:image>
+  </url>
+  <url>
     <loc>https://bravipropiedades.com.ar/propiedad?id=17a15fa5cec16f155b7ef35e0c7d6dd8</loc>
     <lastmod>2026-09-14</lastmod>
     <changefreq>weekly</changefreq>
@@ -37,16 +47,6 @@
     <image:image>
       <image:loc>https://images.mapaprop.app/photos/969/2616187/3246440t.jpg</image:loc>
       <image:title>Campo 4has en Venta a 700 mts de Km 58 Autopista Acc. Oeste, Luján</image:title>
-    </image:image>
-  </url>
-  <url>
-    <loc>https://bravipropiedades.com.ar/propiedad?id=8c656c3593a5cb2232974ab6f7f620ef</loc>
-    <lastmod>2026-09-14</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-    <image:image>
-      <image:loc>https://images.mapaprop.app/photos/969/2617525/3271523t.jpg</image:loc>
-      <image:title>Lote en La Esperanza Club de Campo, General Rodríguez</image:title>
     </image:image>
   </url>
   <url>
