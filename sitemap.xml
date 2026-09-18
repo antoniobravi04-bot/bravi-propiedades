@@ -20,16 +20,6 @@
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://bravipropiedades.com.ar/propiedad?id=e03f634ac52f2e607631cdb3c79e947b</loc>
-    <lastmod>2026-09-18</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-    <image:image>
-      <image:loc>https://images.mapaprop.app/photos/969/2617038/3262222t.jpg</image:loc>
-      <image:title>Fracción en Colectora Sur Acc. Oeste, General Rodríguez Km 49,5</image:title>
-    </image:image>
-  </url>
-  <url>
     <loc>https://bravipropiedades.com.ar/propiedad?id=fbcca523a3ae7d457609a37d71cbf889</loc>
     <lastmod>2026-09-18</lastmod>
     <changefreq>weekly</changefreq>
@@ -47,6 +37,16 @@
     <image:image>
       <image:loc>https://images.mapaprop.app/photos/969/2604551/3275575t.jpg</image:loc>
       <image:title>Casa en Venta, ubicada en importante Avenida Gral. Rodríguez</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://bravipropiedades.com.ar/propiedad?id=e03f634ac52f2e607631cdb3c79e947b</loc>
+    <lastmod>2026-09-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://images.mapaprop.app/photos/969/2617038/3262222t.jpg</image:loc>
+      <image:title>Fracción en Colectora Sur Acc. Oeste, General Rodríguez Km 49,5</image:title>
     </image:image>
   </url>
   <url>
