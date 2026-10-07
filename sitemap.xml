@@ -860,6 +860,16 @@
     </image:image>
   </url>
   <url>
+    <loc>https://bravipropiedades.com.ar/propiedad?id=4b2e9f39bcd6ea5ef943438dd21617bb</loc>
+    <lastmod>2026-10-07</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://images.mapaprop.app/photos/969/2616358/3249554t.jpg</image:loc>
+      <image:title>Oficina en Sarmiento 885, General Rodríguez</image:title>
+    </image:image>
+  </url>
+  <url>
     <loc>https://bravipropiedades.com.ar/propiedad?id=6715437deb0f18b4e3ed530c642bfaab</loc>
     <lastmod>2026-10-07</lastmod>
     <changefreq>weekly</changefreq>
@@ -1047,16 +1057,6 @@
     <image:image>
       <image:loc>https://images.mapaprop.app/photos/969/2616412/3250659t.jpg</image:loc>
       <image:title>Galpon en José C. Paz 560, General Rodríguez</image:title>
-    </image:image>
-  </url>
-  <url>
-    <loc>https://bravipropiedades.com.ar/propiedad?id=4b2e9f39bcd6ea5ef943438dd21617bb</loc>
-    <lastmod>2026-10-07</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-    <image:image>
-      <image:loc>https://images.mapaprop.app/photos/969/2616358/3249554t.jpg</image:loc>
-      <image:title>Oficina en Sarmiento 885, General Rodríguez</image:title>
     </image:image>
   </url>
   <url>
