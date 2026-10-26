@@ -226,12 +226,6 @@
       color: rgba(255,255,255,.80);
       line-height: 1.45;
     }
-    .dp-plano-bar__arrow {
-      flex-shrink: 0;
-      font-size: 1.5rem;
-      color: rgba(255,255,255,.70);
-      line-height: 1;
-    }
     @media (max-width: 540px) {
       .dp-plano-bar { padding: 18px 20px; gap: 14px; }
       .dp-plano-bar__title { font-size: 1rem; }
@@ -654,27 +648,15 @@
 
         <!-- Action bar: precio | highlights | botones -->
         ${p.id === 'ca346bba9869a4221b4d1f5b462a101b' ? `
-        <div class="dp-plano-bar" role="region" aria-label="Plano interactivo">
+        <a href="https://bravi-vivero-lotes.bravelamb68.chatgpt.site/" target="_blank" rel="noopener" class="dp-plano-bar">
           <span class="dp-plano-bar__icon">
             <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
           </span>
           <span class="dp-plano-bar__text">
-            <span class="dp-plano-bar__title">Plano interactivo del loteo</span>
+            <span class="dp-plano-bar__title">Abrir plano interactivo ↗</span>
             <span class="dp-plano-bar__sub">Elegí tu lote y consultá disponibilidad, precios en detalle y financiación.</span>
           </span>
-          <span class="dp-plano-bar__arrow">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,.7)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
-          </span>
-        </div>
-        <div style="margin:-12px 0 32px;border-radius:14px;overflow:hidden;border:1px solid var(--border);background:#f0f1f3;min-height:520px">
-          <iframe
-            src="https://bravi-vivero-lotes.bravelamb68.chatgpt.site/"
-            title="Plano interactivo — Loteo Las Acacias"
-            style="width:100%;height:600px;border:none;display:block"
-            loading="lazy"
-            allow="fullscreen"
-          ></iframe>
-        </div>
+        </a>
         ` : `
         <div class="dp-action-bar"${!sideHls.length ? ' style="grid-template-columns:1fr 1fr"' : ''}>
           <div class="dp-action-bar__info">
