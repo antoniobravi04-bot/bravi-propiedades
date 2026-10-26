@@ -122,6 +122,12 @@
   status = 200
   force  = true
 
+# Plano interactivo Las Acacias
+[[redirects]]
+  from = "/plano-acacias"
+  to   = "https://bravi-vivero-lotes.bravelamb68.chatgpt.site/"
+  status = 302
+
 # Catch-all: cualquier URL inexistente → página 404 personalizada
 [[redirects]]
   from = "/*"
