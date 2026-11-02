@@ -48,6 +48,14 @@
       background: rgba(0,0,0,.48); color: #fff;
       font-size: .75rem; padding: 3px 10px; border-radius: 20px;
     }
+    .dp-gallery__price {
+      position: absolute; bottom: 14px; left: 14px;
+      background: #fff; color: var(--navy);
+      font-family: 'Montserrat', sans-serif; font-size: 1.15rem; font-weight: 700;
+      letter-spacing: -0.02em; line-height: 1;
+      padding: 7px 14px; border-radius: 10px;
+      box-shadow: 0 2px 10px rgba(0,0,0,.18);
+    }
     .dp-gallery__thumbs {
       display: flex; gap: 6px; overflow-x: auto; padding-bottom: 2px;
     }
@@ -700,6 +708,7 @@
             <img id="dpHeroImg" src="${netlifyImg(imgs[0], 1200, 675)}" alt="${titulo}" />
             ${navBtns}
             <span style="position:absolute;top:14px;left:14px">${badge}</span>
+            ${p.precio ? `<div class="dp-gallery__price">${p.precio}</div>` : ''}
           </div>
           ${thumbsHTML}
         </div>
@@ -718,8 +727,6 @@
         ` : `
         <div class="dp-action-bar"${!sideHls.length ? ' style="grid-template-columns:1fr 1fr"' : ''}>
           <div class="dp-action-bar__info">
-            <div class="dp-action-bar__price-label">${p.tipo === 'Alquiler' ? 'Precio mensual' : 'Precio de venta'}</div>
-            <div class="dp-action-bar__price">${p.precio || 'Consultar'}</div>
             <div class="dp-action-bar__loc">
               <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;margin-top:2px"><path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
               ${locFull}
