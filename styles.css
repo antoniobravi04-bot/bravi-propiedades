@@ -1600,8 +1600,9 @@ body { animation: pageFadeIn .45s cubic-bezier(.22,.68,0,1.2) both; }
 }
 
 .props-filters {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
   gap: 14px 16px;
   align-items: end;
   background: #fff;
@@ -1609,6 +1610,15 @@ body { animation: pageFadeIn .45s cubic-bezier(.22,.68,0,1.2) both; }
   border-radius: 14px;
   padding: 22px 22px 18px;
   margin-bottom: 32px;
+}
+.props-filters > .filter-group {
+  flex: 1 1 180px;
+  max-width: calc(25% - 12px);
+  min-width: 150px;
+}
+.props-filters > .btn--outline {
+  flex: 0 0 auto;
+  align-self: end;
 }
 .filter-group {
   display: flex;
