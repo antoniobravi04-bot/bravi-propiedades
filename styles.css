@@ -178,13 +178,13 @@ a   { text-decoration: none; }
   align-items: center;
 }
 .nav__logo-img {
-  height: 54px;
+  height: 46px;
   width: auto;
   object-fit: contain;
   transition: height .3s ease;
 }
 .nav--scrolled .nav__inner { padding-block: 10px; }
-.nav--scrolled .nav__logo-img { height: 44px; }
+.nav--scrolled .nav__logo-img { height: 38px; }
 .nav__logo-img--footer {
   height: 48px;
   opacity: .85;
@@ -848,8 +848,11 @@ a   { text-decoration: none; }
 .footer__nav a:hover { color: rgba(255,255,255,.92); }
 
 /* ===== PAGE LOAD FADE ===== */
-@keyframes pageFadeIn { from { opacity: 0; } to { opacity: 1; } }
-body { animation: pageFadeIn .4s ease both; }
+@keyframes pageFadeIn {
+  from { opacity: 0; transform: translateY(12px); }
+  to   { opacity: 1; transform: none; }
+}
+body { animation: pageFadeIn .45s cubic-bezier(.22,.68,0,1.2) both; }
 
 /* ===== FADE IN ===== */
 .fade-up {
@@ -1313,7 +1316,7 @@ body { animation: pageFadeIn .4s ease both; }
 
 /* ===== LISTADO PAGES ===== */
 .listado-header {
-  background: linear-gradient(160deg, var(--navy) 0%, #1a4fa8 50%, #dde6f5 100%);
+  background: var(--navy);
   padding: 120px 0 48px;
   text-align: center;
   border-bottom: none;
