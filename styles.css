@@ -1056,44 +1056,49 @@ body { animation: pageFadeIn .45s cubic-bezier(.22,.68,0,1.2) both; }
   .nosotros__img     { order: -1; }
 }
 
-/* ===== HERO BOTONES VENTA / ALQUILER ===== */
+/* ===== HERO BOTONES VENTA / ALQUILER (segmented control) ===== */
 .hero__op-btns {
-  display: flex;
-  gap: 10px;
+  display: inline-flex;
+  background: rgba(255,255,255,.13);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255,255,255,.22);
+  border-radius: 50px;
+  padding: 4px;
+  gap: 2px;
   margin-bottom: 28px;
 }
 .hero__op-btns .hero__op-btn {
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 7px;
   font-family: var(--font-body);
   font-size: .88rem;
   font-weight: 600;
-  padding: 10px 24px;
+  padding: 10px 26px;
   border-radius: 50px;
   text-decoration: none;
-  letter-spacing: .04em;
-  background: rgba(255,255,255,.12);
-  color: #fff;
-  border: 1px solid rgba(255,255,255,.28);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  transition: background .2s, border-color .2s, transform .15s;
+  letter-spacing: .03em;
+  background: transparent;
+  color: rgba(255,255,255,.72);
+  border: none;
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+  transition: background .2s, color .2s;
 }
 .hero__op-btns .hero__op-btn:hover {
-  background: rgba(255,255,255,.22);
-  border-color: rgba(255,255,255,.5);
-  transform: translateY(-1px);
+  background: rgba(255,255,255,.12);
+  color: #fff;
 }
 
 /* ===== HERO WIDGET (buscador) ===== */
 .hero__widget {
-  background: rgba(255,255,255,.1);
-  backdrop-filter: blur(18px);
-  -webkit-backdrop-filter: blur(18px);
-  border: 1px solid rgba(255,255,255,.2);
-  border-radius: 16px;
-  box-shadow: 0 8px 40px rgba(0,0,0,.22);
+  background: #fff;
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+  border: none;
+  border-radius: 14px;
+  box-shadow: 0 16px 56px rgba(0,0,0,.24), 0 2px 10px rgba(0,0,0,.1);
   max-width: clamp(560px, 55vw, 720px);
   width: 100%;
 }
@@ -1110,7 +1115,7 @@ body { animation: pageFadeIn .45s cubic-bezier(.22,.68,0,1.2) both; }
   background: transparent;
   font-size: .9rem;
   font-weight: 600;
-  color: #fff;
+  color: var(--navy);
   cursor: pointer;
   padding: 0 14px 0 18px;
   white-space: nowrap;
@@ -1172,7 +1177,7 @@ body { animation: pageFadeIn .45s cubic-bezier(.22,.68,0,1.2) both; }
   background: transparent;
   font-size: .9rem;
   font-weight: 600;
-  color: rgba(255,255,255,.85);
+  color: var(--text);
   cursor: pointer;
   padding: 0 12px 0 0;
   white-space: nowrap;
@@ -1222,13 +1227,13 @@ body { animation: pageFadeIn .45s cubic-bezier(.22,.68,0,1.2) both; }
 .hero__tipo-menu li.active { color: var(--navy); font-weight: 600; background: var(--off-white); }
 .hero__search-divider {
   width: 1px;
-  height: 18px;
-  background: rgba(255,255,255,.2);
+  height: 20px;
+  background: var(--border);
   margin: 0 10px;
   flex-shrink: 0;
 }
 .hero__search-icon {
-  color: rgba(255,255,255,.5);
+  color: var(--text-muted);
   flex-shrink: 0;
   margin-right: 8px;
 }
@@ -1237,26 +1242,26 @@ body { animation: pageFadeIn .45s cubic-bezier(.22,.68,0,1.2) both; }
   border: none;
   outline: none;
   font-size: .88rem;
-  color: #fff;
+  color: var(--text);
   background: transparent;
   min-width: 0;
 }
-.hero__search-input::placeholder { color: rgba(255,255,255,.45); }
+.hero__search-input::placeholder { color: var(--text-muted); }
 .hero__search-btn {
-  background: #fff;
-  color: var(--navy);
+  background: var(--navy);
+  color: #fff;
   border: none;
   border-radius: 10px;
-  padding: 10px 24px;
+  padding: 10px 26px;
   font-size: .88rem;
   font-weight: 700;
   letter-spacing: .02em;
   cursor: pointer;
-  transition: background .2s, opacity .2s;
+  transition: opacity .2s;
   white-space: nowrap;
   flex-shrink: 0;
 }
-.hero__search-btn:hover { opacity: .9; }
+.hero__search-btn:hover { opacity: .85; }
 
 @media (max-width: 600px) {
   .nav__horario { display: none; }
@@ -1301,11 +1306,11 @@ body { animation: pageFadeIn .45s cubic-bezier(.22,.68,0,1.2) both; }
   .hero__tipo-btn {
     width: 100%;
     padding: 10px 12px;
-    border: 1px solid rgba(255,255,255,.25);
+    border: 1px solid var(--border);
     border-radius: 8px;
     font-size: 0.9rem;
-    background: rgba(255,255,255,.12);
-    color: #fff;
+    background: var(--off-white);
+    color: var(--text);
     justify-content: space-between;
   }
   .hero__tipo-menu {
@@ -1321,17 +1326,18 @@ body { animation: pageFadeIn .45s cubic-bezier(.22,.68,0,1.2) both; }
   .hero__search-input {
     width: 100%;
     padding: 10px 12px;
-    border: 1px solid rgba(255,255,255,.25);
+    border: 1px solid var(--border);
     border-radius: 8px;
     font-size: 0.9rem;
-    background: rgba(255,255,255,.12);
-    color: #fff;
+    background: var(--off-white);
+    color: var(--text);
   }
+  .hero__search-input::placeholder { color: var(--text-muted); }
   .hero__search-btn {
     width: 100%;
     text-align: center;
     border-radius: 8px;
-    padding: 11px;                  /* reducido de 13px */
+    padding: 11px;
     font-size: 0.95rem;
   }
 }
