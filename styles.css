@@ -621,7 +621,7 @@ a   { text-decoration: none; }
 .badge--alq   { background: var(--blue-mid); color: var(--white); }
 
 .prop-card__body { padding: 22px 24px; }
-.prop-card__body h3 { color: var(--navy); font-size: 1.05rem; font-weight: 600; letter-spacing: -0.01em; margin-bottom: 8px; }
+.prop-card__body h3 { font-family: 'Montserrat', sans-serif; color: var(--navy); font-size: 1.05rem; font-weight: 600; letter-spacing: -0.01em; margin-bottom: 8px; }
 .prop-card__loc {
   display: flex;
   align-items: center;
