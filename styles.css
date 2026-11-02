@@ -171,6 +171,7 @@ a   { text-decoration: none; }
   align-items: center;
   justify-content: space-between;
   padding-block: 16px;
+  transition: padding .3s ease, height .3s ease;
 }
 .nav__logo {
   display: flex;
@@ -180,7 +181,10 @@ a   { text-decoration: none; }
   height: 54px;
   width: auto;
   object-fit: contain;
+  transition: height .3s ease;
 }
+.nav--scrolled .nav__inner { padding-block: 10px; }
+.nav--scrolled .nav__logo-img { height: 44px; }
 .nav__logo-img--footer {
   height: 48px;
   opacity: .85;
@@ -516,7 +520,8 @@ a   { text-decoration: none; }
   border-color: transparent;
 }
 .prop-card__img { position: relative; aspect-ratio: 4/3; overflow: hidden; }
-.prop-card__img img { height: 100%; }
+.prop-card__img img { height: 100%; transition: transform .45s ease; }
+.prop-card:hover .prop-card__img img { transform: scale(1.06); }
 .prop-card__img-link { display: block; width: 100%; height: 100%; }
 
 /* Botones dentro de la card quedan clicables independientemente */

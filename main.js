@@ -292,23 +292,26 @@ navLinks.querySelectorAll('a').forEach(a =>
   a.addEventListener('click', () => navLinks.classList.remove('open'))
 );
 
-// Nav border on scroll
+// Nav shrink + shadow on scroll
 window.addEventListener('scroll', () => {
-  document.getElementById('nav').style.boxShadow =
-    window.scrollY > 20 ? '0 4px 24px rgba(13,33,55,.10)' : '';
+  const nav = document.getElementById('nav');
+  const scrolled = window.scrollY > 60;
+  nav.classList.toggle('nav--scrolled', scrolled);
+  nav.style.boxShadow = window.scrollY > 20 ? '0 4px 24px rgba(13,33,55,.10)' : '';
 }, { passive: true });
 
-// Fade-up on scroll
+// Fade-up on scroll con stagger
 const observer = new IntersectionObserver((entries) => {
-  entries.forEach(el => {
-    if (el.isIntersecting) {
-      el.target.classList.add('visible');
-      observer.unobserve(el.target);
-    }
+  const visible = entries.filter(e => e.isIntersecting);
+  visible.forEach((entry, i) => {
+    setTimeout(() => {
+      entry.target.classList.add('visible');
+    }, i * 80);
+    observer.unobserve(entry.target);
   });
 }, { threshold: 0, rootMargin: '0px 0px -40px 0px' });
 
-document.querySelectorAll('.card, .prop-card, .testimonial, .stat').forEach(el => {
+document.querySelectorAll('.card, .prop-card, .testimonial, .stat, .tipos__card, .servicio__item').forEach(el => {
   el.classList.add('fade-up');
   observer.observe(el);
 });
