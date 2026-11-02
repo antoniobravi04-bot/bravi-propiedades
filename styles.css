@@ -583,18 +583,17 @@ a   { text-decoration: none; }
 
 .filtros-toggle {
   display: flex; align-items: center; gap: 8px;
-  flex: 0 0 auto;          /* nunca crece ni se estira */
+  flex: 0 0 auto;
   white-space: nowrap;
-  height: 44px;            /* misma altura que los demás controles */
-  background: none; border: 1.5px solid var(--border);
-  border-radius: 8px; padding: 0 18px;
-  font-size: .9rem; color: var(--navy); font-family: inherit;
+  height: 44px;
+  background: none; border: 1px solid var(--border);
+  border-radius: 50px; padding: 0 18px;
+  font-size: .88rem; color: var(--text-muted); font-family: inherit;
   font-weight: 500; cursor: pointer;
-  transition: border-color .2s, background .2s;
+  transition: border-color .2s, color .2s, background .2s;
 }
-.filtros-toggle:hover, .filtros-toggle.active {
-  border-color: var(--navy); background: var(--off-white);
-}
+.filtros-toggle:hover { border-color: var(--navy); color: var(--navy); }
+.filtros-toggle.active { border-color: var(--navy); color: var(--navy); background: var(--off-white); }
 .filtros-toggle__chevron {
   margin-left: 4px; transition: transform .25s;  /* era: margin-left:auto → inflaba el botón */
   display: flex; align-items: center;
@@ -1431,34 +1430,38 @@ body { animation: pageFadeIn .45s cubic-bezier(.22,.68,0,1.2) both; }
   align-items: center;
   gap: 10px;
   background: #fff;
-  border: 1.5px solid var(--border);
+  border: 1px solid var(--border);
   border-radius: 50px;
   padding: 10px 20px;
-  flex: 1 1 0;    /* crece para ocupar el espacio disponible */
-  min-width: 0;   /* permite que el input se comprima si hace falta */
+  flex: 1 1 0;
+  min-width: 0;
+  transition: border-color .2s;
 }
-.filtros-busqueda svg { color: #999; flex-shrink: 0; }
+.filtros-busqueda:focus-within { border-color: var(--navy); }
+.filtros-busqueda svg { color: #bbb; flex-shrink: 0; }
 .filtros-busqueda input {
   border: none;
   outline: none;
-  font-size: .95rem;
+  font-size: .9rem;
   color: var(--text);
   width: 100%;
   background: transparent;
 }
 .filtros-orden select {
-  border: 1.5px solid var(--border);
+  border: 1px solid var(--border);
   border-radius: 50px;
   padding: 10px 16px;
-  height: 44px;           /* misma altura que .filtros-busqueda y .filtros-toggle */
-  font-size: .9rem;
+  height: 44px;
+  font-size: .88rem;
   font-family: inherit;
-  color: var(--text);
+  color: var(--text-muted);
   background: #fff;
   outline: none;
   cursor: pointer;
   display: block;
+  transition: border-color .2s, color .2s;
 }
+.filtros-orden select:focus { border-color: var(--navy); color: var(--text); }
 /* ===== LISTADO FILTROS MOBILE — debe ir DESPUÉS de los estilos desktop para ganar la cascada ===== */
 @media (max-width: 600px) {
   /* Trigger: visible en mobile */
@@ -1581,22 +1584,23 @@ body { animation: pageFadeIn .45s cubic-bezier(.22,.68,0,1.2) both; }
   min-width: 130px;
 }
 .filter-group label {
-  font-size: .75rem;
+  font-size: .7rem;
   font-weight: 600;
-  color: var(--navy);
+  color: var(--text-muted);
   text-transform: uppercase;
-  letter-spacing: .04em;
+  letter-spacing: .06em;
 }
 .filter-group input,
 .filter-group select {
   padding: 8px 12px;
-  border: 1.5px solid var(--border);
+  border: 1px solid var(--border);
   border-radius: 8px;
-  font-size: .9rem;
+  font-size: .88rem;
   background: #fff;
   color: var(--text);
   outline: none;
   transition: border-color .2s;
+  font-family: inherit;
 }
 .filter-group input:focus,
 .filter-group select:focus { border-color: var(--navy); }
