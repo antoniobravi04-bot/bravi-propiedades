@@ -20,7 +20,7 @@ function renderPropiedades(props) {
     const badge    = p.tipo === 'Alquiler'
       ? `<span class="badge badge--alq">Alquiler</span>`
       : `<span class="badge badge--venta">Venta</span>`;
-    const dormText = p.dormitorios ? `<span>${p.dormitorios} dorm.</span><span>·</span>` : '';
+    const dormText = p.dormitorios ? `<span>${p.dormitorios} dorm.</span>` : '';
     const supText  = p.superficie  ? `<span>${p.superficie}</span>` : '';
     let titulo = p.titulo || '';
     if (!titulo || titulo === 'Venta' || titulo === 'Alquiler') {

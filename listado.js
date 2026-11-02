@@ -67,7 +67,7 @@ function renderCards(props) {
 
   grid.innerHTML = props.map(p => {
     const globalIdx = rawAll.indexOf(p);
-    const dormText  = p.dormitorios ? `<span>${p.dormitorios} dorm.</span><span>·</span>` : '';
+    const dormText  = p.dormitorios ? `<span>${p.dormitorios} dorm.</span>` : '';
     const supText   = p.superficie  ? `<span>${p.superficie}</span>` : '';
     let titulo = p.titulo || '';
     if (!titulo || titulo === 'Venta' || titulo === 'Alquiler') {
