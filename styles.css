@@ -61,7 +61,7 @@ a   { text-decoration: none; }
 .eyebrow--light { color: rgba(255,255,255,.5); }
 
 .section__title {
-  font-family: 'DM Serif Display', serif;
+  font-family: 'Montserrat', sans-serif;
   font-size: clamp(2rem, 3.8vw, 3rem);
   font-weight: 700;
   color: var(--navy);
@@ -177,12 +177,12 @@ a   { text-decoration: none; }
   align-items: center;
 }
 .nav__logo-img {
-  height: 40px;
+  height: 54px;
   width: auto;
   object-fit: contain;
 }
 .nav__logo-img--footer {
-  height: 36px;
+  height: 48px;
   opacity: .85;
 }
 .nav__links {
@@ -295,7 +295,7 @@ a   { text-decoration: none; }
   margin-bottom: 20px;
 }
 .hero__title {
-  font-family: 'DM Serif Display', serif;
+  font-family: 'Montserrat', sans-serif;
   font-size: clamp(2.6rem, 5.2vw, 4.2rem);
   font-weight: 700;
   color: var(--white);
@@ -340,7 +340,7 @@ a   { text-decoration: none; }
 .stat--div { border-left: 1px solid rgba(255,255,255,.1); }
 .stat__num {
   display: block;
-  font-family: 'DM Serif Display', serif;
+  font-family: 'Space Mono', monospace;
   font-size: 3rem;
   font-weight: 700;
   color: var(--white);
@@ -1340,7 +1340,7 @@ a   { text-decoration: none; }
 }
 
 .listado-header__title {
-  font-family: 'DM Serif Display', serif;
+  font-family: 'Montserrat', sans-serif;
   font-size: clamp(1.6rem, 4vw, 2.4rem);
   color: var(--dark);
   margin: 0 0 8px;
@@ -1655,7 +1655,7 @@ a   { text-decoration: none; }
   top: 16px; left: 16px;
 }
 .det-titulo {
-  font-family: 'DM Serif Display', serif;
+  font-family: 'Montserrat', sans-serif;
   font-size: clamp(1.4rem, 3vw, 2rem);
   color: var(--navy);
   margin-bottom: 10px;
@@ -1704,7 +1704,7 @@ a   { text-decoration: none; }
   border-top: 1px solid var(--border);
 }
 .det-descripcion h4 {
-  font-family: 'DM Serif Display', serif;
+  font-family: 'Montserrat', sans-serif;
   color: var(--navy);
   font-size: 1rem;
   margin-bottom: 10px;
@@ -1849,7 +1849,7 @@ a   { text-decoration: none; }
 }
 .prop-modal__body { padding: 24px 28px 28px; }
 .prop-modal__title {
-  font-family: 'DM Serif Display', serif;
+  font-family: 'Montserrat', sans-serif;
   font-size: 1.4rem;
   color: var(--navy);
   margin-bottom: 6px;
