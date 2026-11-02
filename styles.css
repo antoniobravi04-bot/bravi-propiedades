@@ -985,6 +985,7 @@ body { animation: pageFadeIn .45s cubic-bezier(.22,.68,0,1.2) both; }
   }
   .nav__links.open   { display: flex; }
   .nav__hamburger    { display: flex; }
+  .nav__hero-cta     { display: none !important; }
   .nav__links > li   { width: 100%; border-bottom: 1px solid var(--border); }
   .nav__links > li > a { display: block; padding: 14px 24px; color: var(--navy) !important; font-size: .97rem; }
   /* Contacto: subtle plain link */
@@ -1812,6 +1813,46 @@ body { animation: pageFadeIn .45s cubic-bezier(.22,.68,0,1.2) both; }
 .nav__mobile-sub   { display: none; }
 .nav__mobile-cta   { display: none; }
 .nav__social { display: flex; align-items: center; gap: 14px; padding-left: 8px; border-left: 1px solid rgba(255,255,255,.2); margin-left: 4px; }
+
+/* ===== NAV HERO CTA (Venta / Alquiler aparecen al salir del hero) ===== */
+.nav__hero-cta {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(-5px);
+  transition: opacity .25s ease, transform .25s ease;
+}
+.nav--past-hero .nav__hero-cta {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0);
+}
+.nav__hero-cta-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 6px 15px;
+  border-radius: 20px;
+  font-size: .77rem;
+  font-weight: 700;
+  letter-spacing: .04em;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: opacity .18s;
+  white-space: nowrap;
+}
+.nav__hero-cta-btn--venta {
+  background: var(--gold);
+  color: var(--navy);
+}
+.nav__hero-cta-btn--alquiler {
+  background: rgba(255,255,255,.15);
+  color: #fff;
+  border: 1px solid rgba(255,255,255,.35);
+}
+.nav__hero-cta-btn:hover { opacity: .82; }
 .nav__social a { color: rgba(255,255,255,.7); display: flex; transition: color .2s; }
 .nav__social a:hover { color: #fff; }
 

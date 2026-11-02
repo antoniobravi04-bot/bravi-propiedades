@@ -110,6 +110,10 @@
           <a href="ventas.html" class="nav__cta-btn nav__cta-btn--venta">Ventas</a>
           <a href="alquileres.html" class="nav__cta-btn nav__cta-btn--alquiler">Alquileres</a>
         </li>
+        <li class="nav__hero-cta">
+          <a href="ventas.html" class="nav__hero-cta-btn nav__hero-cta-btn--venta">Venta</a>
+          <a href="alquileres.html" class="nav__hero-cta-btn nav__hero-cta-btn--alquiler">Alquiler</a>
+        </li>
         <li class="nav__social">
           <a href="https://www.instagram.com/bravipropiedades/" target="_blank" rel="noopener" aria-label="Instagram">
             <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
@@ -715,6 +719,23 @@
   </script>
   <script>
   document.addEventListener("click",function(e){var a=e.target.closest("a[href*=\"wa.me\"]");if(a</body></body>typeof fbq==="function"){fbq("track","Contact",{content_name:"WhatsApp"});}});
+  </script>
+  <script>
+  (function () {
+    var nav = document.getElementById('nav');
+    if (!nav) return;
+    function updateScrolled() {
+      nav.classList.toggle('nav--scrolled', window.scrollY > 10);
+    }
+    window.addEventListener('scroll', updateScrolled, { passive: true });
+    updateScrolled();
+    var hero = document.querySelector('.hero');
+    if (hero && 'IntersectionObserver' in window) {
+      new IntersectionObserver(function (entries) {
+        nav.classList.toggle('nav--past-hero', !entries[0].isIntersecting);
+      }, { threshold: 0, rootMargin: '0px 0px 0px 0px' }).observe(hero);
+    }
+  })();
   </script>
 </body>
 </html>
