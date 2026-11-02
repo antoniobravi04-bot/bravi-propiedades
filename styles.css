@@ -342,7 +342,7 @@ a   { text-decoration: none; }
   display: block;
   font-family: 'Barlow Condensed', sans-serif;
   font-size: 3rem;
-  font-weight: 700;
+  font-weight: 400;
   color: var(--white);
   line-height: 1;
   letter-spacing: -0.04em;
