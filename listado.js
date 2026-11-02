@@ -353,7 +353,19 @@ fetch(jsonFile + '?v=' + Date.now())
     });
     document.getElementById('filtroLimpiar').addEventListener('click', () => {
       ['filtroTexto','filtroMin','filtroMax','filtroSupMin','filtroSupMax','filtroId'].forEach(id => document.getElementById(id).value = '');
-      ['filtroMoneda','filtroDorm','filtroAmbientes','filtroBanos','filtroCochera','filtroTipoProp','filtroOrden'].forEach(id => document.getElementById(id).value = '');
+      ['filtroMoneda','filtroDorm','filtroAmbientes','filtroBanos','filtroCochera','filtroTipoProp','filtroOrden'].forEach(id => {
+        const hidden = document.getElementById(id);
+        if (!hidden) return;
+        hidden.value = '';
+        // reset custom dropdown label to first option text
+        const wrap = hidden.closest('.flt-select');
+        if (wrap) {
+          const firstLi = wrap.querySelector('.flt-select__menu li');
+          const lbl = wrap.querySelector('.flt-select__btn span');
+          if (firstLi && lbl) lbl.textContent = firstLi.textContent;
+          wrap.querySelectorAll('.flt-select__menu li').forEach((l, i) => l.classList.toggle('active', i === 0));
+        }
+      });
       aplicarFiltros();
     });
 
@@ -382,6 +394,40 @@ fetch(jsonFile + '?v=' + Date.now())
     document.getElementById('propiedadesGrid').innerHTML =
       '<p style="color:var(--text-muted);text-align:center;grid-column:1/-1">Propiedades no disponibles.</p>';
   });
+
+// ── Custom filter selects (flt-select) ────────────────────────────
+(function () {
+  function initFltSelects() {
+    document.querySelectorAll('.flt-select').forEach(wrap => {
+      const btn    = wrap.querySelector('.flt-select__btn');
+      const menu   = wrap.querySelector('.flt-select__menu');
+      const hidden = wrap.querySelector('input[type="hidden"]');
+      if (!btn || !menu) return;
+      btn.addEventListener('click', e => {
+        e.stopPropagation();
+        document.querySelectorAll('.flt-select.open').forEach(o => { if (o !== wrap) o.classList.remove('open'); });
+        wrap.classList.toggle('open');
+      });
+      menu.querySelectorAll('li').forEach(li => {
+        li.addEventListener('click', () => {
+          menu.querySelectorAll('li').forEach(l => l.classList.remove('active'));
+          li.classList.add('active');
+          const lbl = btn.querySelector('span');
+          if (lbl) lbl.textContent = li.textContent;
+          if (hidden) {
+            hidden.value = li.dataset.value;
+            hidden.dispatchEvent(new Event('input'));
+          }
+          wrap.classList.remove('open');
+        });
+      });
+    });
+    document.addEventListener('click', () => {
+      document.querySelectorAll('.flt-select.open').forEach(o => o.classList.remove('open'));
+    });
+  }
+  initFltSelects();
+})();
 
 // Nav dropdown — click toggle
 (function() {
