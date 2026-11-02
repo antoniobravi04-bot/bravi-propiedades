@@ -1528,30 +1528,32 @@ body { animation: pageFadeIn .45s cubic-bezier(.22,.68,0,1.2) both; }
 /* ===== PROPS TABS & FILTERS ===== */
 .props-tabs {
   display: flex;
-  gap: 8px;
+  gap: 0;
   justify-content: center;
-  margin-bottom: 20px;
+  margin-bottom: 28px;
+  border-bottom: 1.5px solid var(--border);
 }
 .props-tab {
-  padding: 10px 32px;
-  border: 2px solid var(--navy);
+  padding: 10px 28px 12px;
+  border: none;
+  border-bottom: 2.5px solid transparent;
+  margin-bottom: -1.5px;
   background: transparent;
-  color: var(--navy);
-  border-radius: 50px;
-  font-size: .95rem;
+  color: var(--text-muted);
+  border-radius: 0;
+  font-size: .92rem;
   font-weight: 600;
+  letter-spacing: .01em;
   cursor: pointer;
-  transition: background .2s, color .2s;
+  transition: color .2s, border-color .2s;
 }
 .props-tab.active {
-  background: transparent;
   color: var(--navy);
-  border-color: var(--navy);
-  font-weight: 700;
+  border-bottom-color: var(--navy);
 }
 .props-tab:hover {
-  background: var(--navy);
-  color: #fff;
+  background: transparent;
+  color: var(--navy);
 }
 /* Botón toggle filtros — solo visible en mobile */
 .props-filters-btn {
@@ -1563,9 +1565,10 @@ body { animation: pageFadeIn .45s cubic-bezier(.22,.68,0,1.2) both; }
   flex-wrap: wrap;
   gap: 12px;
   align-items: flex-end;
-  background: #f4f6f9;
+  background: #fff;
+  border: 1px solid var(--border);
   border-radius: 12px;
-  padding: 16px 20px;
+  padding: 18px 20px;
   margin-bottom: 32px;
 }
 .filter-group {
@@ -1597,17 +1600,19 @@ body { animation: pageFadeIn .45s cubic-bezier(.22,.68,0,1.2) both; }
 .filter-group select:focus { border-color: var(--navy); }
 .btn--outline {
   background: transparent;
-  border: 2px solid var(--navy);
-  color: var(--navy);
+  border: 1.5px solid var(--border);
+  color: var(--text-muted);
   align-self: flex-end;
+  font-size: .85rem;
 }
-.btn--outline:hover { background: var(--navy); color: #fff; }
+.btn--outline:hover { border-color: var(--navy); color: var(--navy); background: transparent; }
 .btn--outline-dark {
   background: transparent;
-  border: 2px solid var(--navy);
-  color: var(--navy);
+  border: 1.5px solid var(--border);
+  color: var(--text-muted);
+  font-size: .85rem;
 }
-.btn--outline-dark:hover { background: var(--navy); color: #fff; }
+.btn--outline-dark:hover { border-color: var(--navy); color: var(--navy); background: transparent; }
 
 /* ===== NAV DROPDOWN ===== */
 .nav__dropdown { position: relative; }
