@@ -1302,10 +1302,11 @@ body { animation: pageFadeIn .45s cubic-bezier(.22,.68,0,1.2) both; }
   .hero__tipo-btn {
     width: 100%;
     padding: 10px 12px;
-    border: 1.5px solid #e0e0e0;
+    border: 1px solid rgba(255,255,255,.25);
     border-radius: 8px;
     font-size: 0.9rem;
-    background: #f7f7f7;
+    background: rgba(255,255,255,.12);
+    color: #fff;
     justify-content: space-between;
   }
   .hero__tipo-menu {
@@ -1320,11 +1321,12 @@ body { animation: pageFadeIn .45s cubic-bezier(.22,.68,0,1.2) both; }
   .hero__search-icon    { display: none; }
   .hero__search-input {
     width: 100%;
-    padding: 10px 12px;             /* reducido de 11px 14px */
-    border: 1.5px solid #e0e0e0;
+    padding: 10px 12px;
+    border: 1px solid rgba(255,255,255,.25);
     border-radius: 8px;
     font-size: 0.9rem;
-    background: #f7f7f7;
+    background: rgba(255,255,255,.12);
+    color: #fff;
   }
   .hero__search-btn {
     width: 100%;
