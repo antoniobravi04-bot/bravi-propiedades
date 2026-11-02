@@ -807,7 +807,7 @@ a   { text-decoration: none; }
 
 /* ===== FOOTER ===== */
 .footer {
-  background: #0b1d36;
+  background: rgba(0,40,110,1);
   padding-top: 56px;
   border-top: 1px solid rgba(255,255,255,.06);
 }
