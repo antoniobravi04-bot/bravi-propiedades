@@ -1504,8 +1504,8 @@ body { animation: pageFadeIn .45s cubic-bezier(.22,.68,0,1.2) both; }
     align-items: center;
     gap: 8px;
     width: 100%;
-    padding: 10px 18px 10px;
-    margin-bottom: 12px;
+    padding: 12px 18px;
+    margin-bottom: 10px;
     border: 1.5px solid var(--border);
     border-radius: 50px;
     background: #fff;
@@ -1514,25 +1514,75 @@ body { animation: pageFadeIn .45s cubic-bezier(.22,.68,0,1.2) both; }
     font-weight: 500;
     color: var(--text);
     cursor: pointer;
-    transition: border-color .2s;
+    transition: border-color .2s, background .2s;
   }
-  .filtros-mobile-trigger.active { border-color: var(--navy); background: var(--off-white); }
+  .filtros-mobile-trigger.active { border-color: var(--navy); color: var(--navy); background: var(--off-white); }
   .filtros-mobile-trigger .filtros-toggle__chevron { margin-left: auto; transition: transform .25s; display: flex; align-items: center; }
   .filtros-mobile-trigger.active .filtros-toggle__chevron { transform: rotate(180deg); }
 
-  /* Barra: oculta por defecto, se muestra con clase .open */
+  /* Barra de búsqueda + ordenar: oculta por defecto, visible con .open */
   .filtros-barra { display: none; }
   .filtros-barra.open {
     display: flex;
     flex-wrap: wrap;
-    gap: 10px;
-    padding-top: 8px;
-    padding-bottom: 16px;
+    gap: 8px;
+    padding-top: 6px;
+    padding-bottom: 12px;
   }
   .filtros-barra.open .filtros-busqueda { flex: 1 1 100%; max-width: none; }
   .filtros-barra.open .filtros-orden    { flex: 1 1 0; min-width: 0; }
   .filtros-barra.open .filtros-orden select { width: 100%; }
   .filtros-barra.open .filtros-toggle   { flex: 1 1 0; min-width: 0; border-radius: 50px; }
+
+  /* Panel de filtros avanzados: 2 columnas compactas */
+  .filtros-body { margin-top: 0; }
+  .filtros-body.open {
+    display: block;
+    padding-bottom: 8px;
+  }
+  .filtros-body .props-filters {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px 12px;
+    padding: 16px;
+    border-radius: 12px;
+    margin-bottom: 12px;
+    background: var(--off-white);
+    border: 1px solid var(--border);
+  }
+  .filtros-body .props-filters > .filter-group {
+    flex: unset;
+    max-width: none;
+    min-width: 0;
+    width: 100%;
+  }
+  .filtros-body .filter-group label {
+    font-size: .62rem;
+  }
+  .filtros-body .filter-group input,
+  .filtros-body .filter-group .flt-select__btn {
+    font-size: .82rem;
+    padding: 8px 10px;
+  }
+  .filtros-body .btn--outline {
+    grid-column: 1 / -1;
+    width: 100%;
+    justify-content: center;
+  }
+
+  /* Grid de propiedades: 1 columna en mobile, gap reducido */
+  .listado-grid .propiedades__grid {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+  /* Header del listado: menos padding en mobile */
+  .listado-filtros { padding-top: 16px; }
+  .listado-grid { padding-top: 20px; }
+  .listado-count { margin-bottom: 16px; }
+
+  /* Card en mobile: padding un poco más compacto */
+  .prop-card__body { padding: 14px 16px 16px; }
+  .prop-card__body h3 { font-size: .92rem; }
 }
 
 .listado-grid { padding-top: 32px; }
