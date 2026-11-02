@@ -132,13 +132,7 @@
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
           <input type="text" id="filtroTexto" placeholder="Dirección, zona, barrio o código..." />
         </div>
-        <div class="filtros-orden">
-          <select id="filtroOrden">
-            <option value="">Ordenar</option>
-            <option value="precio-asc">Precio ↑</option>
-            <option value="precio-desc">Precio ↓</option>
-          </select>
-        </div>
+        <div class="filtros-orden"><div class="flt-select"><button class="flt-select__btn flt-select__btn--sm" type="button"><span>Ordenar</span><svg class="flt-select__chev" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg></button><ul class="flt-select__menu"><li data-value="" class="active">Ordenar</li><li data-value="precio-asc">Precio ↑</li><li data-value="precio-desc">Precio ↓</li></ul><input type="hidden" id="filtroOrden" value=""></div></div>
         <button class="filtros-toggle" id="filtrosToggle">
           <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="4" y1="6" x2="20" y2="6"/><line x1="8" y1="12" x2="16" y2="12"/><line x1="11" y1="18" x2="13" y2="18"/></svg>
           Más filtros
@@ -157,63 +151,27 @@
         </div>
         <div class="filter-group">
           <label>Moneda</label>
-          <select id="filtroMoneda">
-            <option value="">Todas</option>
-            <option value="USD">USD</option>
-            <option value="ARS">$ (Pesos)</option>
-          </select>
+          <div class="flt-select"><button class="flt-select__btn" type="button"><span>Todas</span><svg class="flt-select__chev" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg></button><ul class="flt-select__menu"><li data-value="" class="active">Todas</li><li data-value="USD">USD</li><li data-value="ARS">$ (Pesos)</li></ul><input type="hidden" id="filtroMoneda" value=""></div>
         </div>
         <div class="filter-group">
           <label>Tipo de propiedad</label>
-          <select id="filtroTipoProp">
-            <option value="">Todos</option>
-            <option value="casa">Casa</option>
-            <option value="departamento">Departamento</option>
-            <option value="duplex">Dúplex</option>
-            <option value="quinta">Quinta</option>
-            <option value="terreno">Terreno</option>
-            <option value="local comercial">Local comercial</option>
-            <option value="campo">Campo</option>
-            <option value="oficina">Oficina</option>
-            <option value="galpon">Galpón</option>
-            <option value="cochera">Cochera</option>
-          </select>
+          <div class="flt-select"><button class="flt-select__btn" type="button"><span>Todos</span><svg class="flt-select__chev" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg></button><ul class="flt-select__menu"><li data-value="" class="active">Todos</li><li data-value="casa">Casa</li><li data-value="departamento">Departamento</li><li data-value="duplex">Dúplex</li><li data-value="quinta">Quinta</li><li data-value="terreno">Terreno</li><li data-value="local comercial">Local comercial</li><li data-value="campo">Campo</li><li data-value="oficina">Oficina</li><li data-value="galpon">Galpón</li><li data-value="cochera">Cochera</li></ul><input type="hidden" id="filtroTipoProp" value=""></div>
         </div>
         <div class="filter-group">
           <label>Ambientes</label>
-          <select id="filtroAmbientes">
-            <option value="">Todos</option>
-            <option value="1">1</option>
-            <option value="2">2</option>
-            <option value="3">3</option>
-            <option value="4">4+</option>
-          </select>
+          <div class="flt-select"><button class="flt-select__btn" type="button"><span>Todos</span><svg class="flt-select__chev" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg></button><ul class="flt-select__menu"><li data-value="" class="active">Todos</li><li data-value="1">1</li><li data-value="2">2</li><li data-value="3">3</li><li data-value="4">4+</li></ul><input type="hidden" id="filtroAmbientes" value=""></div>
         </div>
         <div class="filter-group">
           <label>Dormitorios</label>
-          <select id="filtroDorm">
-            <option value="">Todos</option>
-            <option value="1">1</option>
-            <option value="2">2</option>
-            <option value="3">3</option>
-            <option value="4">4+</option>
-          </select>
+          <div class="flt-select"><button class="flt-select__btn" type="button"><span>Todos</span><svg class="flt-select__chev" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg></button><ul class="flt-select__menu"><li data-value="" class="active">Todos</li><li data-value="1">1</li><li data-value="2">2</li><li data-value="3">3</li><li data-value="4">4+</li></ul><input type="hidden" id="filtroDorm" value=""></div>
         </div>
         <div class="filter-group">
           <label>Baños</label>
-          <select id="filtroBanos">
-            <option value="">Todos</option>
-            <option value="1">1</option>
-            <option value="2">2</option>
-            <option value="3">3+</option>
-          </select>
+          <div class="flt-select"><button class="flt-select__btn" type="button"><span>Todos</span><svg class="flt-select__chev" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg></button><ul class="flt-select__menu"><li data-value="" class="active">Todos</li><li data-value="1">1</li><li data-value="2">2</li><li data-value="3">3+</li></ul><input type="hidden" id="filtroBanos" value=""></div>
         </div>
         <div class="filter-group">
           <label>Cochera</label>
-          <select id="filtroCochera">
-            <option value="">Todos</option>
-            <option value="si">Con cochera</option>
-          </select>
+          <div class="flt-select"><button class="flt-select__btn" type="button"><span>Todos</span><svg class="flt-select__chev" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg></button><ul class="flt-select__menu"><li data-value="" class="active">Todos</li><li data-value="si">Con cochera</li></ul><input type="hidden" id="filtroCochera" value=""></div>
         </div>
         <div class="filter-group">
           <label>Sup. mín. (m²)</label>
