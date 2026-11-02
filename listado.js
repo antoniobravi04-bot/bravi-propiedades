@@ -77,6 +77,7 @@ function renderCards(props) {
     const hasMany   = p.imagenes && p.imagenes.length > 1;
     const img0      = netlifyImg((p.imagenes && p.imagenes[0]) || p.imagen || FALLBACK_IMG, 600, 450);
 
+    const priceText  = (!p.precio || p.precio === 'Consultar' || (p.precioNum && p.precioNum < 1000 && p.moneda !== 'USD')) ? 'Consultar valor' : p.precio;
     const sliderBtns = hasMany ? `
       <button class="card-slide-btn card-slide-btn--prev" aria-label="Foto anterior">&#8249;</button>
       <button class="card-slide-btn card-slide-btn--next" aria-label="Foto siguiente">&#8250;</button>
@@ -90,6 +91,7 @@ function renderCards(props) {
         </a>
         ${badge}
         ${sliderBtns}
+        <div class="prop-card__price-img">${priceText}</div>
       </div>
       <div class="prop-card__body">
         <h3>${titulo}</h3>
@@ -98,7 +100,6 @@ function renderCards(props) {
           ${dormText}${supText}
         </div>
         <div class="prop-card__footer">
-          <span class="prop-card__price">${(!p.precio || p.precio === 'Consultar' || (p.precioNum && p.precioNum < 1000 && p.moneda !== 'USD')) ? 'Consultar valor' : p.precio}</span>
           <a href="https://wa.me/5491162784642?text=${encodeURIComponent('Hola! Me interesa: ' + titulo + ' — https://bravipropiedades.com.ar/propiedad/' + (p.slug || p.id))}" target="_blank" rel="noopener" class="btn btn--sm btn--wapp" aria-label="WhatsApp" data-prop-id="${p.id}" data-prop-tipo="${p.tipo || ''}" data-prop-precio="${p.precio || ''}">
             ${waSVG}
           </a>
