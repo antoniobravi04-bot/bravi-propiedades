@@ -847,6 +847,10 @@ a   { text-decoration: none; }
 }
 .footer__nav a:hover { color: rgba(255,255,255,.92); }
 
+/* ===== PAGE LOAD FADE ===== */
+@keyframes pageFadeIn { from { opacity: 0; } to { opacity: 1; } }
+body { animation: pageFadeIn .4s ease both; }
+
 /* ===== FADE IN ===== */
 .fade-up {
   opacity: 0;
@@ -1309,27 +1313,28 @@ a   { text-decoration: none; }
 
 /* ===== LISTADO PAGES ===== */
 .listado-header {
-  background: #f5f6f8;
-  padding: 120px 0 28px;
+  background: linear-gradient(160deg, var(--navy) 0%, #1a4fa8 50%, #dde6f5 100%);
+  padding: 120px 0 48px;
   text-align: center;
-  border-bottom: 1px solid #e8e9ec;
+  border-bottom: none;
 }
 
 /* Switcher Venta / Alquiler */
 .listado-switcher {
   display: inline-flex;
-  background: #e2e4e8;
+  background: rgba(255,255,255,.15);
   border-radius: 50px;
   padding: 4px;
   gap: 0;
   margin-bottom: 20px;
+  backdrop-filter: blur(8px);
 }
 .listado-sw {
   padding: 10px 36px;
   border-radius: 50px;
   font-weight: 600;
   font-size: 1rem;
-  color: #888;
+  color: rgba(255,255,255,.75);
   text-decoration: none;
   transition: background 0.2s, color 0.2s;
   white-space: nowrap;
@@ -1338,21 +1343,21 @@ a   { text-decoration: none; }
   .listado-switcher { display: flex; width: 100%; box-sizing: border-box; }
   .listado-sw { padding: 10px 0; flex: 1; text-align: center; }
 }
-.listado-sw:hover:not(.listado-sw--active) { color: var(--dark); }
+.listado-sw:hover:not(.listado-sw--active) { color: #fff; }
 .listado-sw--active {
-  background: var(--navy);
-  color: #fff;
+  background: #fff;
+  color: var(--navy);
 }
 
 .listado-header__title {
   font-family: 'Montserrat', sans-serif;
   font-size: clamp(1.6rem, 4vw, 2.4rem);
-  color: var(--dark);
+  color: #fff;
   margin: 0 0 8px;
 }
 .listado-header__count {
   font-size: .9rem;
-  color: var(--text-muted);
+  color: rgba(255,255,255,.8);
   margin: 0;
 }
 
