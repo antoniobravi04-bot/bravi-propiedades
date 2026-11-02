@@ -340,7 +340,7 @@ a   { text-decoration: none; }
 .stat--div { border-left: 1px solid rgba(255,255,255,.1); }
 .stat__num {
   display: block;
-  font-family: 'Space Mono', monospace;
+  font-family: 'Barlow Condensed', sans-serif;
   font-size: 3rem;
   font-weight: 700;
   color: var(--white);
