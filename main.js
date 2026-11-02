@@ -21,7 +21,7 @@ function renderPropiedades(props) {
       ? `<span class="badge badge--alq">Alquiler</span>`
       : `<span class="badge badge--venta">Venta</span>`;
     const dormText = p.dormitorios ? `<span>${p.dormitorios} dorm.</span>` : '';
-    const supText  = p.superficie  ? `<span>${p.superficie}</span>` : '';
+    const supText  = p.superficie && parseInt(p.superficie) !== 1 ? `<span>${p.superficie}</span>` : '';
     let titulo = p.titulo || '';
     if (!titulo || titulo === 'Venta' || titulo === 'Alquiler') {
       const tp = p.tipoProp ? p.tipoProp.charAt(0).toUpperCase() + p.tipoProp.slice(1) : '';
