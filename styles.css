@@ -1362,7 +1362,7 @@ body { animation: pageFadeIn .45s ease both; }
     background-position: center 30% !important;
     background-size: cover !important;
   }
-  .hero__main { padding-top: 80px; padding-bottom: 16px; }
+  .hero__main { padding-top: 130px; padding-bottom: 16px; }
   .hero__stats { padding-block: 24px 28px; }
   .hero__stats .stats__grid { grid-template-columns: repeat(2, 1fr); gap: 0; }
   .hero__stats .stat--div:nth-child(3) { border-left: none; border-top: 1px solid rgba(255,255,255,.1); }
