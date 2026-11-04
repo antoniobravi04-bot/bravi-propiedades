@@ -1010,19 +1010,28 @@ body { animation: pageFadeIn .45s ease both; }
 
   .section { padding-block: 72px; }
   .nav__links {
-    display: none;
+    display: flex;
     flex-direction: column;
     align-items: flex-start;
     gap: 0;
     position: absolute;
     top: 100%; left: 0; right: 0;
-    background: #fff;
-    padding: 0 0 16px;
-    box-shadow: 0 8px 32px rgba(0,0,0,.12);
+    background: #001533;
+    padding: 0 0 20px;
+    box-shadow: 0 16px 40px rgba(0,0,0,.35);
     border-top: 2px solid var(--gold);
     z-index: 999;
+    /* animación */
+    transform: translateY(-8px);
+    opacity: 0;
+    pointer-events: none;
+    transition: transform .22s ease, opacity .22s ease;
   }
-  .nav__links.open   { display: flex; }
+  .nav__links.open {
+    transform: translateY(0);
+    opacity: 1;
+    pointer-events: auto;
+  }
   .nav__hamburger    { display: flex; }
   .nav__hero-cta     { display: none !important; }
   /* Nav type switcher: sale del centro absoluto, se muestra inline antes del hamburger */
@@ -1034,41 +1043,42 @@ body { animation: pageFadeIn .45s ease both; }
     gap: 2px;
   }
   .nav__type-sw { padding: 5px 11px; font-size: .72rem; }
-  .nav__links > li   { width: 100%; border-bottom: 1px solid var(--border); }
-  .nav__links > li > a { display: block; padding: 14px 24px; color: var(--navy) !important; font-size: .97rem; }
+  .nav__links > li   { width: 100%; border-bottom: 1px solid rgba(255,255,255,.08); }
+  .nav__links > li > a { display: block; padding: 15px 24px; color: rgba(255,255,255,.9) !important; font-size: .97rem; }
+  .nav__links > li > a:hover { color: #fff !important; background: rgba(255,255,255,.06); }
   /* Contacto: subtle plain link */
   .nav__links .btn--nav {
     background: none; border: none; box-shadow: none; border-radius: 0;
-    color: var(--text-muted) !important; font-weight: 400; font-size: .85rem;
+    color: rgba(255,255,255,.55) !important; font-weight: 400; font-size: .85rem;
     margin: 0; width: 100%; padding: 12px 24px; justify-content: flex-start;
   }
   /* Social icons row */
   .nav__links .nav__social {
-    display: flex; gap: 18px; padding: 14px 24px 0;
+    display: flex; gap: 18px; padding: 16px 24px 0;
     border-bottom: none; border-left: none; margin-left: 0;
   }
-  .nav__links .nav__social a { color: var(--navy-lt); }
-  .nav__links .nav__social a:hover { color: var(--navy); }
+  .nav__links .nav__social a { color: rgba(255,255,255,.5); }
+  .nav__links .nav__social a:hover { color: #fff; }
   /* Hide desktop dropdown arrow and submenu on mobile */
   .nav__dropdown > a::after { display: none; }
   .nav__submenu { display: none !important; }
   /* Sub-links for Ventas/Alquileres shown as indented items */
   .nav__mobile-sub {
     display: block !important; width: 100%;
-    border-bottom: 1px solid var(--border) !important;
+    border-bottom: 1px solid rgba(255,255,255,.08) !important;
   }
   .nav__mobile-sub a {
-    display: block; padding: 11px 24px 11px 40px !important;
-    color: var(--navy-lt) !important; font-size: .9rem; font-weight: 500;
-    border-left: 3px solid var(--gold); margin-left: 24px;
+    display: block; padding: 10px 24px 10px 40px !important;
+    color: rgba(255,255,255,.6) !important; font-size: .9rem; font-weight: 500;
+    border-left: 2px solid var(--gold); margin-left: 24px;
   }
-  .nav__mobile-sub a:hover { color: var(--navy) !important; background: var(--off-white); }
+  .nav__mobile-sub a:hover { color: #fff !important; background: rgba(255,255,255,.05); }
   /* Botones Venta / Alquiler en menú mobile */
   .nav__mobile-cta {
     display: flex !important;
     gap: 10px;
-    padding: 14px 24px;
-    border-bottom: 1px solid var(--border);
+    padding: 16px 24px;
+    border-bottom: 1px solid rgba(255,255,255,.08);
   }
   .nav__cta-btn {
     flex: 1;
@@ -1080,8 +1090,9 @@ body { animation: pageFadeIn .45s ease both; }
     text-decoration: none;
     transition: opacity .18s;
   }
-  .nav__cta-btn--venta   { background: transparent; border: 2px solid var(--navy); color: var(--navy); }
-  .nav__cta-btn--alquiler { background: transparent; border: 2px solid var(--navy); color: var(--navy); }
+  .nav__cta-btn--venta   { background: rgba(255,255,255,.12); border: 1px solid rgba(255,255,255,.25); color: #fff; }
+  .nav__cta-btn--alquiler { background: rgba(255,255,255,.12); border: 1px solid rgba(255,255,255,.25); color: #fff; }
+  .nav__cta-btn:hover { background: rgba(255,255,255,.22) !important; opacity: 1; }
   .nav__cta-btn:hover { opacity: .85; }
 
   /* Hide old mobile-only block */
