@@ -353,7 +353,9 @@ a   { text-decoration: none; }
 
 /* ===== STATS ===== */
 .stats {
-  background: var(--navy);
+  background:
+    linear-gradient(rgba(0,18,65,.78), rgba(0,18,65,.78)),
+    url('hero-bg-3.jpg') center / cover no-repeat;
   padding-block: 60px;
 }
 .stats__grid {
