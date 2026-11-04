@@ -270,6 +270,8 @@ a   { text-decoration: none; }
   justify-content: center;
   padding-top: 90px; /* topbar 30px + nav 60px */
   padding-bottom: 24px;
+  position: relative;
+  z-index: 3;
 }
 
 /* ─ Slides del hero ─ */
