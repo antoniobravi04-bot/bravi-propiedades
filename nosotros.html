@@ -120,7 +120,6 @@
     </div>
     <div class="nos-hero__overlay"></div>
     <div class="container nos-hero__content">
-      <p class="nos-hero__eyebrow">Inmobiliaria Bravi · General Rodríguez y la zona</p>
       <h1 class="nos-hero__title">Quiénes somos</h1>
       <p class="nos-hero__sub">Más de 30 años trabajando en el mercado local,<br>conociendo cada barrio, cada calle, cada propiedad.</p>
       <!-- Thumbnails navegación -->
@@ -168,7 +167,7 @@
     .nos-hero__content {
       position: relative; z-index: 2;
       text-align: center;
-      padding-top: 118px;
+      padding-top: 100px;
       padding-bottom: 32px;
       display: flex;
       flex-direction: column;
@@ -176,16 +175,12 @@
       height: 100%;
       justify-content: space-between;
     }
-    .nos-hero__eyebrow {
-      font-size: .78rem; font-weight: 600; letter-spacing: .1em;
-      text-transform: uppercase; color: rgba(255,255,255,.60);
-      margin-bottom: 14px;
-    }
     .nos-hero__title {
       font-family: 'Montserrat', sans-serif;
       font-size: clamp(2.4rem, 5.5vw, 4.2rem);
       font-weight: 700; color: #fff; line-height: 1.1;
       letter-spacing: -0.025em; margin-bottom: 16px;
+      margin-top: 0;
     }
     .nos-hero__sub {
       font-size: clamp(.9rem, 1.1vw, 1.05rem);
@@ -199,13 +194,16 @@
       flex-wrap: wrap;
     }
     .nos-hero__thumb {
-      width: 80px; height: 54px;
+      width: 88px; height: 60px;
       border-radius: 8px;
       border: 2px solid rgba(255,255,255,.25);
-      background-size: cover; background-position: center;
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
       cursor: pointer;
       opacity: .55;
       transition: opacity .2s, border-color .2s, transform .2s;
+      padding: 0;
     }
     .nos-hero__thumb:hover { opacity: .85; transform: scale(1.05); }
     .nos-hero__thumb.active {
