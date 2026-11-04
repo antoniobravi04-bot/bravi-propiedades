@@ -28,7 +28,7 @@ body {
   line-height: 1.7;
   color: var(--text);
   background: var(--white);
-  overflow-x: hidden;
+  overflow-x: clip; /* clip no crea scroll container → position:fixed funciona en iOS Safari */
 }
 
 img { display: block; width: 100%; object-fit: cover; }
