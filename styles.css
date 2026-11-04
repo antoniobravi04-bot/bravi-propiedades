@@ -258,9 +258,15 @@ a   { text-decoration: none; }
   min-height: 100svh;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  padding-top: 30px;
+  padding-top: 0;
   background: #001840; /* fallback mientras cargan las fotos */
+}
+.hero__main {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  padding-top: 90px; /* topbar 30px + nav 60px */
+  padding-bottom: 24px;
 }
 
 /* ─ Slides del hero ─ */
@@ -307,8 +313,8 @@ a   { text-decoration: none; }
   position: relative;
   z-index: 2;
   max-width: clamp(680px, 52%, 860px); /* crece con el ancho disponible */
-  padding-top: clamp(80px, 14vh, 160px);
-  padding-bottom: clamp(16px, 3vh, 40px);
+  padding-top: 0;
+  padding-bottom: 0;
 }
 .hero__logo {
   height: 72px; width: auto; object-fit: contain;
@@ -356,8 +362,7 @@ a   { text-decoration: none; }
 .hero__stats {
   position: relative;
   z-index: 2;
-  margin-top: auto;
-  padding-block: 36px 40px;
+  padding-block: 32px 36px;
   border-top: 1px solid rgba(255,255,255,.12);
 }
 .stats {
@@ -1353,10 +1358,7 @@ body { animation: pageFadeIn .45s ease both; }
     background-position: center 30% !important;
     background-size: cover !important;
   }
-  .hero__content {
-    padding-top: 90px;
-    padding-bottom: 28px;
-  }
+  .hero__main { padding-top: 80px; padding-bottom: 16px; }
   .hero__stats { padding-block: 24px 28px; }
   .hero__stats .stats__grid { grid-template-columns: repeat(2, 1fr); gap: 0; }
   .hero__stats .stat--div:nth-child(3) { border-left: none; border-top: 1px solid rgba(255,255,255,.1); }
