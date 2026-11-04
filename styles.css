@@ -1386,6 +1386,16 @@ body { animation: pageFadeIn .45s ease both; }
   min-width: 0;
 }
 .hero__search-input::placeholder { color: var(--text-muted); }
+/* En desktop el row es un flex item que ocupa el espacio restante */
+.hero__search-row {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  min-width: 0;
+  gap: 0;
+}
+.hero__search-row .hero__search-input { flex: 1; }
+
 .hero__search-btn {
   background: var(--navy);
   color: #fff;
