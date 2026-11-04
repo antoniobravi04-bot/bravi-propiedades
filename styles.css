@@ -1261,6 +1261,7 @@ body { animation: pageFadeIn .45s ease both; }
   font-family: inherit;
 }
 .hero__op.open .hero__tipo-chevron { transform: rotate(180deg); }
+.hero__op.open { z-index: 50; }
 .hero__op-menu {
   display: none;
   position: absolute;
@@ -1324,6 +1325,7 @@ body { animation: pageFadeIn .45s ease both; }
 }
 .hero__tipo-chevron { transition: transform .2s; flex-shrink: 0; }
 .hero__tipo.open .hero__tipo-chevron { transform: rotate(180deg); }
+.hero__tipo.open { z-index: 50; }
 .hero__tipo-menu {
   display: none;
   position: absolute;
