@@ -2148,7 +2148,7 @@ body { animation: pageFadeIn .45s cubic-bezier(.22,.68,0,1.2) both; }
   /* safe-area-inset-bottom: respeta la barra home y toolbar de Safari en iPhone X+ */
   bottom: calc(20px + env(safe-area-inset-bottom));
   right: 20px;
-  z-index: 1000;
+  z-index: 9999;
   width: 56px;
   height: 56px;
   background: #25d366;
