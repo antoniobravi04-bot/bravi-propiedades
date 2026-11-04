@@ -115,47 +115,129 @@
     </div>
   </nav>
 
-  <!-- HEADER -->
-  <section class="listado-header">
-    <div class="container">
-      <h1 class="listado-header__title">Tasación de tu propiedad</h1>
-      <p class="listado-header__count">Valuación profesional con criterio real del mercado en General Rodríguez y la zona</p>
+  <!-- HERO TASACIÓN -->
+  <section class="tas-hero">
+    <div class="tas-hero__bg"></div>
+    <div class="tas-hero__overlay"></div>
+    <div class="container tas-hero__content">
+      <p class="tas-hero__eyebrow">¿Cuánto vale tu propiedad?</p>
+      <h1 class="tas-hero__title">Conocé el valor real<br>de tu propiedad</h1>
+      <p class="tas-hero__sub">Antes de vender o alquilar, conocer el valor real de tu propiedad es fundamental.<br>Una tasación correcta evita vender por debajo del mercado y ahorra tiempo de espera.</p>
+      <div class="tas-hero__cards">
+        <div class="tas-card">
+          <div class="tas-card__icon">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><polyline points="12 16 12.01 16"/></svg>
+          </div>
+          <h3>Sin presiones ni obligaciones</h3>
+          <p>No hay ninguna obligación de vender ni alquilar con nosotros después de la tasación.</p>
+        </div>
+        <div class="tas-card">
+          <div class="tas-card__icon">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+          </div>
+          <h3>Criterio real del mercado</h3>
+          <p>Nos basamos en operaciones reales de la zona, no en valores de portales online.</p>
+        </div>
+        <div class="tas-card">
+          <div class="tas-card__icon">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          </div>
+          <h3>Más de 30 años en la zona</h3>
+          <p>Conocemos cada barrio, cada calle y cada tipo de propiedad en General Rodríguez.</p>
+        </div>
+      </div>
     </div>
   </section>
 
-  <!-- ¿POR QUÉ TASAR? -->
-  <section class="section">
-    <div class="container">
-      <div class="section__header">
-        <p class="eyebrow">¿Cuánto vale tu propiedad?</p>
-        <h2 class="section__title">Conocé el valor real<br>de tu propiedad</h2>
-        <p class="section__sub" style="max-width:600px;margin:0 auto">Antes de vender o alquilar, conocer el valor real de tu propiedad es fundamental. Una tasación correcta evita vender por debajo del mercado y ahorra tiempo de espera.</p>
-      </div>
-      <div class="servicios__grid" style="margin-top:44px;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));max-width:960px;margin-left:auto;margin-right:auto">
-        <div class="card">
-          <div class="card__icon">
-            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><polyline points="12 16 12.01 16"/></svg>
-          </div>
-          <h3>Sin presiones ni obligaciones</h3>
-          <p>No hay ninguna obligación de vender ni alquilar con nosotros después de la tasación. La decisión es tuya y la respetamos.</p>
-        </div>
-        <div class="card">
-          <div class="card__icon">
-            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
-          </div>
-          <h3>Criterio real del mercado</h3>
-          <p>Nos basamos en operaciones reales de la zona, no en valores de portales online. Nuestras valuaciones reflejan lo que realmente se paga hoy.</p>
-        </div>
-        <div class="card">
-          <div class="card__icon">
-            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
-          </div>
-          <h3>Más de 30 años en la zona</h3>
-          <p>Conocemos cada barrio, cada calle y cada tipo de propiedad en General Rodríguez y la zona. Eso nos da una ventaja real para valuarte con precisión.</p>
-        </div>
-      </div>
-    </div>
-  </section>
+  <style>
+    /* ── HERO TASACIÓN ── */
+    .tas-hero {
+      position: relative;
+      min-height: 88svh;
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+      padding: 100px 0 0;
+    }
+    .tas-hero__bg {
+      position: absolute; inset: 0;
+      background: url('tasacion-bg.jpg') center 40% / cover no-repeat;
+      animation: kenburns 18s ease-in-out infinite alternate;
+      will-change: transform;
+    }
+    @keyframes kenburns {
+      from { transform: scale(1)    translateX(0)     translateY(0); }
+      to   { transform: scale(1.08) translateX(-2%)   translateY(-1%); }
+    }
+    .tas-hero__overlay {
+      position: absolute; inset: 0;
+      background:
+        linear-gradient(to bottom, rgba(0,10,35,.65) 0%, rgba(0,10,35,.40) 50%, rgba(0,10,35,.82) 100%);
+    }
+    .tas-hero__content {
+      position: relative; z-index: 2;
+      text-align: center;
+      padding-bottom: 60px;
+    }
+    .tas-hero__eyebrow {
+      font-size: .78rem; font-weight: 600; letter-spacing: .12em;
+      text-transform: uppercase; color: rgba(255,255,255,.65);
+      margin-bottom: 16px;
+    }
+    .tas-hero__title {
+      font-family: 'Montserrat', sans-serif;
+      font-size: clamp(2.2rem, 5vw, 3.8rem);
+      font-weight: 700; color: #fff; line-height: 1.15;
+      letter-spacing: -0.025em; margin-bottom: 20px;
+    }
+    .tas-hero__sub {
+      font-size: clamp(.95rem, 1.1vw, 1.1rem);
+      color: rgba(255,255,255,.78); line-height: 1.8;
+      max-width: 640px; margin: 0 auto 52px;
+    }
+    /* Cards flotantes */
+    .tas-hero__cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+    .tas-card {
+      background: rgba(255,255,255,.10);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border: 1px solid rgba(255,255,255,.18);
+      border-radius: 16px;
+      padding: 28px 24px;
+      text-align: left;
+      transition: background .2s, transform .2s;
+    }
+    .tas-card:hover {
+      background: rgba(255,255,255,.16);
+      transform: translateY(-3px);
+    }
+    .tas-card__icon {
+      width: 48px; height: 48px; border-radius: 12px;
+      background: rgba(255,255,255,.15);
+      display: flex; align-items: center; justify-content: center;
+      color: #fff; margin-bottom: 16px;
+    }
+    .tas-card h3 {
+      font-size: .95rem; font-weight: 600; color: #fff;
+      margin-bottom: 8px; line-height: 1.3;
+    }
+    .tas-card p {
+      font-size: .85rem; color: rgba(255,255,255,.70); line-height: 1.65;
+      margin: 0;
+    }
+    @media (max-width: 700px) {
+      .tas-hero { min-height: auto; padding: 90px 0 0; }
+      .tas-hero__cards { grid-template-columns: 1fr; gap: 14px; }
+      .tas-hero__sub br { display: none; }
+      .tas-hero__title br { display: none; }
+    }
+  </style>
 
   <!-- CÓMO FUNCIONA -->
   <section class="section bg-soft">
