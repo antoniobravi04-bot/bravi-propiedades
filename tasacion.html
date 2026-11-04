@@ -109,6 +109,10 @@
           </a>
         </li>
       </ul>
+      <div class="nav__type-switcher">
+        <a href="ventas.html" class="nav__type-sw">Venta</a>
+        <a href="alquileres.html" class="nav__type-sw">Alquiler</a>
+      </div>
       <button class="nav__hamburger" id="hamburger" aria-label="Menú">
         <span></span><span></span><span></span>
       </button>
@@ -155,9 +159,8 @@
       position: relative;
       min-height: 88svh;
       display: flex;
-      align-items: center;
+      align-items: flex-start;
       overflow: hidden;
-      padding: 100px 0 0;
     }
     .tas-hero__bg {
       position: absolute; inset: 0;
@@ -177,6 +180,7 @@
     .tas-hero__content {
       position: relative; z-index: 2;
       text-align: center;
+      padding-top: 110px; /* topbar 30px + nav 60px + espacio */
       padding-bottom: 60px;
     }
     .tas-hero__eyebrow {
@@ -232,7 +236,8 @@
       margin: 0;
     }
     @media (max-width: 700px) {
-      .tas-hero { min-height: auto; padding: 90px 0 0; }
+      .tas-hero { min-height: auto; }
+      .tas-hero__content { padding-top: 90px; }
       .tas-hero__cards { grid-template-columns: 1fr; gap: 14px; }
       .tas-hero__sub br { display: none; }
       .tas-hero__title br { display: none; }
