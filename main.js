@@ -295,9 +295,16 @@ document.getElementById('heroTexto').addEventListener('keydown', e => {
 // Nav hamburger toggle
 const hamburger = document.getElementById('hamburger');
 const navLinks  = document.querySelector('.nav__links');
-hamburger.addEventListener('click', () => navLinks.classList.toggle('open'));
+const navEl     = document.getElementById('nav');
+hamburger.addEventListener('click', () => {
+  const isOpen = navLinks.classList.toggle('open');
+  navEl.classList.toggle('nav--menu-open', isOpen);
+});
 navLinks.querySelectorAll('a').forEach(a =>
-  a.addEventListener('click', () => navLinks.classList.remove('open'))
+  a.addEventListener('click', () => {
+    navLinks.classList.remove('open');
+    navEl.classList.remove('nav--menu-open');
+  })
 );
 
 // Nav shrink + shadow on scroll

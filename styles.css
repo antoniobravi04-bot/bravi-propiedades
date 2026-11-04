@@ -181,7 +181,8 @@ a   { text-decoration: none; }
   backdrop-filter: none;
   border-bottom-color: transparent;
 }
-.page-home .nav--scrolled {
+.page-home .nav--scrolled,
+.page-home .nav--menu-open {
   background: rgba(18,62,138,.97);
   backdrop-filter: blur(10px);
   border-bottom-color: rgba(255,255,255,.08);
@@ -1019,7 +1020,7 @@ body { animation: pageFadeIn .45s ease both; }
     background: var(--navy);
     padding: 0 0 12px;
     box-shadow: 0 16px 40px rgba(0,0,0,.35);
-    border-top: 2px solid var(--gold);
+    border-top: 1px solid rgba(255,255,255,.25);
     z-index: 999;
     /* animación despliegue */
     max-height: 0;
@@ -1092,9 +1093,9 @@ body { animation: pageFadeIn .45s ease both; }
     text-decoration: none;
     transition: opacity .18s;
   }
-  .nav__cta-btn--venta   { background: transparent; border: 1px solid rgba(255,255,255,.35); color: rgba(255,255,255,.88); font-weight: 400; }
-  .nav__cta-btn--alquiler { background: transparent; border: 1px solid rgba(255,255,255,.35); color: rgba(255,255,255,.88); font-weight: 400; }
-  .nav__cta-btn:hover { background: rgba(255,255,255,.1) !important; border-color: rgba(255,255,255,.6) !important; opacity: 1; }
+  .nav__cta-btn--venta   { background: #fff; border: none; color: var(--navy); font-weight: 600; border-radius: 50px; box-shadow: 0 2px 10px rgba(0,0,0,.18); }
+  .nav__cta-btn--alquiler { background: #fff; border: none; color: var(--navy); font-weight: 600; border-radius: 50px; box-shadow: 0 2px 10px rgba(0,0,0,.18); }
+  .nav__cta-btn:hover { opacity: .88 !important; transform: translateY(-1px); }
   .nav__cta-btn:hover { opacity: .85; }
 
   /* Hide old mobile-only block */
