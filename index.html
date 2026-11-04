@@ -76,7 +76,7 @@
   <script>!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');fbq('init','929142609966270');fbq('track','PageView');</script>
   <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=929142609966270&ev=PageView&noscript=1"/></noscript>
 </head>
-<body>
+<body class="page-home">
 
   <!-- TOPBAR -->
   <div class="nav__topbar">
@@ -724,9 +724,12 @@
   (function () {
     var nav = document.getElementById('nav');
     if (!nav) return;
+    var topbar = document.querySelector('.nav__topbar');
     var heroBtns = document.querySelector('.hero__op-btns');
     function update() {
-      nav.classList.toggle('nav--scrolled', window.scrollY > 10);
+      var scrolled = window.scrollY > 10;
+      nav.classList.toggle('nav--scrolled', scrolled);
+      if (topbar) topbar.classList.toggle('topbar--solid', scrolled);
       if (heroBtns) {
         var r = heroBtns.getBoundingClientRect();
         nav.classList.toggle('nav--past-hero', r.bottom < 10);

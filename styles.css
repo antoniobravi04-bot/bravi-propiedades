@@ -163,7 +163,28 @@ a   { text-decoration: none; }
   background: rgba(18,62,138,.97);
   backdrop-filter: blur(10px);
   border-bottom: 1px solid rgba(255,255,255,.08);
-  transition: box-shadow var(--t);
+  transition: background .35s ease, border-color .35s ease, box-shadow var(--t);
+}
+
+/* ===== HOME: NAV TRANSPARENTE SOBRE EL HERO ===== */
+.page-home .nav__topbar {
+  background: transparent;
+  border-bottom-color: transparent;
+  transition: background .35s ease, border-color .35s ease;
+}
+.page-home .topbar--solid {
+  background: rgba(0,40,110,1);
+  border-bottom-color: rgba(255,255,255,.1);
+}
+.page-home .nav {
+  background: transparent;
+  backdrop-filter: none;
+  border-bottom-color: transparent;
+}
+.page-home .nav--scrolled {
+  background: rgba(18,62,138,.97);
+  backdrop-filter: blur(10px);
+  border-bottom-color: rgba(255,255,255,.08);
 }
 .nav__inner {
   display: flex;
@@ -269,14 +290,16 @@ a   { text-decoration: none; }
   position: absolute;
   inset: 0;
   z-index: 1;
-  /* Gradiente fuerte a la izquierda (donde está el texto) → transparente a la derecha */
-  background: linear-gradient(
-    105deg,
-    rgba(0,18,55,.72) 0%,
-    rgba(0,25,70,.50) 40%,
-    rgba(0,15,45,.20) 75%,
-    rgba(0,10,35,.08) 100%
-  );
+  /* Gradiente izquierda→derecha para el texto + gradiente superior para el nav transparente */
+  background:
+    linear-gradient(to bottom, rgba(0,12,40,.55) 0%, transparent 28%),
+    linear-gradient(
+      105deg,
+      rgba(0,18,55,.72) 0%,
+      rgba(0,25,70,.50) 40%,
+      rgba(0,15,45,.20) 75%,
+      rgba(0,10,35,.08) 100%
+    );
 }
 .hero__content {
   position: relative;
