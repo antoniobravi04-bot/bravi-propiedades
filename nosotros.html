@@ -109,28 +109,142 @@
   </nav>
 
   <!-- HEADER -->
-  <section class="listado-header">
-    <div class="container">
-      <h1 class="listado-header__title">Quiénes somos</h1>
-      <p class="listado-header__count">Inmobiliaria Bravi — General Rodríguez y la zona</p>
+  <!-- HERO NOSOTROS -->
+  <section class="nos-hero" id="nosHero">
+    <div class="nos-hero__slides">
+      <div class="nos-hero__slide active" style="background-image:url('grod-1.webp')"></div>
+      <div class="nos-hero__slide" style="background-image:url('grod-2.jpg')"></div>
+      <div class="nos-hero__slide" style="background-image:url('grod-3.jpg')"></div>
+      <div class="nos-hero__slide" style="background-image:url('grod-4.jpg')"></div>
+      <div class="nos-hero__slide" style="background-image:url('grod-5.jpg')"></div>
+      <div class="nos-hero__slide" style="background-image:url('grod-6.jpg')"></div>
+    </div>
+    <div class="nos-hero__overlay"></div>
+    <div class="container nos-hero__content">
+      <p class="nos-hero__eyebrow">Inmobiliaria Bravi · General Rodríguez y la zona</p>
+      <h1 class="nos-hero__title">Quiénes somos</h1>
+      <p class="nos-hero__sub">Más de 30 años trabajando en el mercado local,<br>conociendo cada barrio, cada calle, cada propiedad.</p>
+      <!-- Thumbnails navegación -->
+      <div class="nos-hero__thumbs" id="nosThumbNav">
+        <button class="nos-hero__thumb active" data-slide="0" style="background-image:url('grod-1.webp')" aria-label="Foto 1"></button>
+        <button class="nos-hero__thumb" data-slide="1" style="background-image:url('grod-2.jpg')" aria-label="Foto 2"></button>
+        <button class="nos-hero__thumb" data-slide="2" style="background-image:url('grod-3.jpg')" aria-label="Foto 3"></button>
+        <button class="nos-hero__thumb" data-slide="3" style="background-image:url('grod-4.jpg')" aria-label="Foto 4"></button>
+        <button class="nos-hero__thumb" data-slide="4" style="background-image:url('grod-5.jpg')" aria-label="Foto 5"></button>
+        <button class="nos-hero__thumb" data-slide="5" style="background-image:url('grod-6.jpg')" aria-label="Foto 6"></button>
+      </div>
     </div>
   </section>
+
+  <style>
+    .nos-hero {
+      position: relative;
+      height: 88svh;
+      min-height: 560px;
+      display: flex;
+      align-items: flex-start;
+      overflow: hidden;
+    }
+    .nos-hero__slides { position: absolute; inset: 0; }
+    .nos-hero__slide {
+      position: absolute; inset: 0;
+      background-size: cover; background-position: center;
+      opacity: 0; transition: opacity 1.2s ease;
+      animation: none;
+    }
+    .nos-hero__slide.active {
+      opacity: 1;
+      animation: kenburns-nos 14s ease-in-out forwards;
+    }
+    @keyframes kenburns-nos {
+      from { transform: scale(1)    translateX(0)   translateY(0); }
+      to   { transform: scale(1.07) translateX(-1%) translateY(-1%); }
+    }
+    .nos-hero__overlay {
+      position: absolute; inset: 0; z-index: 1;
+      background: linear-gradient(to bottom,
+        rgba(0,8,30,.60) 0%,
+        rgba(0,8,30,.35) 45%,
+        rgba(0,8,30,.78) 100%);
+    }
+    .nos-hero__content {
+      position: relative; z-index: 2;
+      text-align: center;
+      padding-top: 118px;
+      padding-bottom: 32px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      height: 100%;
+      justify-content: space-between;
+    }
+    .nos-hero__eyebrow {
+      font-size: .78rem; font-weight: 600; letter-spacing: .1em;
+      text-transform: uppercase; color: rgba(255,255,255,.60);
+      margin-bottom: 14px;
+    }
+    .nos-hero__title {
+      font-family: 'Montserrat', sans-serif;
+      font-size: clamp(2.4rem, 5.5vw, 4.2rem);
+      font-weight: 700; color: #fff; line-height: 1.1;
+      letter-spacing: -0.025em; margin-bottom: 16px;
+    }
+    .nos-hero__sub {
+      font-size: clamp(.9rem, 1.1vw, 1.05rem);
+      color: rgba(255,255,255,.75); line-height: 1.8;
+      max-width: 560px;
+    }
+    /* Thumbnails */
+    .nos-hero__thumbs {
+      display: flex; gap: 10px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    .nos-hero__thumb {
+      width: 80px; height: 54px;
+      border-radius: 8px;
+      border: 2px solid rgba(255,255,255,.25);
+      background-size: cover; background-position: center;
+      cursor: pointer;
+      opacity: .55;
+      transition: opacity .2s, border-color .2s, transform .2s;
+    }
+    .nos-hero__thumb:hover { opacity: .85; transform: scale(1.05); }
+    .nos-hero__thumb.active {
+      opacity: 1;
+      border-color: #fff;
+      transform: scale(1.07);
+    }
+    @media (max-width: 700px) {
+      .nos-hero { height: auto; min-height: 100svh; }
+      .nos-hero__content { padding-top: 100px; }
+      .nos-hero__thumb { width: 54px; height: 38px; }
+      .nos-hero__sub br { display: none; }
+    }
+  </style>
+
+  <script>
+    (function(){
+      var slides = document.querySelectorAll('.nos-hero__slide');
+      var thumbs = document.querySelectorAll('.nos-hero__thumb');
+      var cur = 0, timer;
+      function goTo(n) {
+        slides[cur].classList.remove('active');
+        thumbs[cur].classList.remove('active');
+        cur = (n + slides.length) % slides.length;
+        slides[cur].classList.add('active');
+        thumbs[cur].classList.add('active');
+        clearInterval(timer);
+        timer = setInterval(function(){ goTo(cur + 1); }, 5000);
+      }
+      thumbs.forEach(function(t){ t.addEventListener('click', function(){ goTo(+t.dataset.slide); }); });
+      timer = setInterval(function(){ goTo(cur + 1); }, 5000);
+    })();
+  </script>
 
   <!-- NOSOTROS -->
   <section class="nosotros section" id="nosotros">
     <div class="container nosotros__inner">
-      <div class="nosotros__img">
-        <div class="nosotros__img-frame">
-          <div class="slideshow" id="nosotrosSlide">
-            <picture><source srcset="nos-bg-1.webp" type="image/webp"><img src="nos-bg-1.jpg" alt="Living moderno con chimenea" class="slide active" /></picture>
-            <picture><source srcset="nos-bg-2.webp" type="image/webp"><img src="nos-bg-2.jpg" alt="Estar premium con bodega" class="slide" loading="lazy" /></picture>
-            <picture><source srcset="nos-bg-3.webp" type="image/webp"><img src="nos-bg-3.jpg" alt="Dormitorio elegante" class="slide" loading="lazy" /></picture>
-            <picture><source srcset="nos-bg-4.webp" type="image/webp"><img src="nos-bg-4.jpg" alt="Comedor moderno" class="slide" loading="lazy" /></picture>
-            <picture><source srcset="nos-bg-5.webp" type="image/webp"><img src="nos-bg-5.jpg" alt="Edificio moderno" class="slide" loading="lazy" /></picture>
-            <picture><source srcset="nos-bg-6.webp" type="image/webp"><img src="nos-bg-6.jpg" alt="Propiedad en General Rodríguez" class="slide" loading="lazy" /></picture>
-          </div>
-        </div>
-      </div>
       <div class="nosotros__text">
         <p class="eyebrow">Quiénes somos</p>
         <h2 class="section__title">Más de 30 años<br>en el mercado</h2>
