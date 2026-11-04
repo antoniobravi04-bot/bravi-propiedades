@@ -1494,6 +1494,7 @@ body { animation: pageFadeIn .45s ease both; }
 .listado-header__title {
   font-family: 'Montserrat', sans-serif;
   font-size: clamp(1.6rem, 4vw, 2.4rem);
+  font-weight: 400;
   color: #fff;
   margin: 0 0 8px;
 }
