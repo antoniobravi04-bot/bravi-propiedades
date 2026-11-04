@@ -985,7 +985,7 @@ body { animation: pageFadeIn .45s cubic-bezier(.22,.68,0,1.2) both; }
   }
   .nav__links.open   { display: flex; }
   .nav__hamburger    { display: flex; }
-  .nav--past-hero .nav__hero-cta { margin-left: auto; margin-right: 10px; }
+  .nav__hero-cta     { display: none !important; }
   .nav__links > li   { width: 100%; border-bottom: 1px solid var(--border); }
   .nav__links > li > a { display: block; padding: 14px 24px; color: var(--navy) !important; font-size: .97rem; }
   /* Contacto: subtle plain link */
@@ -1819,21 +1819,15 @@ body { animation: pageFadeIn .45s cubic-bezier(.22,.68,0,1.2) both; }
   display: flex;
   align-items: center;
   gap: 8px;
-  max-width: 0;
-  overflow: hidden;
   opacity: 0;
   pointer-events: none;
   transform: translateY(-5px);
-  transition: opacity .25s ease, transform .25s ease, max-width .3s ease, margin-left .3s ease;
-  margin-left: 0;
-  flex-shrink: 0;
+  transition: opacity .25s ease, transform .25s ease;
 }
 .nav--past-hero .nav__hero-cta {
-  max-width: 220px;
   opacity: 1;
   pointer-events: auto;
   transform: translateY(0);
-  margin-left: 24px;
 }
 .nav__hero-cta-btn {
   display: inline-flex;
