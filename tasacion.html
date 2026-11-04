@@ -157,7 +157,8 @@
     /* ── HERO TASACIÓN ── */
     .tas-hero {
       position: relative;
-      min-height: 88svh;
+      height: 100svh;
+      min-height: 600px;
       display: flex;
       align-items: flex-start;
       overflow: hidden;
@@ -236,7 +237,7 @@
       margin: 0;
     }
     @media (max-width: 700px) {
-      .tas-hero { min-height: auto; }
+      .tas-hero { height: 100svh; min-height: 600px; }
       .tas-hero__content { padding-top: 90px; }
       .tas-hero__cards { grid-template-columns: 1fr; gap: 14px; }
       .tas-hero__sub br { display: none; }
