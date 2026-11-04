@@ -192,6 +192,7 @@ a   { text-decoration: none; }
   justify-content: space-between;
   padding-block: 16px;
   transition: padding .3s ease, height .3s ease;
+  position: relative;
 }
 .nav__logo {
   display: flex;
@@ -1008,6 +1009,14 @@ body { animation: pageFadeIn .45s ease both; }
   .nav__links.open   { display: flex; }
   .nav__hamburger    { display: flex; }
   .nav__hero-cta     { display: none !important; }
+  /* Nav type switcher: sale del centro absoluto, se muestra inline antes del hamburger */
+  .nav__type-switcher {
+    position: static;
+    transform: none;
+    margin-left: auto;
+    margin-right: 10px;
+  }
+  .nav__type-sw { padding: 6px 16px; font-size: .78rem; }
   .nav__links > li   { width: 100%; border-bottom: 1px solid var(--border); }
   .nav__links > li > a { display: block; padding: 14px 24px; color: var(--navy) !important; font-size: .97rem; }
   /* Contacto: subtle plain link */
@@ -1434,37 +1443,35 @@ body { animation: pageFadeIn .45s ease both; }
 /* ===== LISTADO PAGES ===== */
 .listado-header {
   background: var(--navy);
-  padding: 120px 0 48px;
+  padding: 100px 0 36px;
   text-align: center;
   border-bottom: none;
 }
 
-/* Switcher Venta / Alquiler */
-.listado-switcher {
+/* Nav switcher Venta / Alquiler (dentro del navbar) */
+.nav__type-switcher {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
   display: inline-flex;
-  background: rgba(255,255,255,.15);
+  background: rgba(255,255,255,.18);
   border-radius: 50px;
-  padding: 4px;
+  padding: 3px;
   gap: 0;
-  margin-bottom: 20px;
   backdrop-filter: blur(8px);
 }
-.listado-sw {
-  padding: 10px 36px;
+.nav__type-sw {
+  padding: 7px 28px;
   border-radius: 50px;
   font-weight: 600;
-  font-size: 1rem;
-  color: rgba(255,255,255,.75);
+  font-size: .88rem;
+  color: rgba(255,255,255,.8);
   text-decoration: none;
-  transition: background 0.2s, color 0.2s;
+  transition: background .2s, color .2s;
   white-space: nowrap;
 }
-@media (max-width: 600px) {
-  .listado-switcher { display: flex; width: 100%; box-sizing: border-box; }
-  .listado-sw { padding: 10px 0; flex: 1; text-align: center; }
-}
-.listado-sw:hover:not(.listado-sw--active) { color: #fff; }
-.listado-sw--active {
+.nav__type-sw:hover:not(.nav__type-sw--active) { color: #fff; }
+.nav__type-sw--active {
   background: #fff;
   color: var(--navy);
 }
