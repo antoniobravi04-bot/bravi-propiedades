@@ -139,7 +139,11 @@
       display: flex; align-items: flex-start; gap: 5px;
       font-size: .82rem; color: var(--text-muted); line-height: 1.4;
     }
-    .dp-action-bar__hls { display: none; }
+    .dp-action-bar__hls {
+      display: flex; align-items: center;
+      border-left: 1px solid var(--border);
+      padding: 0 8px;
+    }
     .dp-action-bar__hl {
       text-align: center; padding: 0 20px;
       border-right: 1px solid var(--border);
