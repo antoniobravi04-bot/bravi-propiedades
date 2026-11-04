@@ -1147,39 +1147,39 @@ body { animation: pageFadeIn .45s ease both; }
   .nosotros__img     { order: -1; }
 }
 
-/* ===== HERO BOTONES VENTA / ALQUILER (segmented control) ===== */
+/* ===== HERO BOTONES VENTA / ALQUILER ===== */
 .hero__op-btns {
   display: inline-flex;
-  background: rgba(255,255,255,.13);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  border: 1px solid rgba(255,255,255,.22);
-  border-radius: 50px;
-  padding: 4px;
-  gap: 2px;
+  background: transparent;
+  border: none;
+  padding: 0;
+  gap: 12px;
   margin-bottom: 28px;
 }
 .hero__op-btns .hero__op-btn {
   display: flex;
   align-items: center;
-  gap: 7px;
+  gap: 9px;
   font-family: var(--font-body);
-  font-size: .88rem;
-  font-weight: 600;
-  padding: 10px 26px;
+  font-size: .95rem;
+  font-weight: 700;
+  padding: 13px 28px;
   border-radius: 50px;
   text-decoration: none;
-  letter-spacing: .03em;
-  background: transparent;
-  color: rgba(255,255,255,.72);
+  letter-spacing: .01em;
+  background: #fff;
+  color: var(--navy);
   border: none;
-  backdrop-filter: none;
-  -webkit-backdrop-filter: none;
-  transition: background .2s, color .2s;
+  box-shadow: 0 4px 18px rgba(0,0,0,.18);
+  transition: transform .15s, box-shadow .15s;
 }
 .hero__op-btns .hero__op-btn:hover {
-  background: rgba(255,255,255,.12);
-  color: #fff;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 28px rgba(0,0,0,.24);
+}
+.hero__op-btns .hero__op-btn svg {
+  color: var(--navy);
+  flex-shrink: 0;
 }
 
 /* ===== HERO WIDGET (buscador) ===== */
@@ -1372,12 +1372,10 @@ body { animation: pageFadeIn .45s ease both; }
   .hero__sub   { font-size: 0.88rem; margin-bottom: 28px; line-height: 1.6; }
 
   /* Botones Venta / Alquiler: más separación antes del buscador */
-  .hero__op-btns { gap: 10px; margin-bottom: 28px; }
-  .hero__op-btn {
-    flex: 1;
-    justify-content: center;
-    padding: 12px 14px;             /* levemente más compactos */
-    font-size: 0.95rem;
+  .hero__op-btns { gap: 10px; margin-bottom: 24px; }
+  .hero__op-btns .hero__op-btn {
+    padding: 12px 22px;
+    font-size: 0.9rem;
   }
 
   /* Op dropdown: oculto en mobile — el usuario filtra venta/alquiler desde las páginas dedicadas */
