@@ -1016,19 +1016,20 @@ body { animation: pageFadeIn .45s ease both; }
     gap: 0;
     position: absolute;
     top: 100%; left: 0; right: 0;
-    background: #001533;
-    padding: 0 0 20px;
+    background: var(--navy);
+    padding: 0 0 12px;
     box-shadow: 0 16px 40px rgba(0,0,0,.35);
     border-top: 2px solid var(--gold);
     z-index: 999;
-    /* animación */
-    transform: translateY(-8px);
+    /* animación despliegue */
+    max-height: 0;
+    overflow: hidden;
     opacity: 0;
     pointer-events: none;
-    transition: transform .22s ease, opacity .22s ease;
+    transition: max-height .3s ease, opacity .25s ease;
   }
   .nav__links.open {
-    transform: translateY(0);
+    max-height: 420px;
     opacity: 1;
     pointer-events: auto;
   }
@@ -1043,42 +1044,43 @@ body { animation: pageFadeIn .45s ease both; }
     gap: 2px;
   }
   .nav__type-sw { padding: 5px 11px; font-size: .72rem; }
-  .nav__links > li   { width: 100%; border-bottom: 1px solid rgba(255,255,255,.08); }
-  .nav__links > li > a { display: block; padding: 15px 24px; color: rgba(255,255,255,.9) !important; font-size: .97rem; }
-  .nav__links > li > a:hover { color: #fff !important; background: rgba(255,255,255,.06); }
+  .nav__links > li   { width: 100%; border-bottom: 1px solid rgba(255,255,255,.1); }
+  .nav__links > li > a { display: block; padding: 13px 24px; color: rgba(255,255,255,.88) !important; font-size: .95rem; font-weight: 400; }
+  .nav__links > li > a:hover { color: #fff !important; background: rgba(255,255,255,.07); }
   /* Contacto: subtle plain link */
   .nav__links .btn--nav {
     background: none; border: none; box-shadow: none; border-radius: 0;
-    color: rgba(255,255,255,.55) !important; font-weight: 400; font-size: .85rem;
-    margin: 0; width: 100%; padding: 12px 24px; justify-content: flex-start;
+    color: rgba(255,255,255,.5) !important; font-weight: 400; font-size: .85rem;
+    margin: 0; width: 100%; padding: 11px 24px; justify-content: flex-start;
   }
-  /* Social icons row */
+  /* Social icons row: compacto */
   .nav__links .nav__social {
-    display: flex; gap: 18px; padding: 16px 24px 0;
+    display: flex; gap: 20px; padding: 10px 24px 4px;
     border-bottom: none; border-left: none; margin-left: 0;
   }
-  .nav__links .nav__social a { color: rgba(255,255,255,.5); }
-  .nav__links .nav__social a:hover { color: #fff; }
+  .nav__links .nav__social a { color: rgba(255,255,255,.45); }
+  .nav__links .nav__social a svg { width: 17px; height: 17px; }
+  .nav__links .nav__social a:hover { color: rgba(255,255,255,.85); }
   /* Hide desktop dropdown arrow and submenu on mobile */
   .nav__dropdown > a::after { display: none; }
   .nav__submenu { display: none !important; }
-  /* Sub-links for Ventas/Alquileres shown as indented items */
+  /* Sub-links */
   .nav__mobile-sub {
     display: block !important; width: 100%;
     border-bottom: 1px solid rgba(255,255,255,.08) !important;
   }
   .nav__mobile-sub a {
-    display: block; padding: 10px 24px 10px 40px !important;
-    color: rgba(255,255,255,.6) !important; font-size: .9rem; font-weight: 500;
+    display: block; padding: 9px 24px 9px 40px !important;
+    color: rgba(255,255,255,.55) !important; font-size: .88rem; font-weight: 400;
     border-left: 2px solid var(--gold); margin-left: 24px;
   }
   .nav__mobile-sub a:hover { color: #fff !important; background: rgba(255,255,255,.05); }
-  /* Botones Venta / Alquiler en menú mobile */
+  /* Botones Ventas / Alquileres en menú mobile */
   .nav__mobile-cta {
     display: flex !important;
     gap: 10px;
-    padding: 16px 24px;
-    border-bottom: 1px solid rgba(255,255,255,.08);
+    padding: 12px 24px;
+    border-bottom: 1px solid rgba(255,255,255,.1);
   }
   .nav__cta-btn {
     flex: 1;
@@ -1090,9 +1092,9 @@ body { animation: pageFadeIn .45s ease both; }
     text-decoration: none;
     transition: opacity .18s;
   }
-  .nav__cta-btn--venta   { background: rgba(255,255,255,.12); border: 1px solid rgba(255,255,255,.25); color: #fff; }
-  .nav__cta-btn--alquiler { background: rgba(255,255,255,.12); border: 1px solid rgba(255,255,255,.25); color: #fff; }
-  .nav__cta-btn:hover { background: rgba(255,255,255,.22) !important; opacity: 1; }
+  .nav__cta-btn--venta   { background: transparent; border: 1px solid rgba(255,255,255,.35); color: rgba(255,255,255,.88); font-weight: 400; }
+  .nav__cta-btn--alquiler { background: transparent; border: 1px solid rgba(255,255,255,.35); color: rgba(255,255,255,.88); font-weight: 400; }
+  .nav__cta-btn:hover { background: rgba(255,255,255,.1) !important; border-color: rgba(255,255,255,.6) !important; opacity: 1; }
   .nav__cta-btn:hover { opacity: .85; }
 
   /* Hide old mobile-only block */
