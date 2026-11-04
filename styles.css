@@ -28,7 +28,7 @@ body {
   line-height: 1.7;
   color: var(--text);
   background: var(--white);
-  overflow-x: clip; /* clip no crea stacking context → position:fixed funciona correctamente en Safari */
+  overflow-x: hidden;
 }
 
 img { display: block; width: 100%; object-fit: cover; }
