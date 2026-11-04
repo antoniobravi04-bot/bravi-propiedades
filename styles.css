@@ -985,7 +985,7 @@ body { animation: pageFadeIn .45s cubic-bezier(.22,.68,0,1.2) both; }
   }
   .nav__links.open   { display: flex; }
   .nav__hamburger    { display: flex; }
-  .nav--past-hero .nav__hero-cta { margin-left: 0; margin-right: 10px; }
+  .nav--past-hero .nav__hero-cta { margin-left: auto; margin-right: 10px; }
   .nav__links > li   { width: 100%; border-bottom: 1px solid var(--border); }
   .nav__links > li > a { display: block; padding: 14px 24px; color: var(--navy) !important; font-size: .97rem; }
   /* Contacto: subtle plain link */
