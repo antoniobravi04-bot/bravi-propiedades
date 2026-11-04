@@ -1835,22 +1835,19 @@ body { animation: pageFadeIn .45s cubic-bezier(.22,.68,0,1.2) both; }
   padding: 5px 13px;
   border-radius: 20px;
   font-size: .82rem;
-  font-weight: 600;
+  font-weight: 500;
   letter-spacing: .02em;
   text-decoration: none;
-  transition: opacity .18s;
   white-space: nowrap;
+  color: rgba(255,255,255,.85);
+  border: 1px solid rgba(255,255,255,.4);
+  background: transparent;
+  transition: color .2s, background .2s;
 }
-.nav__hero-cta-btn--venta {
-  background: var(--gold);
-  color: var(--navy);
-}
-.nav__hero-cta-btn--alquiler {
-  background: rgba(255,255,255,.15);
+.nav__hero-cta-btn:hover {
   color: #fff;
-  border: 1px solid rgba(255,255,255,.35);
+  background: rgba(255,255,255,.1);
 }
-.nav__hero-cta-btn:hover { opacity: .82; }
 .nav__social a { color: rgba(255,255,255,.7); display: flex; transition: color .2s; }
 .nav__social a:hover { color: #fff; }
 
