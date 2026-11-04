@@ -121,14 +121,16 @@
     <div class="nos-hero__overlay"></div>
     <div class="container nos-hero__content">
       <h1 class="nos-hero__title">Quiénes somos</h1>
-      <p class="nos-hero__sub">Más de 30 años trabajando en el mercado local,<br>conociendo cada barrio, cada calle, cada propiedad.</p>
-      <!-- Thumbnails navegación -->
-      <div class="nos-hero__thumbs" id="nosThumbNav">
+      <div class="nos-hero__bottom">
+        <p class="nos-hero__sub">Más de 30 años trabajando en el mercado local,<br>conociendo cada barrio, cada calle, cada propiedad.</p>
+        <!-- Thumbnails navegación -->
+        <div class="nos-hero__thumbs" id="nosThumbNav">
         <button class="nos-hero__thumb active" data-slide="0" style="background-image:url('grod-2.jpg')" aria-label="Foto 1"></button>
         <button class="nos-hero__thumb" data-slide="1" style="background-image:url('grod-3.jpg')" aria-label="Foto 2"></button>
         <button class="nos-hero__thumb" data-slide="2" style="background-image:url('grod-4.jpg')" aria-label="Foto 3"></button>
         <button class="nos-hero__thumb" data-slide="3" style="background-image:url('grod-5.jpg')" aria-label="Foto 4"></button>
         <button class="nos-hero__thumb" data-slide="4" style="background-image:url('grod-6.jpg')" aria-label="Foto 5"></button>
+        </div>
       </div>
     </div>
   </section>
@@ -181,6 +183,12 @@
       font-weight: 700; color: #fff; line-height: 1.1;
       letter-spacing: -0.025em; margin-bottom: 16px;
       margin-top: 0;
+    }
+    .nos-hero__bottom {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 20px;
     }
     .nos-hero__sub {
       font-size: clamp(.9rem, 1.1vw, 1.05rem);
