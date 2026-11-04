@@ -661,6 +661,29 @@ a   { text-decoration: none; }
   font-size: .95rem; color: rgba(255,255,255,.72);
   margin-top: 6px; margin-bottom: 16px;
 }
+/* Switcher Venta/Alquiler en el header — solo móvil */
+.listado-header__switcher {
+  display: none;
+  gap: 10px;
+  margin-top: 16px;
+}
+.lh-sw {
+  padding: 9px 24px;
+  border-radius: 50px;
+  font-size: .88rem;
+  font-weight: 600;
+  text-decoration: none;
+  border: 1px solid rgba(255,255,255,.4);
+  color: rgba(255,255,255,.8);
+  background: transparent;
+  transition: background .15s, color .15s;
+}
+.lh-sw--active,
+.lh-sw:hover {
+  background: #fff;
+  color: var(--navy);
+  border-color: #fff;
+}
 
 .badge {
   position: absolute;
@@ -1036,15 +1059,9 @@ body { animation: pageFadeIn .45s ease both; }
   }
   .nav__hamburger    { display: flex; }
   .nav__hero-cta     { display: none !important; }
-  /* Nav type switcher: sale del centro absoluto, se muestra inline antes del hamburger */
-  .nav__type-switcher {
-    position: static;
-    transform: none;
-    margin-left: auto;
-    margin-right: 8px;
-    gap: 2px;
-  }
-  .nav__type-sw { padding: 5px 11px; font-size: .72rem; }
+  /* Nav type switcher: se oculta en móvil, aparece en el header de la página */
+  .nav__type-switcher { display: none; }
+  .listado-header__switcher { display: flex; }
   .nav__links > li   { width: 100%; border-bottom: 1px solid rgba(255,255,255,.1); }
   .nav__links > li > a { display: block; padding: 13px 24px; color: rgba(255,255,255,.88) !important; font-size: .95rem; font-weight: 400; }
   .nav__links > li > a:hover { color: #fff !important; background: rgba(255,255,255,.07); }
