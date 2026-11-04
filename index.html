@@ -724,17 +724,16 @@
   (function () {
     var nav = document.getElementById('nav');
     if (!nav) return;
-    function updateScrolled() {
-      nav.classList.toggle('nav--scrolled', window.scrollY > 10);
-    }
-    window.addEventListener('scroll', updateScrolled, { passive: true });
-    updateScrolled();
     var heroBtns = document.querySelector('.hero__op-btns');
-    if (heroBtns && 'IntersectionObserver' in window) {
-      new IntersectionObserver(function (entries) {
-        nav.classList.toggle('nav--past-hero', !entries[0].isIntersecting);
-      }, { threshold: 0 }).observe(heroBtns);
+    function update() {
+      nav.classList.toggle('nav--scrolled', window.scrollY > 10);
+      if (heroBtns) {
+        var r = heroBtns.getBoundingClientRect();
+        nav.classList.toggle('nav--past-hero', r.bottom < 10);
+      }
     }
+    window.addEventListener('scroll', update, { passive: true });
+    update();
   })();
   </script>
 </body>
