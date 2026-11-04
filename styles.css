@@ -931,10 +931,10 @@ a   { text-decoration: none; }
 
 /* ===== PAGE LOAD FADE ===== */
 @keyframes pageFadeIn {
-  from { opacity: 0; transform: translateY(12px); }
-  to   { opacity: 1; transform: none; }
+  from { opacity: 0; }
+  to   { opacity: 1; }
 }
-body { animation: pageFadeIn .45s cubic-bezier(.22,.68,0,1.2) both; }
+body { animation: pageFadeIn .45s ease both; }
 
 /* ===== FADE IN ===== */
 .fade-up {
