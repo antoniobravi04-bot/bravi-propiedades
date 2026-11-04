@@ -151,47 +151,7 @@ function shuffle(arr) {
 }
 
 function aplicarFiltros() {
-  const min       = parsePrecio(document.getElementById('filtroMin').value);
-  const max       = parsePrecio(document.getElementById('filtroMax').value);
-  const dorm      = document.getElementById('filtroDorm').value;
-  const sup       = parsePrecio(document.getElementById('filtroSup').value);
-  const banos     = document.getElementById('filtroBanos').value;
-  const tipoProp  = document.getElementById('filtroTipoProp').value;
-
-  const filtradas = allProps.filter(p => {
-    if (p.tipo !== tipoActivo) return false;
-
-    const precio = parsePrecio(p.precio);
-    if (min !== null && precio !== null && precio < min) return false;
-    if (max !== null && precio !== null && precio > max) return false;
-
-    if (dorm) {
-      const d = parseInt(p.dormitorios, 10);
-      if (isNaN(d) || d === 0) return false;
-      if (dorm === '4' || dorm === '4+') { if (d < 4) return false; }
-      else { if (d !== parseInt(dorm, 10)) return false; }
-    }
-
-    if (sup !== null) {
-      const s = parseInt((p.supCubierta || p.supTerreno || p.superficie || '').toString().replace(/[^\d]/g, ''), 10);
-      if (isNaN(s) || s < sup) return false;
-    }
-
-    if (banos) {
-      const b = parseInt(p.banos, 10);
-      if (isNaN(b) || b === 0) return false;
-      if (banos === '3' || banos === '3+') { if (b < 3) return false; }
-      else { if (b !== parseInt(banos, 10)) return false; }
-    }
-
-    if (tipoProp) {
-      const tp = p.tipoProp || inferirTipoProp(p);
-      if (tp !== tipoProp) return false;
-    }
-
-    return true;
-  });
-
+  const filtradas = allProps.filter(p => p.tipo === tipoActivo);
   renderPropiedades(shuffle(filtradas).slice(0, MAX_DESTACADAS));
 }
 
@@ -215,26 +175,6 @@ fetch('properties.json?v=' + Date.now())
       });
     });
 
-    // Filtros
-    ['filtroMin','filtroMax','filtroDorm','filtroSup','filtroBanos','filtroTipoProp'].forEach(id => {
-      document.getElementById(id).addEventListener('input', aplicarFiltros);
-    });
-
-    // Limpiar
-    document.getElementById('filtroLimpiar').addEventListener('click', () => {
-      ['filtroMin','filtroMax','filtroSup'].forEach(id => document.getElementById(id).value = '');
-      ['filtroDorm','filtroBanos','filtroTipoProp','filtroMoneda','filtroAmbientes','filtroCochera'].forEach(id => {
-        const el = document.getElementById(id); if (!el) return;
-        el.value = '';
-        const wrap = el.closest('.flt-select'); if (!wrap) return;
-        const lbl = wrap.querySelector('.flt-select__btn span');
-        const first = wrap.querySelector('.flt-select__menu li');
-        if (lbl && first) lbl.textContent = first.textContent;
-        wrap.querySelectorAll('.flt-select__menu li').forEach(l => l.classList.remove('active'));
-        if (first) first.classList.add('active');
-      });
-      aplicarFiltros();
-    });
   })
   .catch(() => {
     const grid = document.getElementById('propiedadesGrid');
