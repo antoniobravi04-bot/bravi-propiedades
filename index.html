@@ -729,11 +729,11 @@
     }
     window.addEventListener('scroll', updateScrolled, { passive: true });
     updateScrolled();
-    var hero = document.querySelector('.hero');
-    if (hero && 'IntersectionObserver' in window) {
+    var heroBtns = document.querySelector('.hero__op-btns');
+    if (heroBtns && 'IntersectionObserver' in window) {
       new IntersectionObserver(function (entries) {
         nav.classList.toggle('nav--past-hero', !entries[0].isIntersecting);
-      }, { threshold: 0, rootMargin: '0px 0px 0px 0px' }).observe(hero);
+      }, { threshold: 0 }).observe(heroBtns);
     }
   })();
   </script>
