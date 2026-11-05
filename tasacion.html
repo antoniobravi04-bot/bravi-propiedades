@@ -243,6 +243,34 @@
       .tas-hero__sub br { display: none; }
       .tas-hero__title br { display: none; }
     }
+    .proceso-card {
+      position: relative;
+      overflow: hidden;
+    }
+    .proceso-num-bg {
+      position: absolute;
+      top: -12px;
+      right: 8px;
+      font-size: 90px;
+      font-weight: 800;
+      line-height: 1;
+      color: var(--border, #e8eaf0);
+      pointer-events: none;
+      user-select: none;
+    }
+    .proceso-icon {
+      color: var(--navy);
+      margin-bottom: 14px;
+      display: block;
+      position: relative;
+    }
+    .proceso-card h3 {
+      margin-bottom: 8px;
+      position: relative;
+    }
+    .proceso-card p {
+      position: relative;
+    }
   </style>
 
   <!-- CÓMO FUNCIONA -->
@@ -253,24 +281,28 @@
         <h2 class="section__title">¿Cómo funciona?</h2>
       </div>
       <div class="servicios__grid" style="margin-top:44px;grid-template-columns:repeat(auto-fit,minmax(220px,1fr))">
-        <div class="card" style="text-align:center">
-          <div style="width:48px;height:48px;border-radius:50%;background:var(--navy);color:#fff;display:flex;align-items:center;justify-content:center;font-size:1.3rem;font-weight:700;margin:0 auto 16px">1</div>
-          <h3 style="margin-bottom:8px">Nos contactás</h3>
+        <div class="card proceso-card">
+          <span class="proceso-num-bg">1</span>
+          <svg class="proceso-icon" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>
+          <h3>Nos contactás</h3>
           <p>Completás el formulario o nos escribís por WhatsApp contándonos sobre tu propiedad.</p>
         </div>
-        <div class="card" style="text-align:center">
-          <div style="width:48px;height:48px;border-radius:50%;background:var(--navy);color:#fff;display:flex;align-items:center;justify-content:center;font-size:1.3rem;font-weight:700;margin:0 auto 16px">2</div>
-          <h3 style="margin-bottom:8px">Visitamos</h3>
+        <div class="card proceso-card">
+          <span class="proceso-num-bg">2</span>
+          <svg class="proceso-icon" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+          <h3>Visitamos</h3>
           <p>Coordinamos una visita para conocer la propiedad y evaluar sus características.</p>
         </div>
-        <div class="card" style="text-align:center">
-          <div style="width:48px;height:48px;border-radius:50%;background:var(--navy);color:#fff;display:flex;align-items:center;justify-content:center;font-size:1.3rem;font-weight:700;margin:0 auto 16px">3</div>
-          <h3 style="margin-bottom:8px">Valuación</h3>
+        <div class="card proceso-card">
+          <span class="proceso-num-bg">3</span>
+          <svg class="proceso-icon" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
+          <h3>Valuación</h3>
           <p>Analizamos el mercado actual de la zona y te entregamos una valuación fundamentada.</p>
         </div>
-        <div class="card" style="text-align:center">
-          <div style="width:48px;height:48px;border-radius:50%;background:var(--navy);color:#fff;display:flex;align-items:center;justify-content:center;font-size:1.3rem;font-weight:700;margin:0 auto 16px">4</div>
-          <h3 style="margin-bottom:8px">Decidís vos</h3>
+        <div class="card proceso-card">
+          <span class="proceso-num-bg">4</span>
+          <svg class="proceso-icon" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+          <h3>Decidís vos</h3>
           <p>Con la información en mano, decidís si querés avanzar con la venta o el alquiler.</p>
         </div>
       </div>
