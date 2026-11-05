@@ -252,6 +252,35 @@ document.getElementById('propModalClose').addEventListener('click', cerrarModal)
 document.getElementById('propModalOverlay').addEventListener('click', cerrarModal);
 document.addEventListener('keydown', e => { if (e.key === 'Escape') cerrarModal(); });
 
+// ── Stats counter animado ────────────────────────────────────────────────────
+(function() {
+  const stats = document.querySelectorAll('.nosotros__stat-n');
+  if (!stats.length) return;
+  let animated = false;
+  function animateCount(el) {
+    const target = parseInt(el.dataset.target, 10);
+    const suffix = el.dataset.suffix || '';
+    const duration = 1600;
+    const start = performance.now();
+    function step(now) {
+      const elapsed = now - start;
+      const progress = Math.min(elapsed / duration, 1);
+      const eased = 1 - Math.pow(1 - progress, 3);
+      el.textContent = Math.round(eased * target) + suffix;
+      if (progress < 1) requestAnimationFrame(step);
+    }
+    requestAnimationFrame(step);
+  }
+  const observer = new IntersectionObserver(entries => {
+    if (entries[0].isIntersecting && !animated) {
+      animated = true;
+      stats.forEach(el => animateCount(el));
+    }
+  }, { threshold: 0.3 });
+  const section = document.querySelector('.nosotros__stats');
+  if (section) observer.observe(section);
+})();
+
 // ── Slideshow Nosotros ───────────────────────────────────────────────────────
 (function() {
   const slides = document.querySelectorAll('#nosotrosSlide .slide');

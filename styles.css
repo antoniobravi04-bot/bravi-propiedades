@@ -485,6 +485,34 @@ a   { text-decoration: none; }
 }
 .nosotros__text .section__title { margin-bottom: 20px; }
 .nosotros__text p { color: var(--text-muted); margin-bottom: 14px; }
+.nosotros__stats {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+  margin: 24px 0 28px;
+}
+.nosotros__stat {
+  background: var(--light);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 18px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+.nosotros__stat-n {
+  font-size: 2rem;
+  font-weight: 800;
+  color: var(--navy);
+  line-height: 1;
+  display: block;
+}
+.nosotros__stat-l {
+  font-size: .78rem;
+  color: var(--text-muted);
+  display: block;
+  line-height: 1.4;
+}
 .nosotros__img-frame {
   border-radius: var(--radius);
   overflow: hidden;
