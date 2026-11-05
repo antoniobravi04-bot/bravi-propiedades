@@ -713,7 +713,7 @@
             ${sideHls.map(h => `<div class="dp-action-bar__hl"><span class="dp-action-bar__hl-val">${h.val}</span><span class="dp-action-bar__hl-lbl">${h.lbl}</span></div>`).join('')}
           </div>` : ''}
           <div class="dp-action-bar__btns">
-            <a href="https://wa.me/5491162784642?text=${waMsg}" target="_blank" rel="noopener" class="btn btn--primary" style="display:flex;align-items:center;gap:8px" data-prop-id="${p.id}" data-prop-tipo="${p.tipo || ''}" data-prop-precio="${p.precio || ''}">
+            <a href="https://wa.me/5491162784642?text=${waMsg}" target="_blank" rel="noopener" class="btn btn--wapp" style="display:flex;align-items:center;gap:8px" data-prop-id="${p.id}" data-prop-tipo="${p.tipo || ''}" data-prop-precio="${p.precio || ''}">
               ${waSVG} WhatsApp
             </a>
             <a href="tel:+5402374840027" class="btn btn--outline-dark">
