@@ -703,7 +703,7 @@ a   { text-decoration: none; }
   backdrop-filter: blur(6px);
 }
 .badge--venta { background: rgba(18,62,138,.82); color: #fff; }
-.badge--alq   { background: rgba(255,255,255,.22); color: #fff; border: 1px solid rgba(255,255,255,.5); }
+.badge--alq   { background: #fff; color: var(--navy); }
 
 .prop-card__body { padding: 18px 20px 20px; }
 .prop-card__body h3 {
