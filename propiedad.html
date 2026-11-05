@@ -163,12 +163,36 @@
 
     /* ─ Responsive ─ */
     @media (max-width: 700px) {
-      .dp-action-bar { flex-direction: column; }
-      .dp-action-bar__info { padding: 16px 20px; }
+      .dp-action-bar {
+        flex-direction: column;
+        align-items: stretch;
+        padding: 14px 16px;
+        gap: 12px;
+      }
+      .dp-action-bar__info { padding: 0; }
       .dp-action-bar__btns {
         width: 100%; min-width: 0;
-        border-left: none; border-top: 1px solid rgba(0,0,0,.07);
-        padding: 14px 20px;
+        border-left: none;
+        flex-wrap: wrap;
+        gap: 8px;
+        padding: 0;
+      }
+      .dp-action-bar__btns .btn {
+        flex: 1 1 calc(50% - 4px);
+        justify-content: center;
+        font-size: .85rem;
+        padding: 10px 12px;
+      }
+      .dp-card__share {
+        flex: 1 1 calc(50% - 4px);
+        justify-content: center;
+      }
+      .dp-action-bar__id {
+        width: 100%;
+        text-align: center;
+        font-size: .7rem;
+        white-space: normal;
+        word-break: break-all;
       }
     }
     @media (max-width: 640px) {
