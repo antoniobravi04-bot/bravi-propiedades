@@ -77,7 +77,7 @@ function renderCards(props) {
     const hasMany   = p.imagenes && p.imagenes.length > 1;
     const img0      = netlifyImg((p.imagenes && p.imagenes[0]) || p.imagen || FALLBACK_IMG, 600, 450);
 
-    const priceText  = (!p.precio || p.precio === 'Consultar' || (p.precioNum && p.precioNum < 1000 && p.moneda !== 'USD')) ? 'Consultar valor' : p.precio;
+    const priceText  = (!p.precio || p.precio === 'Consultar' || p.precioNum <= 1 || (p.precioNum && p.precioNum < 1000 && p.moneda !== 'USD')) ? 'Consultar valor' : p.precio;
     const sliderBtns = hasMany ? `
       <button class="card-slide-btn card-slide-btn--prev" aria-label="Foto anterior">&#8249;</button>
       <button class="card-slide-btn card-slide-btn--next" aria-label="Foto siguiente">&#8250;</button>

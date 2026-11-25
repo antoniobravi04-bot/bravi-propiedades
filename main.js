@@ -32,7 +32,7 @@ function renderPropiedades(props) {
 
     const tipoPropInferido = inferirTipoProp(p);
 
-    const priceText = (!p.precio || p.precio === 'Consultar' || (p.precioNum && p.precioNum < 1000 && p.moneda !== 'USD')) ? 'Consultar valor' : p.precio;
+    const priceText = (!p.precio || p.precio === 'Consultar' || p.precioNum <= 1 || (p.precioNum && p.precioNum < 1000 && p.moneda !== 'USD')) ? 'Consultar valor' : p.precio;
     return `
     <article class="prop-card fade-up" data-tipoProp="${tipoPropInferido}">
       <div class="prop-card__img">
